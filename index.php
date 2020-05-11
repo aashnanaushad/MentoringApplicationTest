@@ -1,7 +1,3 @@
-<?php 
-	include('base.php');
-	?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,10 +12,12 @@
 			</div>
 		<form action="index.php" method="post">
 			<div class="inner_container">
-				<a href="<?php echo BASE_URL; ?>slogin.php"><button type="button" class="login_button">Student</button></a>
-				<a href="<?php echo BASE_URL; ?>flogin.php"><button type="button" class="login_button">Faculty</button></a>
-				<a href="<?php echo BASE_URL; ?>clogin.php"><button type="button" class="login_button">Counselor</button></a>
-				<a href="<?php echo BASE_URL; ?>login.php"><button type="button" class="login_button">Admin</button></a>
+
+				<a href="slogin.php"><button type="button" class="login_button">Student</button></a>
+				<a href="flogin.php"><button type="button" class="login_button">Faculty</button></a>
+				<a href="clogin.php"><button type="button" class="login_button">Counselor</button></a>
+				<a href="login.php"><button type="button" class="login_button">Admin</button></a>
+
 			</div>
 			</div>
 		</form>
