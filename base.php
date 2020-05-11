@@ -1,3 +1,3 @@
 <?php 
-    define('BASE_URL','https://mentoringapp.000webhostapp.com/');
+    define('BASE_URL','https://mentoringapplication.herokuapp.com/');
 ?>
