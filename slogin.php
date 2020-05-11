@@ -2,7 +2,6 @@
 	session_start();
 	require_once('dbconfig/config.php');
 	//phpinfo();
-	incude('base.php');
 ?>
 
 <!DOCTYPE html>
