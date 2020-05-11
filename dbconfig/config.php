@@ -1,7 +1,9 @@
 <?php
 /*For My LocalPC*/
-$con=mysqli_connect ("remotemysql.com", process.env.DATABASE_NAME, process.env.DATABASE_PASSWORD,process.env.DATABASE_NAME) or die ('I cannot connect to the database because: ' . mysql_error());
-mysqli_select_db ($con,process.env.DATABASE_NAME);
+$dbname = getenv('DATABASE_NAME');
+$dbpass = getenv('DATABASE_PASSWORD');
+$con=mysqli_connect ("remotemysql.com", $dbname, $dbpass,$dbname) or die ('I cannot connect to the database because: ' . mysql_error());
+mysqli_select_db ($con,$dbname);
 ?>
 
 
