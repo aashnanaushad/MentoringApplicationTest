@@ -47,7 +47,7 @@
                         <?php
                         //receiver name to array
                         $added_user=array($counter=>$receiver_name);
-                        $counnter++;
+                        $counter++;
                         
                     }
                 }elseif($_SESSION['username']==$receiver_name){
