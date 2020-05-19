@@ -87,6 +87,36 @@
         <div id ="container">
          <div id="menu">
              <?php echo $_SESSION['username']; ?>
+             <?php
+                 $sql='SELECT DISTINCT `username` FROM `counselor`';
+                 $y=mysqli_query($con,$sql);
+                 if($y){
+                    $counselor=array();
+                    $count=0;
+                    if(mysqli_num_rows($y)>0){
+                         while($row=mysqli_fetch_assoc($y)){
+                          $user=$row['username'];
+                          if(in_array($user,$counselor)){
+                          //not added
+                          }else{
+                          //added to array
+                                $counselor=array($count=>$user);
+                                $count++;
+                
+                            }
+                        }
+                    }
+                }
+                if(in_array($_SESSION['username'],$counselor)){
+                    ?>
+                     <a href="chome.php"><button class="chome" type="button">HOME</button></a>
+                    <?php
+                }else{
+                    ?>
+                     <a href="shome.php"><button class="chome" type="button">HOME</button></a>
+                    <?php
+                }
+             ?>
          </div> 
          <div id="left-col">
              <?php require_once("include/left_col.php"); ?>
