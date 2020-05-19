@@ -77,6 +77,23 @@
             margin-right:2px;
             
         }
+        .chome{
+            float:right;
+            position:relative;
+            right:8px;
+            top:4px;
+            width:75px;
+            height:30px;
+            border:2px solid white;
+            border-sizing:border-box;
+            background:blue;
+            color:white;
+        }
+        .chome:hover{
+            color:#39FF14;
+            font-size:16px;
+            border:2px solid #39FF14;
+            
         }
     </style>
     </head>
