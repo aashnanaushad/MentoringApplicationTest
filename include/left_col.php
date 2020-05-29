@@ -1,10 +1,24 @@
 <?php
-    session_start();
+    //session_start();
     require 'dbconfig/config.php';
 ?>
     <div id="left-col-container">
     <?php
-    if($_SESSION['username']=='c1'){
+    $sql='SELECT username FROM `counselor`;';
+    $r=mysqli_query($con,$sql);
+    if($r){
+        $counselor=array();
+        $count=0;
+        if(mysqli_num_rows($r)>0){
+            while($row=mysqli_fetch_assoc($r)){
+                $user=$row['username'];
+                $counselor=array($count=>$user);
+                $count++;
+        }
+     }
+    }
+
+    if(in_array($_SESSION['username'],$counselor)){
     ?>
     <!--<div onclick="document.getElementById('new-messages').style.display='block'" class="white">-->
     <div class="white">
@@ -18,8 +32,40 @@
     </div>
     <?php
     }
-    if($_SESSION['username']!='c1'){
-    $sql='SELECT DISTINCT `receiver_name`,`sender_name`
+
+    if(in_array($_SESSION['username'],$counselor)){
+        $sql='SELECT `username` FROM `request` WHERE approve=2';
+        $r=mysqli_query($con,$sql);
+        if($r){
+        $added_user=array();
+        $counter=0;
+        if(mysqli_num_rows($r)>0){
+            while($row=mysqli_fetch_assoc($r)){
+                $receiver_name=$row['username'];
+                if(in_array($receiver_name,$added_user)){
+                        //not added
+                    }else{
+                        //sender  added
+                        ?>
+                            <div class="back">
+                               <?php echo'<a href="?user='.$receiver_name.'">'.$receiver_name.'</a>';?>
+                            </div>
+                        <?php
+                        //receiver name to array
+                        $added_user=array($counter=>$receiver_name);
+                        $counter++;
+                        
+                    }
+            }
+                
+        
+    }
+    }else{
+        echo "error";
+    }
+    
+   }else{//here
+   $sql='SELECT DISTINCT `receiver_name`,`sender_name`
     FROM `message` WHERE
     `sender_name`="'.$_SESSION['username'].'" OR
     `receiver_name`="'.$_SESSION['username'].'"
@@ -47,7 +93,7 @@
                         <?php
                         //receiver name to array
                         $added_user=array($counter=>$receiver_name);
-                        $counnter++;
+                        $counter++;
                         
                     }
                 }elseif($_SESSION['username']==$receiver_name){
@@ -76,28 +122,9 @@
     }else{
         echo"error!!";
     }
-   }else{
-    $sql='SELECT DISTINCT `username` FROM `request` WHERE approve=2';
-    $r=mysqli_query($con,$sql);
-    if($r){
-        $added_user=array();
-        $counter=0;
-        if(mysqli_num_rows($r)>0){
-            while($row=mysqli_fetch_assoc($r)){
-                $receiver_name=$row['username'];
-                ?>
-                <div class="back">
-                   <?php echo'<a href="?user='.$receiver_name.'">'.$receiver_name.'</a>';?>
-                </div>
-                <?php
-            }
-                
-        
-    }
-    }else{
-        echo "error";
-    }
+       
    }
+   
 ?>
 
 
