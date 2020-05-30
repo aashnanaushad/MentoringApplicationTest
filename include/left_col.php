@@ -37,7 +37,7 @@
     }
 
     if(in_array($_SESSION['username'],$counselor)){
-        $sql='SELECT `username` FROM `request` WHERE approve=2 ORDER BY `date` DESC LIMIT 1;';
+        $sql='SELECT `username` FROM `request` WHERE approve=2;';
         $r=mysqli_query($con,$sql);
         if($r){
         $added_user=array();
@@ -55,8 +55,8 @@
                             </div>
                         <?php
                         //receiver name to array
-                        $added_user=array($counter=>$receiver_name);
-                        $counter++;
+                        $added_user[]=$receiver_name;
+                        //$counter++;
                         
                     }
             }
