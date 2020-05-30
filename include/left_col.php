@@ -68,11 +68,7 @@
     }
     
    }else{//here
-   $sql='SELECT DISTINCT `receiver_name`,`sender_name`
-    FROM `message` WHERE
-    `sender_name`="'.$_SESSION['username'].'" OR
-    `receiver_name`="'.$_SESSION['username'].'"
-    ORDER BY `date_time` DESC LIMIT 1;';
+    $sql=' SELECT DISTINCT `username` FROM `counselor`';
 
     $r=mysqli_query($con,$sql);
     if($r){
@@ -80,53 +76,30 @@
         $counter=0;
         if(mysqli_num_rows($r)>0){
             while($row=mysqli_fetch_assoc($r)){
-                $sender_name=$row['sender_name'];
-                $receiver_name=$row['receiver_name'];
-                
-                if($_SESSION['username']==$sender_name){
-                    //receiver name only once
-                    if(in_array($receiver_name,$added_user)){
+                $receiver_name=$row['username'];
+                if(in_array($receiver_name,$added_user)){
                         //not added
                     }else{
-                        //receiver added
+                        //sender  added
                         ?>
                             <div class="back">
                                <?php echo'<a href="?user='.$receiver_name.'">'.$receiver_name.'</a>';?>
                             </div>
                         <?php
                         //receiver name to array
-                        $added_user=array($counter=>$receiver_name);
-                        $counter++;
-                        
-                    }
-                }elseif($_SESSION['username']==$receiver_name){
-                    //receiver name only once
-                    if(in_array($sender_name,$added_user)){
-                        //not added
-                    }else{
-                        //sender  added
-                        ?>
-                            <div class="back">
-                               <?php echo'<a href="?user='.$sender_name.'">'.$sender_name.'</a>';?>
-                            </div>
-                        <?php
-                        //receiver name to array
-                        $added_user=array($counter=>$sender_name);
-                        $counter++;
-                        
-                    }
-                }
+                        $added_user[]= $receiver_name;
+                       // $counter++;
             }
-            
-        }else{
-            'no user';
-        }
         
+        }
+    }
+  
     }else{
         echo"error!!";
     }
        
    }
+
    
 ?>
 
