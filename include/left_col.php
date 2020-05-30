@@ -37,7 +37,7 @@
     }
 
     if(in_array($_SESSION['username'],$counselor)){
-        $sql='SELECT `username` FROM `request` WHERE approve=2;';
+        $sql='SELECT `username` FROM `request` WHERE approve=2 ORDER BY `date` DESC LIMIT 1;';
         $r=mysqli_query($con,$sql);
         if($r){
         $added_user=array();
@@ -72,7 +72,7 @@
     FROM `message` WHERE
     `sender_name`="'.$_SESSION['username'].'" OR
     `receiver_name`="'.$_SESSION['username'].'"
-    ORDER BY `date_time` DESC';
+    ORDER BY `date_time` DESC LIMIT 1;';
 
     $r=mysqli_query($con,$sql);
     if($r){
