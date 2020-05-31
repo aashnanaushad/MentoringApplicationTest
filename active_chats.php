@@ -105,25 +105,23 @@
          <div id="menu">
              <?php echo $_SESSION['username']; ?>
              <?php
-                 $sql='SELECT DISTINCT `username` FROM `counselor`';
-                 $y=mysqli_query($con,$sql);
-                 if($y){
+                $sql='SELECT username FROM `counselor`;';
+                $r=mysqli_query($con,$sql);
+                if($r){
                     $counselor=array();
                     $count=0;
-                    if(mysqli_num_rows($y)>0){
-                         while($row=mysqli_fetch_assoc($y)){
-                          $user=$row['username'];
-                          if(in_array($user,$counselor)){
-                          //not added
-                          }else{
-                          //added to array
-                                $counselor=array($count=>$user);
-                                $count++;
-                
-                            }
-                        }
+                    if(mysqli_num_rows($r)>0){
+                        while($row=mysqli_fetch_assoc($r)){
+                            $user=$row['username'];
+                            $counselor[]= $user;
+                        // $count++;
                     }
+            
                 }
+                }else{
+                    echo "database error";
+                }
+                     
                 if(in_array($_SESSION['username'],$counselor)){
                     ?>
                      <a href="chome.php"><button class="chome" type="button">HOME</button></a>

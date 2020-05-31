@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	//session_start();
 	require_once('dbconfig/config.php');
 		if(!isset($_SESSION['username'])){
     echo "<script>window.location.href='chome.php';</script>";
