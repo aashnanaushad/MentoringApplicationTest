@@ -51,7 +51,7 @@
 		  ?>
 		      <form method="post" action="request_fwdhod.php">
 		      <input type="hidden" name=user1 value="<?php echo $username; ?>">
-			  <button name="forward" class="sign_up_btn" type="submit">Forward</button></a>
+			  <button name="forward" class="sign_up_btn" type="submit">Approve</button></a>
 			    </form>
 
 		  

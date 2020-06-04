@@ -90,7 +90,7 @@
          exit();
      }
      else{
-         mysqli_stmt_bind_param($stmt,"s",$userEmail);
+        //  mysqli_stmt_bind_param($stmt,"s",$userEmail);
        
          mysqli_stmt_execute($stmt);
      }
@@ -104,7 +104,8 @@
      else{
          mysqli_stmt_bind_param($stmt,"ssss",$username,$reason,$dept,$start_yr);
          mysqli_stmt_execute($stmt);
-         echo"requested";
+         echo '<script type="text/javascript">alert("Request Successful")</script>';
+         echo "<script>window.location.href='shome.php';</script>";
      }
   }
 ?>

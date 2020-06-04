@@ -26,13 +26,13 @@
 			<div class="inner_container">
 			  <center> <a href="changepass.php"><button class="change_button" type="button">Change Password</button></a></center>
 			 <center><a href="fview.php"><button type="button" class="change_button">View Profile</button></a></center>
-			 <a href="slist_dept.php"><button type="button" class="login_button">Students of Department</button></a>
+			 <center><a href="slist_dept.php"><button type="button" class="change_button">Students of Department</button></a></center>
 			</div>
 		</form>
 
 		<form action="logout.php" method="post">
 			<div class="inner_container">
-				<button class="change_button2" type="submit">Log Out</button>
+			<center><button class="change_button2" type="submit">Log Out</button></center>
 			</div>
 		</form>
 

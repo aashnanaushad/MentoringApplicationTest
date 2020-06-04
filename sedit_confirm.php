@@ -83,7 +83,7 @@
 		  ?>
 		      <form method="post">
 			  <button name="confirm" class="sign_up_btn" type="submit">Confirm</button></a>
-			    <a href="confirm_requests.php"><button type="button" class="back_btn"><< Back to Home</button></a>	
+			    <a href="confirm_requests.php"><button type="button" class="back_btn"><< Back </button></a>	
 			    </form>
 
 		  

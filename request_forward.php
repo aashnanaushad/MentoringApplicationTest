@@ -52,7 +52,7 @@
 		      <form method="post" action="request_forward.php">
 		      <input type="hidden" name=user value="<?php echo $username ?>">
 			  <button name="forward" class="sign_up_btn" type="submit">Forward</button></a>
-			    <a href="request_counselor.php"><button type="button" class="back_btn"><< Back to Home</button></a>	
+			    <a href="confirm_requests.php"><button type="button" class="back_btn"><< Back </button></a>	
 			    </form>
 
 		  
