@@ -52,6 +52,7 @@
 		      <form method="post" action="request_fwdhod.php">
 		      <input type="hidden" name=user1 value="<?php echo $username; ?>">
 			  <button name="forward" class="sign_up_btn" type="submit">Approve</button></a>
+			  <a href="hod.php"><button type="button" class="back_btn"><< Back To Home </button></a>
 			    </form>
 
 		  
