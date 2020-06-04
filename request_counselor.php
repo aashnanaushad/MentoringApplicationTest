@@ -11,7 +11,7 @@
 	$result=mysqli_query($con,$query);
 	$row1=mysqli_fetch_array($result);
 	$dept1=$row1['dept'];
-	$batch=$row1['batch'];
+	// $batch=$row1['batch'];
 	$start_yr=$row1['start_yr'];
 ?>
 <html>
@@ -91,6 +91,7 @@
      }
      else{
          mysqli_stmt_bind_param($stmt,"s",$userEmail);
+       
          mysqli_stmt_execute($stmt);
      }
      

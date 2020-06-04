@@ -26,7 +26,7 @@
 			<div class="inner_container">
 				<label><b>Name</b></label>
 				<input type="text" placeholder="Enter Name" name="name" >
-				<label><b>Username*</b></label>
+				<label><b>Username *</b></label>
 				<input type="text" placeholder="Enter Username" name="username" required>
 				<label><b>DOB</b></label>
 				<input type="date" placeholder="dd-mm-yyyy" name="dob" >
@@ -34,7 +34,7 @@
 				<input type="text" placeholder="Enter Address" name="address" >
 				<label><b>Email</b></label>
 				<input type="text" placeholder="user@example.com" name="email" >
-				<label><b>* denotes required field</b></b></label>
+				<br/><label><b>* denotes required field</b></b></label>
 				<!--<label><b>Password</b></label>
 				<input type="password" placeholder="Enter Password" name="password" required>-->
 				<a href="fhome.php"><button name="sadd" class="sign_up_btn" type="submit">Submit</button></a>
@@ -56,6 +56,7 @@
 				@$start_yr=$batch;
 				@$end_yr=$batch+$end;
 				@$edit=0;
+				@$reqcon=0;
 				$dept=$dept;
 				
 				if (empty($name)){
@@ -84,7 +85,9 @@
 						}
 						else
 						{
-							$query = "insert into student values('$name','$username','$dept','$start_yr','$end_yr','$dob','$address','$email','$password','$edit')";
+							
+							echo $reqcon ;
+							$query = "insert into student values('$name','$username','$dept','$start_yr','$end_yr','$dob','$address','$email','$password','$edit','$reqcon')";
 							$query_run = mysqli_query($con,$query);
 							if($query_run)
 							{
