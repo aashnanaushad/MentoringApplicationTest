@@ -37,7 +37,7 @@
         		<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="resetpassword.php">
         			<form action="reset-password.php" method="post">
   						<input type="hidden" name="pageinfo" value="a">
-						<button type="submit" class="login_button" name="newpwd">Forgot Password?</button>
+						<button type="submit"  name="newpwd">Forgot Password?</button>
   					</form>
   				</a>
     		</div>
