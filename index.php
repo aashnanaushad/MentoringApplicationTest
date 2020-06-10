@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>MITS-Mentoring Platform</title>
-<link rel="stylesheet" href="css/style.css">
+	<title>MITS-Mentoring Platform</title>
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body style="background-color:#bdc3c7">
 	<div id="main-wrapper">

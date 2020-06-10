@@ -7,9 +7,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login Page</title>
-<link rel="stylesheet" href="css/tailwind.css">
-<link href="css/tailwind.min.css" rel="stylesheet">
+	<title>Login Page</title>
+	<link rel="stylesheet" href="css/tailwind.css">
+	<link href="css/tailwind.min.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 		<div class=" bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
