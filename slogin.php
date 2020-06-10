@@ -24,7 +24,7 @@
 		</nav>
 		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class=" bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
-					<img src="imgs/login.gif"/>
+					<img src="imgs/login1.gif"/>
 				</div>
 					<form action="slogin.php" method="post" class=" bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
 					<div class="mb-4">
@@ -47,7 +47,7 @@
 						<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="resetpassword.php">
 							<form action="reset-password.php" method="post">
 								<input type="hidden" name="pageinfo" value="a">
-								<button type="submit"  name="newpwd">Forgot Password?</button>
+								<button type="submit"  name="newpwd" >Forgot Password?</button>
 							</form>
 						</a>
 					</div>
