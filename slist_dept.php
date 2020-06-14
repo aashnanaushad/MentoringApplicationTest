@@ -63,7 +63,7 @@
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $department;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $sy;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $ey;  ?></td>
-            <td class="p-4 w-1/6 scrolling-touch"><?php echo $user_email; ?></td>
+            <td class="p-4 w-1/6 overflow-hidden "><?php echo $user_email; ?></td>
             <td class="p-4 w-1/6 overflow-hidden"><a href="slist_dept.php"><button class="text-red-400" type="submit" name="<?php echo $user_id;?>">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
         </tr>  
         
@@ -104,9 +104,27 @@
   
     </table> 
     </br>
+    <form href="fedit.php" method="post">
     <a href="fhome.php"><button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
 								back
 		</button> </a>
+        </form>
+        <?php
+			if(isset($_POST['back']))
+			{
+				if($type=='HOD')
+				 {
+			     echo "<script>window.location.href='hod.php';</script>";
+				 }
+				 if($type=='advisor')
+				 {
+			     echo "<script>window.location.href='advisor.php';</script>";
+				 }
+				 if($type=='faculty')
+				 {
+			     echo "<script>window.location.href='fhome.php';</script>";
+				 }
+			}?>
         </div>  
 
   
