@@ -128,7 +128,7 @@
                     <?php
                 }else{
                     ?>
-                     <a href="shome.php"><button class="chome" type="button">HOME</button></a>
+                     <a href="sview.php"><button class="chome" type="button">HOME</button></a>
                     <?php
                 }
              ?>

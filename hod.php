@@ -43,7 +43,7 @@
 
 		<form action="logout.php" method="post">
 			<div class="inner_container">
-				<button class="change_button2" type="submit">Log Out</button>
+			<center><button class="change_button2" type="submit">Log Out</button></center>
 			</div>
 		</form>
         

@@ -4,44 +4,78 @@
 	if(!isset($_SESSION['username'])){
     echo "<script>window.location.href='index.php';</script>";
 	}
-	//phpinfo();
-?>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Student</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<div id="main-wrapper">
-		<center><h2>Profile</h2></center>
-		<form action="sview.php" method="get">
-			<div class="imgcontainer">
-				<img src="imgs/avatar.png" alt="Avatar" class="avatar">
-			</div class="profile">
-			<?php
 			    $username=$_SESSION['username'];
 			    $query="select * from student where username='$username'";
 			    $query_run = mysqli_query($con,$query);
 			    if($query_run)
 			    {
-			        //$row=mysqli_fetch_row($query_run);
 			        $row=$query_run->fetch_assoc();
 			    }
-			 ?>
-			<h3>Username:<?php echo $username;?></h3>
-			<h3>Name: <?php echo $row['name'];?></h3>
-			<h3>Department: <?php echo $row['dept'];?></h3>
-			<h3>Batch: <?php echo $row['start_yr'];?></h3>
-			<h3>Passout year: <?php echo $row['end_yr'];?></h3>
-			<h3>DateOFBirth: <?php echo $row["dateofbirth"];?></h3>
-			<h3>Address: <?php echo $row["address"];?></h3>
-			<h3>Email: <?php echo $row["email"];?></h3>
-			<div class="inner_container">
-			    <a href="sedit.php"><button type="button" class="back_btn"> Edit >> </button></a>
-			    <a href="shome.php"><button type="button" class="back_btn"><< Back to Home</button></a>	
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Counselor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tailwind.min.css">
+</head>
+<body class=" bg-blue-400 ">
+	<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
+		<div class="flex items-center flex-shrink-0 text-blue-600 mr-6 ">
+				<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $row['name'];?>)</span>
 			</div>
-		</form>
-	</div>
+			<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+				<div class="text-sm lg:flex-grow">
+				<a href="sview.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Profile
+				</a>
+				<a href="request_counselor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Request Counselor
+				</a>
+				<a href="changepass.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200">
+					Change Password
+				</a>
+				 </div> 
+				<div>
+				<a href="logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Logout</a>
+				</div>
+			</div>
+			</nav>
+
+		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
+				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
+				<div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+					<img src="imgs/avatar.png" />
+
+				</div>
+				<div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
+					<div class="mb-4">
+						<label class="block text-gray-700 text-sm font-bold mb-2" >
+							Professional Details:
+						</label>
+						<p class="text-gray-700 text-base">Admission No: <?php echo $row['username'];?></p>
+						<p class="text-gray-700 text-base">Batch: <?php echo $row['start_yr'];?> - <?php echo $row['end_yr'];?></p>
+						<p class="text-gray-700 text-base">Department: <?php echo $row['dept'];?></p>
+					</div>
+					<div class="mb-6">
+						<label class="block text-gray-700 text-sm font-bold mb-2" >
+							Personal Details:
+						</label>
+						<p class="text-gray-700 text-base">Name: <?php echo $row['name'];?></p>
+						<p class="text-gray-700 text-base">Email ID: <?php echo $row['email'];?></p>
+						<p class="text-gray-700 text-base">DOB: <?php echo $row['dateofbirth'];?></p>
+						<p class="text-gray-700 text-base">Address: <?php echo $row['address'];?></p>
+					</div>
+					<div class="flex items-center justify-between">
+						<a href="sedit.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
+							Edit Profile
+						</button></a>
+					</div>
+				</div>
+					
+			</div>
+		</div>
 </body>
 </html>
