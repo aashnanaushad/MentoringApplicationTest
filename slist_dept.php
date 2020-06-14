@@ -63,7 +63,7 @@
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $department;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $sy;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $ey;  ?></td>
-            <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_email; ?></td>
+            <td class="p-4 w-1/6 scrolling-touch"><?php echo $user_email; ?></td>
             <td class="p-4 w-1/6 overflow-hidden"><a href="slist_dept.php"><button class="text-red-400" type="submit" name="<?php echo $user_id;?>">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
         </tr>  
         
