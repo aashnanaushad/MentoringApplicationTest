@@ -24,7 +24,7 @@
 		</nav>
 		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
-					<img src="imgs/login.gif"/>
+					<img src="imgs/login1.gif"/>
 					<form action="login.php" method="post" >
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" >

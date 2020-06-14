@@ -24,7 +24,7 @@
 		</nav>
 		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class=" lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
-					<img src="imgs/login.gif"/>
+					<img src="imgs/login1.gif"/>
 					<form action="flogin.php" method="post"  >
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" >
@@ -43,14 +43,15 @@
 						<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="login" type="submit">
 							LogIn
 						</button>
-						<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="resetpassword.php">
+						</form>
+						<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="reset-password.php">
 							<form action="reset-password.php" method="post">
 								<input type="hidden" name="pageinfo" value="a">
 								<button type="submit" name="newpwd">Forgot Password?</button>
 							</form>
 						</a>
 					</div>
-					</form>
+					
 			</div>
 	    <?php
                   if(isset($_GET["newpwd"])){

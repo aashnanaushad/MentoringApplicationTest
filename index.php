@@ -57,7 +57,7 @@
 				<!--Footer-->
 				<div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in ">
 					<a class="text-black no-underline hover:no-underline" href="http://mgmits.ac.in/">&copy; Muthoot Institute of Technology and Science</a></br>
-					<a href="login.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Admin</a>
+					<a href="login.php" class="inline-block text-sm px-4 py-2 leading-none text-purple-900 border-blue-600 hover:border-transparent hover:text-purple-300 hover:underline mt-4 lg:mt-0">Login As Admin?</a>
 				</div>
 			</div>
 		</div>

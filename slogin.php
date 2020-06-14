@@ -44,14 +44,15 @@
 						<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="login" type="submit">
 							LogIn
 						</button>
-						<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="resetpassword.php">
+						</form>
+						<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" >
 							<form action="reset-password.php" method="post">
 								<input type="hidden" name="pageinfo" value="a">
-								<button type="submit"  name="newpwd" >Forgot Password?</button>
+								<button type="submit"  name="pwd" >Forgot Password?</button>
 							</form>
 						</a>
 					</div>
-					</form>
+					
 				</div>
 		 <?php
                   if(isset($_GET["newpwd"])){
@@ -80,7 +81,7 @@
 					$_SESSION['passsword'] = $password;
 					
 					//header( "Location: homepage.php");
-					echo "<script>window.location.href='shome.php';</script>";
+					echo "<script>window.location.href='sview.php';</script>";
 					}
 					else
 					{
