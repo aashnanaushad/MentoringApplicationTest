@@ -5,38 +5,47 @@
     echo "<script>window.location.href='index.php';</script>";
 	}
 	//phpinfo();
+	$username=$_SESSION['username'];
+	$query="select * from faculty where username='$username'";
+	$query_run = mysqli_query($con,$query);
+	if($query_run)
+	{
+			        //$row=mysqli_fetch_row($query_run);
+        $row=$query_run->fetch_assoc();
+    }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home Page</title>
+<title>Password_change</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/tailwind.min.css">
 </head>
 <body class=" bg-blue-400 ">
-	<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
+<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
 		<div class="flex items-center flex-shrink-0 text-blue-600 mr-6 ">
-				<span class="font-semibold text-xl tracking-tight">Administrator</span>
-			</div>
-			<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+				<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $row['name'];?>)</span>
+		</div>
+		<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
 				<div class="text-sm lg:flex-grow">
-				<a href="fadd.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
-					Add Faculty
+				<a href="hod.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Profile
 				</a>
-				<a href="cadd.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
-					Add Counselor
+				<a href="request_fwdhod.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Requests
 				</a>
-				<a href="assignhod.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
-					Assign HOD
+				<a href="assignadvisor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Assign advisor
 				</a>
-				<a href="viewallfaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				<a href="viewfaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					List Faculty
 				</a>
-				<a href="studentlist.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				<a href="slist_dept.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					List Students
 				</a>
-				<a href="homepage.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 ">
+				<a href="change_pass1.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 ">
 					Change Password
 				</a>
 				 </div> 
@@ -45,10 +54,9 @@
 				</div>
 			</div>
 			</nav>
-	
-			<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
+		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
-					<form action="homepage.php" method="post" >
+					<form action="change_pass1.php" method="post" >
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" >
 							Current Password
@@ -68,9 +76,9 @@
 							Change 
 						</button>
 						</form>
-						<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="reset-password.php">
+						<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="resetpassword.php">
 							<form action="reset-password.php" method="post">
-								<input type="hidden" name="pageinfo" value="c">
+								<input type="hidden" name="pageinfo" value="a">
 								<button type="submit" name="newpwd">Forgot Password?</button>
 							</form>
 						</a>
@@ -189,6 +197,7 @@
 			{
 			}
 		?>
-		</div>
-</body> 
+		
+	</div>
+</body>
 </html>

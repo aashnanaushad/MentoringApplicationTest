@@ -6,42 +6,30 @@
 
 <html>  
 <head lang="en">    
-    <link type="text/css" rel="stylesheet" href="css\bootstrap.css"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="css\tailwind.min.css"> 
     <title>View faculty</title>  
-</head>  
-<style>  
-    .login-panel {  
-        margin-top: 150px;  
-    }  
-    .table {  
-        margin-top: 50px;  
-  
-    }  
-  
-</style>  
+</head>    
   
 <body>  
   
-<div class="table-scrol">  
-    <h1 align="center">All Faculties</h1>  
+<div class="container ">
+	<h1 class="mb-8 text-center text-2xl text-teal-400">
+      Faculty List
+  </h1> 
+  <table class="text-left w-full ml-8">
+		<thead class="bg-teal-400 flex text-white w-full"> 
   
-<div class="table-responsive"> 
-  
-  
-    <table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
-        <thead>  
-  
-        <tr>  
-            <th>Department</th>
-            <th>User Name</th>  
-            <th>Designation</th>  
-            <th>User E-mail</th>  
-            <th>Type</th>  
-            <th>Batch</th>
-            <th>Edit User</th>  
+        <tr class="flex w-full mb-5">
+            <th class="p-4 w-1/6">Department</th>
+            <th class="p-4 w-1/6">User Name</th>  
+            <th class="p-4 w-1/6">Designation</th>    
+            <th class="p-4 w-1/6">Type</th>  
+            <th class="p-4 w-1/6">Batch</th>
+            <th class="p-4 w-1/6">Edit User</th>  
         </tr>  
         </thead>  
-  
+        <tbody class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full" style="height: 50vh;">
         <?php  
          
         $view_users_query="select * from faculty order by dept ";//select query for viewing users.  
@@ -60,15 +48,14 @@
   
         ?>  
         <form action="viewallfaculty.php" method="post">
-        <tr>  
+        <tr class="flex w-full mb-1">
 <!--here showing results in the table --> 
-            <td><?php echo $user_dept; ?></td>
-            <td><?php echo $user_id;  ?></td>  
-            <td><?php echo $designation;  ?></td>  
-            <td><?php echo $user_email;  ?></td>  
-            <td><?php echo $user_pass;  ?></td> 
-            <td><?php if($batch!=0) echo $batch; ?></td>
-            <td><a href="viewallfaculty.php"><button class="btn btn-danger" type="submit" name="<?php echo $user_id;?>">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
+            <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_dept; ?></td>
+            <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_id;  ?></td>  
+            <td class="p-4 w-1/6 overflow-hidden"><?php echo $designation;  ?></td>  
+            <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_pass;  ?></td> 
+            <td class="p-4 w-1/6 overflow-hidden"><?php if($batch!=0) echo $batch; ?></td>
+            <td class="p-4 w-1/6 overflow-hidden"><a href="viewallfaculty.php"><button class="text-red-400" type="submit" name="<?php echo $user_id;?>">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
         </tr>  
         </form>
         <?php
@@ -89,9 +76,20 @@
 			}
 		?>
         <?php } ?>  
-  
+        </tbody> 
     </table>  
-        </div>  
+    </br>
+    <form href="viewallfaculty.php" method="post">
+    <a href="viewallfaculty.php"><button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
+								back
+		</button> </a>
+        </form>
+        <?php
+			if(isset($_POST['back']))
+			{
+			     echo "<script>window.location.href='homepage.php';</script>";
+            }
+            ?> 
 </div>  
   
   

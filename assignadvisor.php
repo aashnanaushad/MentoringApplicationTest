@@ -5,7 +5,8 @@
     echo "<script>window.location.href='index.php';</script>";
     //header('location:index.php');
      }
-	//phpinfo();
+    //phpinfo();
+    
 	$username=$_SESSION['username'];
 	$query="select * from faculty where username='$username'";
 	$result=mysqli_query($con,$query);
@@ -17,47 +18,30 @@
 
 <html>  
 <head lang="en">    
-    <link type="text/css" rel="stylesheet" href="css\bootstrap.css" > 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="css\tailwind.min.css">
     <title>View faculty</title>  
 </head>  
-<style>  
-    .login-panel {  
-        margin-top: 150px;  
-    }  
-    .table {  
-        margin-top: 50px;  
-  
-    }  
-
-</style>  
-     <style type="text/css">      
-       table {border-top: 1px solid #ff0000; border-left: 1px solid #ff0000;}
-      table td {border-right: 1px solid #00ff00; border-bottom: 1px solid #00ff00;}
-      input[type="text"] {width: 100%;} 
-   </style> 
 <body>  
   
-<div class="table-scrol">  
-    <h1 align="center"> Faculties</h1>  
+<div class="container ">
+	<h1 class="mb-8 text-center text-2xl text-teal-400">
+    Faculty list
+  </h1> 
+  <table class="text-left w-full ml-8">
+		<thead class="bg-teal-400 flex text-white w-full"> 
   
-<div class="table-responsive"> 
+        <tr class="flex w-full mb-4">
   
-  
-    <table class="table table-bordered table-hover table-striped" style="table-layout: fixed">  
-        <thead>  
-  
-        <tr>  
-  
-            <th>User Name</th>  
-            <th>Department</th>
-            <th>Designation</th>  
-            <th>User E-mail</th>  
-            <th>Type</th>  
-            <th>Batch</th>
-            <th>Assign advisor</th>  
+            <th class="p-4 w-1/6">User Name</th>  
+            <th class="p-4 w-1/6">Department</th>
+            <th class="p-4 w-1/6">Designation</th>    
+            <th class="p-4 w-1/6">Type</th>  
+            <th class="p-4 w-1/6">Batch</th>
+            <th class="p-4 w-1/6">Assign advisor</th>  
         </tr>  
         </thead>  
-  
+        <tbody class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full" style="height: 50vh;">
         <?php  
          
         $view_users_query="select * from faculty where dept='$dept1' ";//select query for viewing users.  
@@ -73,15 +57,14 @@
         ?>  
         <form action="assignadvisor.php" method="post">
         
-        <tr>  
+        <tr class="flex w-full mb-1"> 
 <!--here showing results in the table -->  
-            <td><?php echo $user_id;  ?></td>  
-            <td><?php echo $dept; ?></td>
-            <td><?php echo $designation;  ?></td>  
-            <td><?php echo $user_email;  ?></td>  
-            <td><?php echo $user_type;  ?></td>  
-            <td><input type="text"  name="batch" value=" "/></td>
-            <td><a href="assignadvisor.php"><button class="btn btn-danger" type="submit"  name="<?php echo "$user_id"; ?>">Assign</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
+            <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_id;  ?></td>  
+            <td class="p-4 w-1/6 overflow-hidden"><?php echo $dept; ?></td>
+            <td class="p-4 w-1/6 overflow-hidden"><?php echo $designation;  ?></td>   
+            <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_type;  ?></td>  
+            <td class="p-4 w-1/6 overflow-hidden"><input type="text"  name="batch" value=" "/></td>
+            <td class="p-4 w-1/6 overflow-hidden"><a href="assignadvisor.php"><button class="text-green-400" type="submit"  name="<?php echo "$user_id"; ?>">Assign</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
         </tr>  
             </form>
         <?php
@@ -119,8 +102,20 @@
 			}
 		?>
        	 <?php } ?> 
+            </tbody> 
     </table>  
-        </div>  
+    </br>
+        <form href="assignadvisor.php" method="post">
+    <a href="assignadvisor.php"><button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
+								back
+		</button> </a>
+        </form>
+        <?php
+			if(isset($_POST['back']))
+			{
+			     echo "<script>window.location.href='hod.php';</script>";
+            }
+            ?> 
 </div>  
 </body>  
   
