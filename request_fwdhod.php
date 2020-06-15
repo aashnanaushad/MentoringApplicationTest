@@ -72,7 +72,7 @@
 		            $username= $row["username"];
 		            $reason=$row["reason"];
 					$flag=1;
-					$flag=1;
+					$flag1=1;
 		            echo"<br>";
 		            echo"<br>";
 		            echo"<br>";
