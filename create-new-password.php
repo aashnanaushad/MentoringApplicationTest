@@ -1,13 +1,14 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Login Page</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/tailwind.min.css">
 </head>
-<body style="background-color:#bdc3c7">
- <main>
-     <div id="main-wrapper">
-         <section class="1">
+<body class=" bg-blue-400 ">
+     <div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
+				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
+         
              <?php
              $selector=$_GET["selector"];
              $validator=$_GET["validator"];
@@ -22,9 +23,13 @@
                  <div class="inner_container">
                  <input type="hidden" name="selector" value="<?php echo $selector;?>">
                  <input type="hidden" name="validator" value="<?php echo $validator;?>">
-                 <input type="password" name="pwd" placeholder="enter new password">
-                 <input type="password" name="pwd-repeat" placeholder="confirm the password">
-                 <button type="submit" name="reset-password-submit">RESET PASSWORD</button>
+                 <input class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" name="pwd" placeholder="enter new password">
+                 <input  class="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" type="password" name="pwd-repeat" placeholder="confirm the password">
+                 <div class="flex items-center justify-between">
+						<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="reset-password-submit" type="submit">
+						RESET PASSWORD	
+						</button>
+                  
                  </div>
              </form>
              <?php
@@ -32,9 +37,10 @@
                  
              }
                  ?>
-         </section>
+          
      </div>
- </main>
+    </div>
+ 
  </body>
 </html>
   
