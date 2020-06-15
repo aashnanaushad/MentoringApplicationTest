@@ -50,15 +50,18 @@
                   if(isset($_GET["reset"])){
                       if($_GET["reset"]=="success"){
                           echo '<p class="signupsucess">CHECK YOUR MAIL</p>';
-                          if($table=="a"){
+                          $tabl=$_GET['table'];
+                          if($tabl=="a"){
                             echo"<script>window.location.href='slogin.php';</script>";  
-                          }elseif($table=="b"){
+                          }elseif($tabl=="b"){
                               echo"<script>window.location.href='flogin.php';</script>";
-                          }elseif($table=="c"){
+                          }elseif($tabl=="c"){
                               echo"<script>window.location.href='clogin.php';</script>";
                           }else{
                                echo"<script>window.location.href='login.php';</script>";
                           }
+                      }else{
+                          echo "RESUBMIT the request";
                       }
                   }
                  ?>

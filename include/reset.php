@@ -50,12 +50,12 @@
      $headers="Content-type:text/html\r\n";
      
      mail($to,$subject,$message,$headers);
-     echo"<script>window.location.href='../reset-password.php?reset=success';</script>";
+     echo"<script>window.location.href='../reset-password.php?reset=success&table=".$table."';</script>";
       
      
  }
  else{
-     header("Location:../slogin.php");
+     header("Location:../index.php");
  }
 
 ?>

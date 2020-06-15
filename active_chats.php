@@ -10,6 +10,7 @@
 <html>
     <head>
     <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/tailwind.min.css">
     <style>
         #message-container{
             height:95%;
@@ -99,7 +100,7 @@
     </head>
     <body>
         
-        <?php require_once("include/new_messages.php"); ?>
+         
         
         <div id ="container">
          <div id="menu">
