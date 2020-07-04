@@ -125,7 +125,7 @@
                      
                 if(in_array($_SESSION['username'],$counselor)){
                     ?>
-                     <a href="../counselor/chome.php"><button class="chome" type="button">HOME</button></a>
+                     <a href="../counselor/home.php"><button class="chome" type="button">HOME</button></a>
                     <?php
                 }else{
                     ?>

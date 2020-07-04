@@ -72,7 +72,7 @@
             <?php
 			if(isset($_POST['back']))
 			{
-			     echo "<script>window.location.href='chome.php';</script>";
+			     echo "<script>window.location.href='home.php';</script>";
 			}
 			if(isset($_POST['edit']))
 			{
@@ -84,7 +84,7 @@
 				if($query_run)
 				{
 				 echo '<script type="text/javascript">alert("Updates saved!")</script>';
-			     echo "<script>window.location.href='chome.php';</script>";
+			     echo "<script>window.location.href='home.php';</script>";
 				}
 				else
 				{
