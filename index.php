@@ -36,7 +36,7 @@
 					<h1 class="my-4 text-3xl md:text-5xl text-purple-800 font-bold leading-tight text-center md:text-left slide-in-bottom-h1">Institute Vision</h1>
 					<p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">To be a centre of excellence for learning and research in engineering and technology, producing intellectually well-equipped and socially committed citizens possessing an ethical value system.</p> 
 					<div class="flex text-xl w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in">
-					<a href="student/slogin.php"><button class="bg-none hover:bg-blue-200 text-blue-600 font-bold py-2 px-4 rounded-full">
+					<a href="student/login.php"><button class="bg-none hover:bg-blue-200 text-blue-600 font-bold py-2 px-4 rounded-full">
 						Student
 						</button></a>
 						<a href="faculty/login.php"><button class="bg-none hover:bg-blue-200 text-white font-bold py-2 px-4 rounded-full">

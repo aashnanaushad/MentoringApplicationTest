@@ -25,7 +25,7 @@
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
 					<img src="../imgs/login1.gif"/>
 				
-					<form action="slogin.php" method="post"  >
+					<form action="login.php" method="post"  >
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" >
 							Username
