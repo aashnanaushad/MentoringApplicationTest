@@ -45,7 +45,7 @@
 				<a href="requeststofaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Requests
 				</a>
-				<a href="change_pass2.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				<a href="changepassword.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Change Password
 				</a>
 				</div>
@@ -57,7 +57,7 @@
 		</nav>
 		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
-					<form action="change_pass2.php" method="post" >
+					<form action="changepassword.php" method="post" >
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" >
 							Current Password
