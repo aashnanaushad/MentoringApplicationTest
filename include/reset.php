@@ -1,6 +1,11 @@
 <?php
 
+    use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
+    require '../vendor/phpmailer/phpmailer/src/Exception.php';
+    require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
+    require '../vendor/phpmailer/phpmailer/src/SMTP.php';
  if(isset($_POST["reset-request"])){
      $table=$_POST['table'];
      $selector=bin2hex(random_bytes(8));
@@ -37,36 +42,39 @@
      } 
      mysqli_stmt_close($stmt);
      mysqli_close($con);
-     $mail = new PHPMailer();
+     $mail = new PHPMailer(true);
 
     // Settings
     $mail->IsSMTP();
     $mail->CharSet = 'UTF-8';
-
-    $mail->Host       = "smtp.mgits.ac.in"; // SMTP server example
-    $mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    // $mail->isSMTP();
+    $mail->Host       = "smtp.gmail.com"; // SMTP server example
+    $mail->SMTPDebug  = 1;                     // enables SMTP debug information (for testing)
     $mail->SMTPAuth   = true;                  // enable SMTP authentication
-    $mail->Port       = 25;                    // set the SMTP port for the GMAIL server
+    $mail->SMTPSecure = "tls";
+    $mail->Port       = 587;                    // set the SMTP port for the GMAIL server
     $mail->Username   = "coronaadmin@mgits.ac.in"; // SMTP account username example
     $mail->Password   = "Mits@123";        //
+    $mail->addAddress($userEmail);
+    $mail->SetFrom("coronaadmin@mgits.ac.in", "Mentoring App MITS");
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Reset your password for the  mentoring app';
     $mail->Body    = '<p>Here is your password reset link:</br><a href="'.$url.'">'.$url.'</a></p>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-$mail->send();
-     $to=$userEmail;
+    $mail->send();
+    //  $to=$userEmail;
      
-     $subject ='Reset your password for the  mentoring app';
+    //  $subject ='Reset your password for the  mentoring app';
      
-     $message ='<p>We received a password reset request.The link to reset your password is below.if you did not make this request ,please ignore this email.</p>';
-     $mesaage .='<p>Here is your password reset link:</br>';
-     $message .='<a href="'.$url.'">'.$url.'</a></p>';
+    //  $message ='<p>We received a password reset request.The link to reset your password is below.if you did not make this request ,please ignore this email.</p>';
+    //  $message .='<p>Here is your password reset link:</br>';
+    //  $message .='<a href="'.$url.'">'.$url.'</a></p>';
      
-     $headers="From:Memtoring app<mentoringapp.com>\r\n";
-     $headers="Content-type:text/html\r\n";
+    //  $headers="From:Memtoring app<mentoringapp.com>\r\n";
+    //  $headers="Content-type:text/html\r\n";
      
-     mail($to,$subject,$message,$headers);
+    //  mail($to,$subject,$message,$headers);
      echo"<script>window.location.href='../reset-password.php?reset=success&table=".$table."';</script>";
       
      
