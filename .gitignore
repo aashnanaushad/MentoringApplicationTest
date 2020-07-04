@@ -2,4 +2,4 @@
 
 # dependencies
 /vendor
-config.php
+/dbconfig
