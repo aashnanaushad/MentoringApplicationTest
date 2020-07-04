@@ -1,8 +1,8 @@
 <?php
 	//session_start();
-	require_once('dbconfig/config.php');
+	require_once('../dbconfig/config.php');
 		if(!isset($_SESSION['username'])){
-    echo "<script>window.location.href='chome.php';</script>";
+    echo "<script>window.location.href='../counselor/chome.php';</script>";
 	}
 	//phpinfo();
 ?>
@@ -11,7 +11,7 @@
          
          <?php
          $no_messages=false;
-         require 'dbconfig/config.php';
+         require '../dbconfig/config.php';
          if(isset($_GET['user'])){
              $_GET['user']= $_GET['user'];
          }else{
