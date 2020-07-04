@@ -80,7 +80,7 @@
 					$_SESSION['passsword'] = $password;
 					
 					//header( "Location: homepage.php");
-					echo "<script>window.location.href='sview.php';</script>";
+					echo "<script>window.location.href='view.php';</script>";
 					}
 					else
 					{
