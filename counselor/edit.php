@@ -27,7 +27,7 @@
 		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
 			<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-			<form action="cedit.php" method="post">
+			<form action="edit.php" method="post">
 		<div class="-mx-3 md:flex mb-6">
 				
 			<div class=" px-3 mb-6 md:mb-0">
@@ -58,11 +58,11 @@
 		</div>
 		
 		<div class="flex items-center justify-between ">
-						<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" name="cedit" type="submit">
+						<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" name="edit" type="submit">
 							Edit
 						</button>
 			</form>
-						<form action="cedit.php" method="post">
+						<form action="edit.php" method="post">
 							<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back" >
 								back
 							</button>
@@ -74,7 +74,7 @@
 			{
 			     echo "<script>window.location.href='chome.php';</script>";
 			}
-			if(isset($_POST['cedit']))
+			if(isset($_POST['edit']))
 			{
 			    @$name=$_POST['name'];
 				@$qualification=$_POST['qualification'];
