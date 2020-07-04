@@ -39,7 +39,7 @@
 					<a href="student/slogin.php"><button class="bg-none hover:bg-blue-200 text-blue-600 font-bold py-2 px-4 rounded-full">
 						Student
 						</button></a>
-						<a href="faculty/flogin.php"><button class="bg-none hover:bg-blue-200 text-white font-bold py-2 px-4 rounded-full">
+						<a href="faculty/login.php"><button class="bg-none hover:bg-blue-200 text-white font-bold py-2 px-4 rounded-full">
 						Faculty
 						</button></a>
 						<a href="counselor/login.php"><button class="bg-none hover:bg-blue-200 text-blue-600 font-bold py-2 px-4 rounded-full">
