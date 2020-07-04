@@ -1,6 +1,4 @@
 <?php
-	// use Twilio\Rest\Client;
-	// require __DIR__ . './vendor/autoload.php';
 	session_start();
 	require_once('../../dbconfig/config.php');
 		if(!isset($_SESSION['username'])){
@@ -15,7 +13,6 @@
                 }
                 $dept=$row['dept'];
                 $batch=$row['batch'];
-	//phpinfo();
 ?>
 <!DOCTYPE html>
 <html>
@@ -213,26 +210,6 @@
 				if($query_run)
 				{
 					echo '<script type="text/javascript">alert(" Successfully Forwarded to HOD")</script>';
-					
-
-					// // Your Account SID and Auth Token from twilio.com/console
-					// $account_sid = 'ACb0d8f7bc44d55b11c21c4c6423e2aba7';
-					// $auth_token = '0786d43f4936eebc60fece35ecba077e';
-					// // In production, these should be environment variables. E.g.:
-					// // $auth_token = $_ENV["TWILIO_AUTH_TOKEN"]
-
-					// // A Twilio number you own with SMS capabilities
-					// $twilio_number = "+12058904892";
-
-					// $client = new Client($account_sid, $auth_token);
-					// $client->messages->create(
-					// 	// Where to send a text message (your cell phone?)
-					// 	'+918921871926',
-					// 	array(
-					// 		'from' => $twilio_number,
-					// 		'body' => 'I sent this message in under 10 minutes!'
-					// 	)
-					// );
 				    echo "<script>window.location.href='advisor.php';</script>";
 				}
 				else
