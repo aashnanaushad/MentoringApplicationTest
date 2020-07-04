@@ -37,7 +37,7 @@
      } 
      mysqli_stmt_close($stmt);
      mysqli_close($con);
-     
+     $from = "17cs179@mgits.ac.in";
      $to=$userEmail;
      
      $subject ='Reset your password for the  mentoring app';
