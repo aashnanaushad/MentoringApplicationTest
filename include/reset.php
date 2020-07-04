@@ -6,7 +6,7 @@
      $selector=bin2hex(random_bytes(8));
      $token=random_bytes(32);
      
-     $url="https://mentoringapp.000webhostapp.com/create-new-password.php?selector=".$selector."&validator=".bin2hex($token);
+     $url="https://mentoringApplication.herokuapp.com/create-new-password.php?selector=".$selector."&validator=".bin2hex($token);
      
      $expires=date("U")+900;
      
