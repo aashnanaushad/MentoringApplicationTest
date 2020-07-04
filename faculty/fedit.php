@@ -87,7 +87,7 @@
 				 }
 				 if($type=='faculty')
 				 {
-			     echo "<script>window.location.href='fhome.php';</script>";
+			     echo "<script>window.location.href='home.php';</script>";
 				 }
 			}
 
@@ -118,7 +118,7 @@
 				 }
 				 if($type=='faculty')
 				 {
-			     echo "<script>window.location.href='fhome.php';</script>";
+			     echo "<script>window.location.href='home.php';</script>";
 				 }
 				}
 				else

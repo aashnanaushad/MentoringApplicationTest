@@ -94,7 +94,7 @@
 			    else
 			    {
 			        echo '<script type="text/javascript">alert("Sorry, Only HOD is only allowed for this provision")</script>';
-			        echo "<script>window.location.href='fhome.php';</script>";
+			        echo "<script>window.location.href='home.php';</script>";
 			    }
 			}
 		?>
@@ -105,7 +105,7 @@
     </table> 
     </br>
     <form href="fedit.php" method="post">
-    <a href="fhome.php"><button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
+    <a href="home.php"><button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
 								back
 		</button> </a>
         </form>
@@ -122,7 +122,7 @@
 				 }
 				 if($type=='faculty')
 				 {
-			     echo "<script>window.location.href='fhome.php';</script>";
+			     echo "<script>window.location.href='home.php';</script>";
 				 }
 			}?>
         </div>  
