@@ -104,7 +104,7 @@
   
     </table> 
     </br>
-    <form href="fedit.php" method="post">
+    <form action="home.php" method="post">
     <a href="home.php"><button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
 								back
 		</button> </a>

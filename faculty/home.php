@@ -84,7 +84,7 @@
 						<p class="text-gray-700 text-base">Qualification: <?php echo $result1;?></p>
 					</div>
 					<div class="flex items-center justify-between">
-						<a href="fedit.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" name="login">
+						<a href="edit.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" name="login">
 							Edit Profile
 						</button></a>
 					</div>
