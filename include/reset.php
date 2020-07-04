@@ -37,7 +37,24 @@
      } 
      mysqli_stmt_close($stmt);
      mysqli_close($con);
-     $from = "17cs179@mgits.ac.in";
+     $mail = new PHPMailer();
+
+    // Settings
+    $mail->IsSMTP();
+    $mail->CharSet = 'UTF-8';
+
+    $mail->Host       = "smtp.mgits.ac.in"; // SMTP server example
+    $mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
+    $mail->SMTPAuth   = true;                  // enable SMTP authentication
+    $mail->Port       = 25;                    // set the SMTP port for the GMAIL server
+    $mail->Username   = "coronaadmin@mgits.ac.in"; // SMTP account username example
+    $mail->Password   = "Mits@123";        //
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Reset your password for the  mentoring app';
+    $mail->Body    = '<p>Here is your password reset link:</br><a href="'.$url.'">'.$url.'</a></p>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+$mail->send();
      $to=$userEmail;
      
      $subject ='Reset your password for the  mentoring app';
