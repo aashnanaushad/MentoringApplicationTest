@@ -2,7 +2,7 @@
     session_start();
     require_once('../dbconfig/config.php');
     	if(!isset($_SESSION['username'])){
-    echo "<script>window.location.href='index.php';</script>";
+    echo "<script>window.location.href='../index.php';</script>";
 	}
     //phpinfo();
 	$username=$_SESSION['username'];
