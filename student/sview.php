@@ -69,7 +69,7 @@
 						<p class="text-gray-700 text-base">Address: <?php echo $row['address'];?></p>
 					</div>
 					<div class="flex items-center justify-between">
-						<a href="sedit.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
+						<a href="edit.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
 							Edit Profile
 						</button></a>
 					</div>
