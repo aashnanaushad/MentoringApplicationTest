@@ -1,11 +1,12 @@
 <?php
 
-    use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-    require '../vendor/phpmailer/phpmailer/src/Exception.php';
-    require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
-    require '../vendor/phpmailer/phpmailer/src/SMTP.php';
+// Load Composer's autoloader
+require '../vendor/autoload.php';
+
  if(isset($_POST["reset-request"])){
      $table=$_POST['table'];
      $selector=bin2hex(random_bytes(8));
@@ -46,23 +47,34 @@ use PHPMailer\PHPMailer\Exception;
 
     // Settings
     $mail->IsSMTP();
-    $mail->CharSet = 'UTF-8';
+    $mail->Mailer = "smtp";
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
     // $mail->isSMTP();
-    $mail->Host       = "smtp.gmail.com"; // SMTP server example
-    $mail->SMTPDebug  = 1;                     // enables SMTP debug information (for testing)
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    ); 
+    $username = getenv('sendGridUsername');
+    $password = getenv('sendGridPassword');
+    
+    $mail->Host       = "smtp.sendgrid.net"; // SMTP server example
+    $mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
     $mail->SMTPAuth   = true;                  // enable SMTP authentication
-    $mail->SMTPSecure = "tls";
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
     $mail->Port       = 587;                    // set the SMTP port for the GMAIL server
-    $mail->Username   = "coronaadmin@mgits.ac.in"; // SMTP account username example
-    $mail->Password   = "Mits@123";        //
+    $mail->Username   = $username; // SMTP account username example
+    $mail->Password   = $password;        //
+    
+    $mail->SetFrom("17CS163@mgits.ac.in", "Mentoring App MITS");
     $mail->addAddress($userEmail);
-    $mail->SetFrom("coronaadmin@mgits.ac.in", "Mentoring App MITS");
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Reset your password for the  mentoring app';
     $mail->Body    = '<p>Here is your password reset link:</br><a href="'.$url.'">'.$url.'</a></p>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     $mail->send();
+    
     //  $to=$userEmail;
      
     //  $subject ='Reset your password for the  mentoring app';
