@@ -3,3 +3,4 @@
 # dependencies
 /vendor
 /dbconfig
+.env

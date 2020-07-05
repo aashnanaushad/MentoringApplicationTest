@@ -59,7 +59,7 @@ require '../vendor/autoload.php';
     ); 
     $username = getenv('sendGridUsername');
     $password = getenv('sendGridPassword');
-    
+
     $mail->Host       = "smtp.sendgrid.net"; // SMTP server example
     $mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
     $mail->SMTPAuth   = true;                  // enable SMTP authentication
@@ -87,7 +87,7 @@ require '../vendor/autoload.php';
     //  $headers="Content-type:text/html\r\n";
      
     //  mail($to,$subject,$message,$headers);
-     echo"<script>window.location.href='../reset-password.php?reset=success&table=".$table."';</script>";
+     echo"<script>window.location.href='../common/forgotpassword/reset-password.php?reset=success&table=".$table."';</script>";
       
      
  }
