@@ -52,11 +52,11 @@
                           echo '<p class="text-grey-700">CHECK YOUR MAIL</p>';
                           $tabl=$_GET['table'];
                           if($tabl=="a"){
-                            echo"<script>window.location.href='../../student/slogin.php';</script>";  
+                            echo"<script>window.location.href='../../student/login.php';</script>";  
                           }elseif($tabl=="b"){
-                              echo"<script>window.location.href='../../faculty/flogin.php';</script>";
+                              echo"<script>window.location.href='../../faculty/login.php';</script>";
                           }elseif($tabl=="c"){
-                              echo"<script>window.location.href='../../counselor/clogin.php';</script>";
+                              echo"<script>window.location.href='../../counselor/login.php';</script>";
                           }else{
                                echo"<script>window.location.href='../../admin/login.php';</script>";
                           }
