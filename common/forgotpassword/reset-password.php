@@ -58,7 +58,7 @@
                               echo"<script>window.location.href='../../faculty/login.php';</script>";
                           }elseif($tabl=="c"){
                               echo"<script>window.location.href='../../counselor/login.php';</script>";
-                          }else{
+                          }elseif($tabl=="d"){
                                echo"<script>window.location.href='../../admin/login.php';</script>";
                           }
                       }else{
