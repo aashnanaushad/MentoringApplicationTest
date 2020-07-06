@@ -46,7 +46,7 @@
 						<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="../common/forgotpassword/reset-password.php">
 							<form action="../common/forgotpassword/reset-password.php" method="post">
 								<input type="hidden" name="pageinfo" value="d">
-								<button type="submit" name="newpwd">Forgot Password?</button>
+								<button type="submit" name="pwd">Forgot Password?</button>
 							</form>
 						</a>
 					</div>
@@ -55,7 +55,6 @@
 	    <?php
                   if(isset($_GET["newpwd"])){
                       if($_GET["newpwd"]=="passwordupdated"){
-						//   echo '<p class="signupsucess">PASSWORD UPDATED!!</p>';
 						echo '<script type="text/javascript">alert("PASSWORD UPDATED!!")</script>';
                       }
                   }
