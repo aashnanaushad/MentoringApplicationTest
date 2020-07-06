@@ -49,7 +49,8 @@
                         <?php
                   if(isset($_GET["reset"])){
                       if($_GET["reset"]=="success"){
-                          echo '<p class="text-grey-700">CHECK YOUR MAIL</p>';
+                        //   echo '<p class="text-grey-700">CHECK YOUR MAIL</p>';
+                          echo '<script type="text/javascript">alert("PLEASE CHECK YOUR MAIL")</script>';
                           $tabl=$_GET['table'];
                           if($tabl=="a"){
                             echo"<script>window.location.href='../../student/login.php';</script>";  
