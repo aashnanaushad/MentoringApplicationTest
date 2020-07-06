@@ -55,7 +55,8 @@
 	    <?php
                   if(isset($_GET["newpwd"])){
                       if($_GET["newpwd"]=="passwordupdated"){
-                          echo '<p class="signupsucess">PASSWORD UPDATED!!</p>';
+						//   echo '<p class="signupsucess">PASSWORD UPDATED!!</p>';
+						echo '<script type="text/javascript">alert("PASSWORD UPDATED!!")</script>';
                       }
                   }
                  ?>
