@@ -19,7 +19,7 @@
                  if(ctype_xdigit($selector)!==false && ctype_xdigit($validator)!==false ){
              ?>
              
-             <form action="include/reset-pwd.php" method="post">
+             <form action="../../include/reset-pwd.php" method="post">
                  <div class="inner_container">
                  <input type="hidden" name="selector" value="<?php echo $selector;?>">
                  <input type="hidden" name="validator" value="<?php echo $validator;?>">

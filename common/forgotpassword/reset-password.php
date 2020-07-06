@@ -33,7 +33,7 @@
 					
 				
 				
-					<form action="reset-password.php" method="post"  >
+					<form action="../../include/reset.php" method="post"  >
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-4" >
                         An E-mail will be sent to you with instructions to reset the password.
@@ -49,16 +49,16 @@
                         <?php
                   if(isset($_GET["reset"])){
                       if($_GET["reset"]=="success"){
-                          echo '<p class="signupsucess">CHECK YOUR MAIL</p>';
+                          echo '<p class="text-grey-700">CHECK YOUR MAIL</p>';
                           $tabl=$_GET['table'];
                           if($tabl=="a"){
-                            echo"<script>window.location.href='student/slogin.php';</script>";  
+                            echo"<script>window.location.href='../../student/slogin.php';</script>";  
                           }elseif($tabl=="b"){
-                              echo"<script>window.location.href='faculty/flogin.php';</script>";
+                              echo"<script>window.location.href='../../faculty/flogin.php';</script>";
                           }elseif($tabl=="c"){
-                              echo"<script>window.location.href='counselor/clogin.php';</script>";
+                              echo"<script>window.location.href='../../counselor/clogin.php';</script>";
                           }else{
-                               echo"<script>window.location.href='admin/login.php';</script>";
+                               echo"<script>window.location.href='../../admin/login.php';</script>";
                           }
                       }else{
                           echo "RESUBMIT the request";

@@ -12,7 +12,7 @@ require '../vendor/autoload.php';
      $selector=bin2hex(random_bytes(8));
      $token=random_bytes(32);
      
-     $url="https://mentoringApplication.herokuapp.com/create-new-password.php?selector=".$selector."&validator=".bin2hex($token);
+     $url="https://mentoringApplication.herokuapp.com/common/forgotpassword/create-new-password.php?selector=".$selector."&validator=".bin2hex($token);
      
      $expires=date("U")+900;
      
