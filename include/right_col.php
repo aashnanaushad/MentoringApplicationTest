@@ -86,7 +86,7 @@
  
      </div>
      <div id="txtbox">
-         <form method="post" id="message-form" action="send_txtbox.php">
+         <form method="post" id="message-form" action="../include/send_txtbox.php">
             <input type="hidden" name="user" value="<?php echo $_GET['user']; ?>">
             <textarea class="textarea" name="text" id="message_text" placeholder="type here"></textarea>
          <input type="submit" value="SEND" name="textbox" id="textbox">
