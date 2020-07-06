@@ -72,7 +72,7 @@ require '../vendor/autoload.php';
     $mail->addAddress($userEmail);
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Reset your password for the  mentoring app';
-    $mail->Body    = '<p>Here is your password reset link:</p></br><a href="'.$url.'">'.$url.'</a>';
+    $mail->Body    = '<p>Here is your password reset link:</p></br><a href='.$url.'>'.$url.'</a>';
     $mail->send();
     
     //  $to=$userEmail;
