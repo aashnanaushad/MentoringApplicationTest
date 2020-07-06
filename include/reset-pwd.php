@@ -207,7 +207,7 @@ if(isset($_POST['reset-password-submit'])){
                                      else{
                                          mysqli_stmt_bind_param($stmt,"s",$tokenEmail);
                                          mysqli_stmt_execute($stmt);
-                                         echo"<script>window.location.href='../admin/login.php?newpwd=passwordupdated;</script>";
+                                         echo"<script>window.location.href='../admin/login.php?newpwd=passwordupdated';</script>";
                                     }
                                  }
                                 }
