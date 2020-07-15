@@ -57,7 +57,7 @@
 		<?php
 			$flag=0;
 			$flag1=0;
-		    $query="select * from request where dept='$dept' and start_yr='$batch'";
+		    $query="select * from request where dept='$dept'";
 			$query_run = mysqli_query($con,$query);
 			
 		    while($row=$query_run->fetch_assoc() )
@@ -88,7 +88,7 @@
 		  ?>
 		  		<?php if ($flag1 == 1) { ?>
 		      <form method="post" action="request_fwdhod.php">
-		      <input type="hidden" name=user1 value="<?php echo $username; ?>">
+		      <input type="hidden" name="user1" value="<?php echo $username; ?>">
 			  <button name="forward" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Approve</button></a>
 			    </form>
 				  <?php }
@@ -105,12 +105,7 @@
 				$query_run= mysqli_query($con,$query);
 				if($query_run)
 				{
-				   // $query = "UPDATE request SET date=$date where username='$username1';";
-				   // $query_run= mysqli_query($con,$query);
-				   //  if(!$query_run){
-				    //        echo "error";
-				       // }
-					echo '<script type="text/javascript">alert("request forwarded to counselor")</script>';
+					echo '<script type="text/javascript">alert("request approved successfully")</script>';
 					echo "<script>window.location.href='hod.php';</script>";
 				}
 				else

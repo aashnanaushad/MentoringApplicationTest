@@ -129,7 +129,7 @@
                     <?php
                 }else{
                     ?>
-                     <a href="../student/sview.php"><button class="chome" type="button">HOME</button></a>
+                     <a href="../student/view.php"><button class="chome" type="button">HOME</button></a>
                     <?php
                 }
              ?>
