@@ -12,8 +12,7 @@
 	$result=mysqli_query($con,$query);
 	$row1=mysqli_fetch_array($result);
 	$dept1=$row1['dept'];
-	
-	
+    $flag=0;
 ?>
 
 <html>  
@@ -44,7 +43,7 @@
         <tbody class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full" style="height: 50vh;">
         <?php  
          
-        $view_users_query="select * from faculty where dept='$dept1' ";//select query for viewing users.  
+        $view_users_query="select * from faculty where dept='$dept1' and user_type!='HOD' ";//select query for viewing users.  
         $run=mysqli_query($con,$view_users_query);//here run the sql query.  
   
         while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
@@ -54,6 +53,7 @@
             $user_email=$row['email'];  
             $user_type=$row['user_type'];  
             $dept=$row['dept'];
+            $batch=$row['batch'];
         ?>  
         <form action="assignadvisor.php" method="post">
         
@@ -62,17 +62,46 @@
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_id;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $dept; ?></td>
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $designation;  ?></td>   
-            <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_type;  ?></td>  
-            <td class="p-4 w-1/6 overflow-hidden"><input type="text"  name="batch" value=" "/></td>
+            <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_type;  ?></td> 
+            <?php if($user_type=="advisor" && $batch !=0){ ?>
+                <td class="p-4 w-1/6 overflow-hidden"><?php echo $batch;  ?></td> 
+            <?php } 
+            else { ?>
+                 <td class="p-4 w-1/6 overflow-hidden focus:bg-teal-400"><input type="text"  name="batch" value=" "/></td>
+            <?php } ?>
+            <?php  if ($user_type != "advisor") { ?>
             <td class="p-4 w-1/6 overflow-hidden"><a href="assignadvisor.php"><button class="text-green-400" type="submit"  name="<?php echo "$user_id"; ?>">Assign</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
+            <?php }
+                else { ?>
+            <td class="p-4 w-1/6 overflow-hidden"><a href="assignadvisor.php"><button class="text-red-400" type="submit"  name="<?php echo "$user_id"; ?>">DeAssign</button></a></td>
+                <?php 
+                    $flag=1;
+            } ?>
         </tr>  
             </form>
         <?php
 			if(isset($_POST[$user_id]))
 			{
+                if($flag == 1){
+                    $user_type="faculty";
+                    $batch=0;
+                    $query = "update faculty set user_type='$user_type',batch='$batch' where username='$user_id' ";
+                    $query_run = mysqli_query($con,$query);
+			        	if($query_run)
+				    	{
+					      echo '<script type="text/javascript">alert("Successfully de-assigned advisor ")</script>';
+					        echo "<script>window.location.href='hod.php';</script>";
+				    	}
+				    	else
+				    	{
+					        echo '<script type="text/javascript">alert("cannot de-assign advisor!!")</script>';
+				    	}
+                }
+                else{
 				$batch=$_POST['batch'];
 				$query="select * from faculty where batch='$batch' and user_type='advisor' and dept='$dept'";
-			    $query_run = mysqli_query($con,$query);
+                $query_run = mysqli_query($con,$query);
+                
 			    if($query_run)
 			    {
 				    if(mysqli_num_rows($query_run)<2)
@@ -98,7 +127,8 @@
 			    else
 			    {
 			        echo '<script type="text/javascript">alert("DB error")</script>';
-			    }
+                }
+            }
 			}
 		?>
        	 <?php } ?> 
