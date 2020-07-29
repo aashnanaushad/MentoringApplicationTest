@@ -100,7 +100,7 @@
 					
 					
 					//header( "Location: homepage.php");
-					echo "<script>window.location.href='logout.php';</script>";
+					echo "<script>window.location.href='../logout.php';</script>";
 					}
 					else
 					{
@@ -122,7 +122,7 @@
         					
         					
         					//header( "Location: homepage.php");
-        					echo "<script>window.location.href='logout.php';</script>";
+        					echo "<script>window.location.href='../logout.php';</script>";
         					}
         					else
         					{
@@ -144,7 +144,7 @@
                 					
                 					
                 					//header( "Location: homepage.php");
-                					echo "<script>window.location.href='logout.php';</script>";
+                					echo "<script>window.location.href='../logout.php';</script>";
                 					}
                 					else
                 					{
@@ -166,7 +166,7 @@
                         					
                         					
                         					//header( "Location: homepage.php");
-                        					echo "<script>window.location.href='logout.php';</script>";
+                        					echo "<script>window.location.href='../logout.php';</script>";
                         					}
                         					else
                         					{
