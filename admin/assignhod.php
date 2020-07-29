@@ -26,7 +26,7 @@
             <th class="p-4 w-1/6">Designation</th>  
             <th class="p-4 w-1/6">User E-mail</th>  
             <th class="p-4 w-1/6">Type</th>  
-            <th class="p-4 w-1/6">Assign advisor</th>  
+            <th class="p-4 w-1/6">Assign HOD</th>  
         </tr>  
         </thead>  
         <tbody class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full" style="height: 50vh;">
@@ -52,12 +52,36 @@
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $designation;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_email;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_type;  ?></td>  
+            <?php  if ($user_type != "HOD") { ?>
             <td class="p-4 w-1/6 overflow-hidden"><a href="assignhod.php"><button class="text-green-400" type="submit"  name="<?php echo "$user_id"; ?>">Assign</button></a></td>  
+            <?php 
+                $flag =0;    
+                    }
+                else { ?>
+                <td class="p-4 w-1/6 overflow-hidden"><a href="assignhod.php"><button class="text-red-400" type="submit"  name="<?php echo "$user_id"; ?>">De-assign</button></a></td>  
+                <?php 
+                    $flag=1;
+            } ?>
         </tr>  
             </form>
         <?php
 			if(isset($_POST[$user_id]))
 			{
+                if($flag == 1){
+                    $user_type="faculty";
+                    $query = "update faculty set user_type='$user_type' where username='$user_id' ";
+                    $query_run = mysqli_query($con,$query);
+			        	if($query_run)
+				    	{
+					      echo '<script type="text/javascript">alert("Successfully de-assigned HOD ")</script>';
+					        echo "<script>window.location.href='homepage.php';</script>";
+				    	}
+				    	else
+				    	{
+					        echo '<script type="text/javascript">alert("cannot de-assign HOD!!")</script>';
+				    	}
+                }
+                else{
 			    $query="select * from faculty where dept='$dept' and user_type='HOD'";
 			    $query_run = mysqli_query($con,$query);
 			    if($query_run)
@@ -85,7 +109,8 @@
 			    {
 			        echo '<script type="text/javascript">alert("DB error")</script>';
 			    }
-			}
+            }
+        }
 		?>
        	 <?php } ?> 
             </tbody> 
