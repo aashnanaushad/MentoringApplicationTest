@@ -43,7 +43,7 @@
 						Faculty
 						</button></a>
 						<a href="counselor/login.php"><button class="bg-none hover:bg-blue-200 text-blue-600 font-bold py-2 px-4 rounded-full">
-						Counselor
+						Counsellor
 						</button></a>
 					</div> 
 
