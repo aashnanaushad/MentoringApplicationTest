@@ -98,10 +98,10 @@
 		                      echo "<br>";
 		                      echo "<br>";
 		                  }
-		                  if( $row["dateofbirth"]!=$row1["dob"])
+		                  if( $row["dateofbirth"]!=$row1["dateofbirth"])
 		                  {
-		                      @$dob=$row1["dob"];
-		                      echo "Edited dob: $dob";
+		                      @$dob=$row1["dateofbirth"];
+		                      echo "Edited dob: $dateofbirth";
 		                      echo "<br>";
 		                      echo "<br>";
 		                  }
@@ -118,11 +118,52 @@
 		                      echo "Edited email: $email";
 		                      echo "<br>";
 		                      echo "<br>";
-		                  }
+						  }
+						  if( $row["phone_no"]!=$row1["phone_no"])
+		                  {
+		                      @$phone_no=$row1["phone_no"];
+		                      echo "Edited Contact: $phone_no";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["father"]!=$row1["father"])
+		                  {
+		                      @$father=$row1["father"];
+		                      echo "Edited Father's Name: $father";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["focc"]!=$row1["focc"])
+		                  {
+		                      @$focc=$row1["focc"];
+		                      echo "Edited Father's Occupation: $focc";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["mother"]!=$row1["mother"])
+		                  {
+		                      @$mother=$row1["mother"];
+		                      echo "Edited Mother's Name: $mother";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["mocc"]!=$row1["mocc"])
+		                  {
+		                      @$mocc=$row1["mocc"];
+		                      echo "Edited Mother's Occupation: $mocc";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+				
 		                  @$name=$row1['name'];
-		                  @$dateofbirth=$row1['dob'];
+		                  @$dateofbirth=$row1['dateofbirth'];
 			           	  @$address=$row1['address'];
-				          @$email=$row1['email'];
+						  @$email=$row1['email'];
+						  @$phone_no=$row1['phone_no'];
+						  @$father=$row1['father'];
+						  @$focc=$row1['focc'];
+						  @$mother=$row1['mother'];
+						  @$mocc=$row1['mocc'];
 		            }
 		        }
 		        }
@@ -138,13 +179,13 @@
 			{
 				
 				echo "$username";
-	            $query = "update student set name='$name',dateofbirth='$dateofbirth',address='$address',email='$email',edit='0' where username='$username'";
+	            $query = "update student set $name='$name',$dateofbirth='$dateofbirth',$address='$address',$email='$email',$phone_no='$phone_no',$father='$father',$focc='$focc',$mother='$mother',$mocc='$mocc',edit='0' where username='$username'";
 				$query_run= mysqli_query($con,$query);
 				if($query_run)
 				{
 				    $query = "delete from temp_student where username='$username'";
 				    $query_run= mysqli_query($con,$query);
-					echo '< type="text/javascript">alert("Update success for user")</script>';
+					echo '< type="text/javascript">alert("Update success for user")<script>';
 				    echo "<script>window.location.href='advisor.php';</script>";
 				}
 				else
@@ -210,7 +251,7 @@
 				$query_run= mysqli_query($con,$query);
 				if($query_run)
 				{
-					echo '<script type="text/javascript">alert(" Successfully Forwarded to HOD")</script>';
+					echo '<script type="text/javascript"> alert(" Successfully Forwarded to HOD")</script>';
 				    echo "<script>window.location.href='advisor.php';</script>";
 				}
 				else

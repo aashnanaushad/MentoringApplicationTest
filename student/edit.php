@@ -72,16 +72,53 @@
 
 			</div>
 		</div>
-		<div class="-mx-3 md:flex mb-2">
-			<div class="md:w-1/2 px-3 mb-6 md:mb-0">
+		<div class="-mx-3 md:flex mb-">
+			
+			<div class="md:w-1/2 px-3 mb-1 md:mb-0">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-city">
 				DOB
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="dateofbirth" value="<?php echo $row['dateofbirth']?>" type="text" placeholder="Albuquerque">
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="dateofbirth"  type="text" value="<?php echo $row['dateofbirth'];?>" >
 			</div>
-			
-			
+			<div class="md:w-1/2 px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+				Contact
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="phone_no" type="text" value="<?php echo $row['phone_no'];?>" >
+			</div>
 		</div>
+		<div class="-mx-3 md:flex mb-">
+			
+			<div class="md:w-1/2 px-3 mb-1 md:mb-0">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-city">
+				Father's Name
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="father"  type="text" value="<?php echo $row['father'];?>"  >
+			</div>
+			<div class="md:w-1/2 px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+				Occupation
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="focc" type="text" value="<?php echo $row['focc'];?>"  >
+			</div>
+		</div>
+		<div class="-mx-3 md:flex mb-">
+			
+			<div class="md:w-1/2 px-3 mb-1 md:mb-0">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-city">
+				Mother's Name
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="mother"  type="text" value="<?php echo $row['mother'];?>" >
+			</div>
+			<div class="md:w-1/2 px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+				Occupation
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="mocc" type="text" value="<?php echo $row['mocc'];?>"  >
+			</div>
+		</div>	
+			
+		
 		<div class="flex items-center justify-between float-right">
 						<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="edit" type="submit">
 							Edit
@@ -98,8 +135,13 @@
 				@$dateofbirth=$_POST['dateofbirth'];
 				@$address=$_POST['address'];
 				@$email=$_POST['email'];
+				@$phone_no=$_POST['phone_no'];
+				@$father=$_POST['father'];
+				@$focc=$_POST['focc'];
+				@$mother=$_POST['mother'];
+				@$mocc=$_POST['mocc'];
 				
-						    $query = "insert into temp_student values('$name','$username','$dateofbirth','$address','$email')";
+						    $query = "insert into temp_student values('$name','$username','$dateofbirth','$address','$email','$phone_no','$father','$focc','$mother','$mocc')";
 						    $query_run = mysqli_query($con,$query);
 						    if($query_run)
 							{
