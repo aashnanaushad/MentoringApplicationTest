@@ -66,8 +66,9 @@
                 
 		           
                    <div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
-				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
-                Edit Request
+				<div class=" g:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
+                <div>Approve Edit Request here:</div><br /> 
+				
 		<?php
 		    $flag=0;
 		    $query="select * from student where dept='$dept' and start_yr='$batch'";
@@ -370,8 +371,9 @@
 		    }
 		  ?>
 		      <form action="requeststofaculty.php" method="post">
-			  <button name="confirm" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Confirm</button></a>
-			    </form>
+			  <br /><br /><button name="confirm" class="w-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit">Confirm</button><br /><br />
+			  <button name="discard" class="w-20 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit">Discard</button>
+				</form>
 
 		  
 		  <?php
@@ -396,8 +398,30 @@
 			else
 			{
 			}
+			if(isset($_POST['discard']))
+			{
+				
+				echo "$username";
+	            $query = "delete from temp_student where username='$username'";
+				$query_run= mysqli_query($con,$query);
+				if($query_run)
+				{
+					$query = "update student set edit=0 where username='$username'";
+					$query_run = mysqli_query($con,$query);
+					echo '<script type="text/javascript">alert("Edit discarded successfully!!")</script>';
+				    echo "<script>window.location.href='advisor.php';</script>";
+				}
+				else
+				{
+					echo '<p class="bg-danger msg-block">Sorry, request could not be granted!</p>';
+				}
+			}
+			else
+			{
+			}
 		?>
 		  </div>
+
 	</div>
 
 				</div>
@@ -407,7 +431,7 @@
                                         
                                         <div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
-                Counselor Request
+                Approve Counselor Request here:
 		<?php
 		    $flag=0;
 		    $query="select * from request where dept='$dept' and start_yr='$batch'";
@@ -438,7 +462,7 @@
 		  ?>
 		      <form method="post" action="requeststofaculty.php">
 		      <input type="hidden" name="user" value="<?php echo $username ?>">
-			  <button name="forward" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Forward</button></a>
+			  <br /><br /><button name="forward" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Forward</button></a>
 			    </form>
 
 		  
