@@ -463,7 +463,8 @@
 		      <form method="post" action="requeststofaculty.php">
 		      <input type="hidden" name="user" value="<?php echo $username ?>">
 			  <br /><br /><button name="forward" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Forward</button></a>
-			    </form>
+			  <button name="reject" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Reject</button>
+				</form>
 
 		  
 		  <?php
@@ -477,6 +478,28 @@
 				{
 					echo '<script type="text/javascript"> alert(" Successfully Forwarded to HOD")</script>';
 				    echo "<script>window.location.href='advisor.php';</script>";
+				}
+				else
+				{
+					echo '<p class="bg-danger msg-block">Sorry, request could not be granted!</p>';
+				}
+			}
+			if(isset($_POST['reject']))
+			{
+				$username=$_POST['user'];
+				$query = "delete from request where username='$username'";
+				$query_run = mysqli_query($con,$query);
+				if($query_run)
+				{
+					$query = "update student set rqstcon='0' where username='$username';";
+					$query_run = mysqli_query($con,$query);
+					if($query_run){
+						echo '<script type="text/javascript"> alert("Rejection of request successfull.")</script>';
+						echo "<script>window.location.href='advisor.php';</script>";
+					}
+					else {
+						echo '<p class="bg-danger msg-block">Sorry, request could not be granted!</p>';
+					}
 				}
 				else
 				{
