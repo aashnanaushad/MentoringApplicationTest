@@ -80,7 +80,6 @@
 			</label>
 			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="gender"  type="text" value="<?php echo $row['gender'];?>" >
 			</div>
-			<div></div>
 		</div>
 		<div class="-mx-3 md:flex mb-">
 			
