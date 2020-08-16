@@ -89,7 +89,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
 				Address
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="adress" type="text" placeholder="xyz lane, pqr town">
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="address" type="text" placeholder="xyz lane, pqr town">
 
 			</div>
 		</div>
@@ -117,8 +117,8 @@
 				Gender
 			</label>
 			<input name="gender" type="radio" id="male" value="male"><label for="male">Male</label><br>
-            <input name="gender" type="radio" id="female" value="male"><label for="female">Female</label><br>
-            <input name="gender" type="radio" id="other" value="male"><label for="other">Other</label><br>
+            <input name="gender" type="radio" id="female" value="female"><label for="female">Female</label><br>
+            <input name="gender" type="radio" id="other" value="other"><label for="other">Other</label><br>
 		    </div>
 		</div>
 		<div class="-mx-3 md:flex mb-">
@@ -282,20 +282,20 @@
 				@$othermark=$_POST['othermark'];
 				@$otherperc=$_POST['otherperc'];
 				@$C1=$_POST['C1'];
-				@$C2=$_POST['C2'];
-				@$C3=$_POST['C3'];
-				@$C4=$_POST['C4'];
-				@$C5=$_POST['C5'];
-				@$C6=$_POST['C6'];
-				@$C7=$_POST['C7'];
-				@$C8=$_POST['C8'];
 				@$A1=$_POST['A1'];
+				@$C2=$_POST['C2'];
 				@$A2=$_POST['A2'];
+				@$C3=$_POST['C3'];
 				@$A3=$_POST['A3'];
+				@$C4=$_POST['C4'];
 				@$A4=$_POST['A4'];
+				@$C5=$_POST['C5'];
 				@$A5=$_POST['A5'];
+				@$C6=$_POST['C6'];
 				@$A6=$_POST['A6'];
+				@$C7=$_POST['C7'];
 				@$A7=$_POST['A7'];
+				@$C8=$_POST['C8'];
 				@$A8=$_POST['A8'];
 				@$password=$_POST['username'];
 				$end=4;
@@ -308,7 +308,7 @@
 				if (empty($name)){
 				    $name=" ";
 				}
-				if (empty($dob)){
+				if (empty($dateofbirth)){
 				    $dob='00000000';
 				}
 				if (empty($address)){
@@ -316,9 +316,6 @@
 				}
 				if (empty($email)){
 				    $email=" ";
-				}
-				if (empty($phone_no)){
-				    $phone_no=" ";
 				}
 				if (empty($phone_no)){
 				    $phone_no=" ";
@@ -430,7 +427,7 @@
 						{
 							
 							echo $reqcon ;
-							$query = "insert into student values('$name','$username','$dept','$start_yr','$end_yr','$dob','$address','$email','$password','$edit','$reqcon','$father','$focc','$mother','$mocc','$phone_no','$gender','$school10','$mark10','$perc10','$school12','$mark12','$perc12','$othername','$othermark','$otherperc','$C1','$C2','$C3','$C4','$C5','$C6','$C7','$C8','$A1','$A2','$A3','$A4','$A5','$A6','$A7','$A8')";
+							$query = "insert into student values('$name','$username','$dept','$start_yr','$end_yr','$dateofbirth','$address','$email','$password','$edit','$reqcon','$phone_no','$gender','$father','$focc','$mother','$mocc','$school10','$mark10','$perc10','$school12','$mark12','$perc12','$othername','$othermark','$otherperc','$C1','$A1','$C2','$A2','$C3','$A3','$C4','$A4','$C5','$A5','$C6','$A6','$C7','$A7','$C8','$A8')";
 							$query_run = mysqli_query($con,$query);
 							if($query_run)
 							{
