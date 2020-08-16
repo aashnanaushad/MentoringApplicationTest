@@ -53,7 +53,7 @@
 			</div>
 			</nav>
 			<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
-				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
+				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
 		<?php
 			$flag=0;
 			$flag1=0;
