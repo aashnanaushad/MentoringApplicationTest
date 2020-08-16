@@ -5,7 +5,13 @@
     echo "<script>window.location.href='../../index.php';</script>";
 	}
 	$username=$_SESSION['username'];
-	$query="select * from student where username='$username'";
+	$q = "select * from student where username='$username'";
+	$q_run = mysqli_query($con,$q);
+	if($q_run)
+	{
+		$r=$q_run->fetch_assoc();
+	}
+	$query="select * from personal where username='$username'";
 	$query_run = mysqli_query($con,$query);
 	if($query_run)
 	{
@@ -24,7 +30,7 @@
 <body class=" bg-blue-400 ">
 	<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
 		<div class="flex items-center flex-shrink-0 text-blue-600 mr-6 ">
-				<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $row['name'];?>)</span>
+				<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $r['name'];?>)</span>
 		</div>
 			<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
 				<div class="text-sm lg:flex-grow">
@@ -50,10 +56,10 @@
 		
 		<div class="-mx-3 md:flex mb-">
 			<div class="md:w-full px-3">
-			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name" >
 				Family Tree :
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="famtree" type="text" placeholder="Enter your family tree" >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="famtree" type="text" placeholder="Enter your family tree" value="<?php echo $row['famtree']?>">
 
 			</div>
 		</div>
@@ -63,7 +69,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-lat-name">
 				Whether your parents stay along with you ?
 			</label>
-			<input name="stay" type="radio" id="yes" value="yes"><label for="yes">YES</label><br>
+			<input name="stay" type="radio" id="yes" value="yes" ><label for="yes">YES</label><br>
             <input name="stay" type="radio" id="no" value="no"><label for="no">NO</label><br>
 
 			</div>
@@ -73,7 +79,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				Is your home life pleasurable ?
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="life" type="text" placeholder="About your home life.." >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="life" type="text" placeholder="About your home life.." value="<?php echo $row['life']?>">
 
 			</div>
 		</div>
@@ -82,7 +88,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				Do you have any social activities ?
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="social" type="text" placeholder="My social activities are.." >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="social" type="text" placeholder="My social activities are.." value="<?php echo $row['social']?>">
 
 			</div>
 		</div>
@@ -91,7 +97,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				What type of skills you have ?
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="skills" type="text" placeholder="I am good at.." >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="skills" type="text" placeholder="I am good at.." value="<?php echo $row['skills']?>">
 
 			</div>
 		</div>
@@ -100,7 +106,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				What are your hobbies ?
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="hobby" type="text" placeholder="My hobbies are.." >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="hobby" type="text" placeholder="My hobbies are.." value="<?php echo $row['hobby']?>">
 
 			</div>
 		</div>
@@ -109,7 +115,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				Which are your thrust areas ?
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="thrust" type="text" placeholder="My thrust areas are.." >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="thrust" type="text" placeholder="My thrust areas are.." value="<?php echo $row['thrust']?>">
 
 			</div>
 		</div>
@@ -118,7 +124,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				what is the major objective in your life ?
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="obj" type="text" placeholder="My objective for life.." >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="obj" type="text" placeholder="My objective for life.." value="<?php echo $row['obj']?>">
 
 			</div>
 		</div>
@@ -127,7 +133,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name" for="study">
 				How is your study practice?
 			</label>
-			<select  name="study" id="study" >
+			<select  name="study" id="study" value="<?php echo $row['study']?>">
 			   <option value="regular">Regular</option>
                <option value="irregular">Irregular</option>
 			   <option value="bookreading">Book Reading</option>
@@ -140,7 +146,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name" for="learn">
 				What is your learning pattern ?
 			</label>
-			<select name="learn" id="learn" >
+			<select name="learn" id="learn" value="<?php echo $row['learn']?>">
 			    <option value="visual">Visual</option>
 				<option value="auditory">Auditory</option>
 				<option value="read,write,revise">Read,Write,Revise</option>
@@ -153,7 +159,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				Do you wish to change your attitude towards studies ?
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="attitude" type="text" placeholder="Improve my.." >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="attitude" type="text" placeholder="Improve my.." value="<?php echo $row['attitude']?>">
 
 			</div>
 		</div>
@@ -162,7 +168,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				What are your strengths & weakness in your behaviour ?
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="behaviour" type="text" placeholder="My strength and weakness.." >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="behaviour" type="text" placeholder="My strength and weakness.." value="<?php echo $row['behaviour']?>">
 
 			</div>
 		</div>
@@ -171,7 +177,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				Are you confident in your communication skills ?
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="communication" type="text" placeholder="Communication" >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="communication" type="text" placeholder="Communication" value="<?php echo $row['communication']?>">
 
 			</div>
 		</div>
@@ -180,7 +186,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				Do you have any concerns in general ?
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="concerns" type="text" placeholder="Physical/Psychological/Social/Emotional." >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="concerns" type="text" placeholder="Physical/Psychological/Social/Emotional." value="<?php echo $row['concerns']?>">
 
 			</div>
 		</div>
@@ -189,7 +195,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				Are you generally a stress free person?
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="person" type="text" placeholder="I am.." >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="person" type="text" placeholder="I am.." value="<?php echo $row['person']?>">
 
 			</div>
 		</div>
@@ -198,7 +204,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				Do you have any difficulty with your present theory/practical classes ?
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="class" type="text" placeholder="If so, in which areas :" >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="class" type="text" placeholder="If so, in which areas :" value="<?php echo $row['class']?>">
 
 			</div>
 		</div>
@@ -217,10 +223,9 @@
 <?php
 			if(isset($_POST['personal']))
 			{    
-				$query = "select * where username='$username';";
+				$query = "select * from personal where username='$username'";
 				$query_run = mysqli_query($con,$query);
-				@$username=$_POST['username'];
-				@$name=$_POST['name'];
+				@$username=$_SESSION['username'];
 				@$famtree=$_POST['famtree'];
 				@$stay=$_POST['stay'];
 				@$life=$_POST['life'];
@@ -238,19 +243,17 @@
 				@$person=$_POST['person'];
 				@$class=$_POST['class'];
 				
-				
-				
-	 $sql = "INSERT INTO personal (username,famtree,stay,life,social,skills,hobby,thrust,obj,study,learn,attitude,behaviour,communication,concerns,person,class) values ('$username','$famtree','$stay','$life',s'$social','$skills','$hobby','$thrust','$obj','$study','$learn','$attitude','$behaviour','$communication','$concerns','$person','$class')";
-     $stmt = mysqli_stmt_init($con);
-     if(!mysqli_stmt_prepare($stmt,$sql)){
-         echo "There was an error";
-         exit();
-     }
-     else{
-        // mysqli_stmt_bind_param($stmt,"ssss",$username,$reason,$dept,$start_yr);
-         mysqli_stmt_execute($stmt);
-         echo '<script type="text/javascript">alert("Update Successful")</script>';
-         echo "<script>window.location.href='view.php';</script>";
-	 }
+				$query = "update personal set username='$username',famtree= '$famtree',stay='$stay',life='$life',social='$social',skills='$skills',hobby='$hobby',thrust='$thrust',obj='$obj',study='$study',learn='$learn',attitude='$attitude',behaviour='$behaviour',communication='$communication',concerns='$concerns',person='$person',class='$class'where username='$username'";
+				$query_run = mysqli_query($con,$query);
+				if($query_run)
+				{
+					
+					echo '<script type="text/javascript">alert("Updates saved!")</script>';
+					echo "<script>window.location.href='personal_view.php';</script>";
+				}
+					else
+				{
+					echo '<p class="bg-danger msg-block">Unsuccessful due to server error. Please try later</p>';
+				}		
     }
 ?>

@@ -75,6 +75,16 @@
 		<div class="-mx-3 md:flex mb-">
 			
 			<div class="md:w-1/2 px-3 mb-1 md:mb-0">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-gender">
+				Gender
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="gender"  type="text" value="<?php echo $row['gender'];?>" >
+			</div>
+			<div></div>
+		</div>
+		<div class="-mx-3 md:flex mb-">
+			
+			<div class="md:w-1/2 px-3 mb-1 md:mb-0">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-city">
 				DOB
 			</label>
@@ -117,6 +127,101 @@
 			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="mocc" type="text" value="<?php echo $row['mocc'];?>"  >
 			</div>
 		</div>	
+		<div class="container">
+            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
+			   Academic details
+			</label>
+			<div class="shadow overflow-hidden rounded border-b border-gray-200">
+             <table class="min-w-full bg-white">
+              <thead class="bg-gray-800 text-white">
+            <tr>
+                <th class="w-1/20 text-left py-3 px-4 ">QUALIFICATION</th>
+                <th class="w-1/20 text-left py-3 px-4 ">NAME OF SCHOOL & SYLLABUS</th>
+                <th class="w-1/20 text-left py-3 px-4 ">TOTAL MARKS</th>
+                <th class="w-1/20 text-left py-3 px-4 ">PERCENTAGE</td>
+            </tr>
+            </thead>
+            <tbody class="text-gray-700">
+            <tr>
+                <td class="w-1/20 text-left py-3 px-4">GRADE X</td>
+       			<td class="w-1/20 text-left py-3 px-4"><input name="school10" type="text" placeholder="Name of school,Syllabus" value="<?php echo $row['school10'];?>"></td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="mark10" type="text" placeholder="Total Marks/Grade[X]" value="<?php echo $row['mark10'];?>"></td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="perc10" type="text" placeholder="Percentage[X]" value="<?php echo $row['perc10'];?>"></td>
+      		</tr>
+      		<tr class="bg-gray-100">
+        		<td class="w-1/20 text-left py-3 px-4">GRADE XII</td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="school12" type="text" placeholder="Name of school,Syllabus" value="<?php echo $row['school12'];?>"></td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="mark12" type="text" placeholder="Total Marks/Grade[XII]" value="<?php echo $row['mark12'];?>"></td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="perc12" type="text" placeholder="Percentage[XII]" value="<?php echo $row['perc12'];?>"></td>
+      		</tr>
+      		<tr>
+        		<td class="w-1/20 text-left py-3 px-4">Any Other</td>
+       		 	<td class="w-1/20 text-left py-3 px-4"><input name="othername" type="text" placeholder="Name of school,Syllabus" value="<?php echo $row['othername'];?>"></td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="othermark" type="text" placeholder="Total Marks/Grade" value="<?php echo $row['othermark'];?>"></td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="otherperc" type="text" placeholder="Percetage" value="<?php echo $row['otherperc'];?>"></td>
+      		</tr>
+    		</tbody>
+    		</table>
+  		</div>
+	</div>
+    
+	<div class="md:px-32 py w-full">
+            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
+				Semester wise performance
+			</label>
+            <div class="shadow overflow-hidden rounded border-b border-gray-200">
+            <table class="min-w-full bg-white">
+            <thead class="bg-gray-800 text-white">
+            <tr>
+                <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">SEMESTER</th>
+                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">CGPA</th>
+                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">NO: OF ARREARS</th>
+            </tr>
+            </thead>
+            <tbody class="text-gray-700">
+            <tr>
+                <td class="w-1/3 text-left py-3 px-4">SEMESTER 1</td>
+       			<td><input class="text-left py-3 px-4" name="C1" type="text" placeholder="0.00" value="<?php echo $row['C1'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A1" type="text" placeholder="0" value="<?php echo $row['A1'];?>"></td>
+      		</tr>
+      		<tr class="bg-gray-100">
+        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 2</td>
+        		<td><input class="text-left py-3 px-4" name="C2" type="text" placeholder="0.00" value="<?php echo $row['C2'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A2" type="text" placeholder="0" value="<?php echo $row['A2'];?>"></td>
+      		</tr>
+			<tr>
+                <td class="w-1/3 text-left py-3 px-4">SEMESTER 3</td>
+       			<td><input class="text-left py-3 px-4" name="C3" type="text" placeholder="0.00" value="<?php echo $row['C3'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A3" type="text" placeholder="0" value="<?php echo $row['A3'];?>"></td>
+      		</tr>
+			<tr class="bg-gray-100">
+        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 4</td>
+        		<td><input class="text-left py-3 px-4" name="C4" type="text" placeholder="0.00" value="<?php echo $row['C4'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A4" type="text" placeholder="0" value="<?php echo $row['A4'];?>"></td>
+      		</tr>
+			<tr>
+                <td class="w-1/3 text-left py-3 px-4">SEMESTER 5</td>
+       			<td><input class="text-left py-3 px-4" name="C5" type="text" placeholder="0.00" value="<?php echo $row['C5'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A5" type="text" placeholder="0" value="<?php echo $row['A5'];?>"></td>
+      		</tr>
+			<tr class="bg-gray-100">
+        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 6</td>
+        		<td><input class="text-left py-3 px-4" name="C6" type="text" placeholder="0.00" value="<?php echo $row['C6'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A6" type="text" placeholder="0" value="<?php echo $row['A6'];?>"></td>
+      		</tr>
+			<tr>
+                <td class="w-1/3 text-left py-3 px-4">SEMESTER 7</td>
+       			<td><input class="text-left py-3 px-4" name="C7" type="text" placeholder="0.00" value="<?php echo $row['C7'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A7" type="text" placeholder="0" value="<?php echo $row['A7'];?>"></td>
+      		</tr>
+			<tr class="bg-gray-100">
+        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 8</td>
+        		<td><input class="text-left py-3 px-4" name="C8" type="text" placeholder="0.00" value="<?php echo $row['C8'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A8" type="text" placeholder="0" value="<?php echo $row['A8'];?>"></td>
+      		</tr>
+      		</tbody>
+    		</table>
+  		</div>
 			
 		
 		<div class="flex items-center justify-between float-right">
@@ -136,22 +241,155 @@
 				@$address=$_POST['address'];
 				@$email=$_POST['email'];
 				@$phone_no=$_POST['phone_no'];
+				@$gender=$_POST['gender'];
 				@$father=$_POST['father'];
 				@$focc=$_POST['focc'];
 				@$mother=$_POST['mother'];
 				@$mocc=$_POST['mocc'];
-				
-						    $query = "insert into temp_student values('$name','$username','$dateofbirth','$address','$email','$phone_no','$father','$focc','$mother','$mocc')";
-						    $query_run = mysqli_query($con,$query);
-						    if($query_run)
-							{
-							    echo '<script type="text/javascript">alert("Updates saved and Request send to faculty!")</script>';
-							    echo "<script>window.location.href='view.php';</script>";
-							}
-								else
-							{
-								echo '<p class="bg-danger msg-block">Unsuccessful due to server error. Please try later</p>';
-							}
+				@$school10=$_POST['school10'];
+				@$mark10=$_POST['mark10'];
+				@$perc10=$_POST['perc10'];
+				@$school12=$_POST['school12'];
+				@$mark12=$_POST['mark12'];
+				@$perc12=$_POST['perc12'];
+				@$othername=$_POST['othername'];
+				@$othermark=$_POST['othermark'];
+				@$otherperc=$_POST['otherperc'];
+				@$C1=$_POST['C1'];
+				@$C2=$_POST['C2'];
+				@$C3=$_POST['C3'];
+				@$C4=$_POST['C4'];
+				@$C5=$_POST['C5'];
+				@$C6=$_POST['C6'];
+				@$C7=$_POST['C7'];
+				@$C8=$_POST['C8'];
+				@$A1=$_POST['A1'];
+				@$A2=$_POST['A2'];
+				@$A3=$_POST['A3'];
+				@$A4=$_POST['A4'];
+				@$A5=$_POST['A5'];
+				@$A6=$_POST['A6'];
+				@$A7=$_POST['A7'];
+				@$A8=$_POST['A8'];
+
+
+				if (empty($name)){
+				    $name=" ";
+				}
+				if (empty($dateofbirth)){
+				    $dob='00000000';
+				}
+				if (empty($address)){
+				    $address=" ";
+				}
+				if (empty($email)){
+				    $email=" ";
+				}
+				if (empty($gender)){
+				    $gender=" ";
+				}
+				if (empty($phone_no)){
+				    $phone_no=" ";
+				}
+				if (empty($father)){
+				    $father=" ";
+				}
+				if (empty($focc)){
+				    $focc=" ";
+				}
+				if (empty($mother)){
+				    $mother=" ";
+				}
+				if (empty($mocc)){
+				    $mocc=" ";
+				}
+				if (empty($school10)){
+				    $school10= " ";
+				}
+				if (empty($mark10)){
+				    $mark10=0.0;
+				}
+				if (empty($perc10)){
+					$perc10=0.0;
+				}
+				if (empty($school12)){
+				    $school12 = " ";
+				}
+				if (empty($mark12)){
+				    $mark12=0.0;
+				}
+				if (empty($perc12)){
+				    $perc12=0.0;
+				}
+				if (empty($otherschool)){
+				    $otherschool=" ";
+				}
+				if (empty($othermark)){
+				    $othermark=0.0;
+				}
+				if (empty($otherperc)){
+				    $otherperc=0.0;
+				}
+				if (empty($C1)){
+				    $C1=0.0;
+				}
+				if (empty($A1)){
+				    $A1=0;
+				}
+				if (empty($C2)){
+				    $C2=0.0;
+				}
+				if (empty($A2)){
+				    $A2=0;
+				}
+				if (empty($C3)){
+				    $C3=0.0;
+				}
+				if (empty($A3)){
+				    $A3=0;
+				}
+				if (empty($C4)){
+				    $C4=0.0;
+				}
+				if (empty($A4)){
+				    $A4=0;
+				}
+				if (empty($C5)){
+				    $C5=0.0;
+				}
+				if (empty($A5)){
+				    $A5=0;
+				}
+				if (empty($C6)){
+				    $C6=0.0;
+				}
+				if (empty($A6)){
+				    $A6=0;
+				}
+				if (empty($C7)){
+				    $C7=0.0;
+				}
+				if (empty($A7)){
+				    $A7=0;
+				}
+				if (empty($C8)){
+				    $C8=0.0;
+				}
+				if (empty($A8)){
+				    $A8=0;
+				}
+
+				$query = "insert into temp_student values('$name','$username','$dateofbirth','$address','$email','$phone_no','$gender','$father','$focc','$mother','$mocc','$school10','$mark10','$perc10','$school12','$mark12','$perc12','$othername','$othermark','$otherperc','$C1','$A1','$C2','$A2','$C3','$A3','$C4','$A4','$C5','$A5','$C6','$A6','$C7','$A7','$C8','$A8')";
+				$query_run = mysqli_query($con,$query);
+				if($query_run)
+				{
+				    echo '<script type="text/javascript">alert("Updates saved and Request send to faculty!")</script>';
+				    echo "<script>window.location.href='view.php';</script>";
+				}
+				else
+				{
+					echo '<p class="bg-danger msg-block">Unsuccessful due to server error. Please try later</p>';
+				}
 			}
 			else
 			{

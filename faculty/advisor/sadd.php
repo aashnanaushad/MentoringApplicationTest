@@ -317,6 +317,102 @@
 				if (empty($email)){
 				    $email=" ";
 				}
+				if (empty($phone_no)){
+				    $phone_no=" ";
+				}
+				if (empty($phone_no)){
+				    $phone_no=" ";
+				}
+				if (empty($gender)){
+				    $gender=" ";
+				}
+				if (empty($father)){
+				    $father=" ";
+				}
+				if (empty($focc)){
+				    $focc=" ";
+				}
+				if (empty($mother)){
+				    $mother=" ";
+				}
+				if (empty($mocc)){
+				    $mocc=" ";
+				}
+				if (empty($school10)){
+				    $school10= " ";
+				}
+				if (empty($mark10)){
+				    $mark10=0.0;
+				}
+				if (empty($perc10)){
+					$perc10=0.0;
+				}
+				if (empty($school12)){
+				    $school12 = " ";
+				}
+				if (empty($mark12)){
+				    $mark12=0.0;
+				}
+				if (empty($perc12)){
+				    $perc12=0.0;
+				}
+				if (empty($otherschool)){
+				    $otherschool=" ";
+				}
+				if (empty($othermark)){
+				    $othermark=0.0;
+				}
+				if (empty($otherperc)){
+				    $otherperc=0.0;
+				}
+				if (empty($C1)){
+				    $C1=0.0;
+				}
+				if (empty($A1)){
+				    $A1=0;
+				}
+				if (empty($C2)){
+				    $C2=0.0;
+				}
+				if (empty($A2)){
+				    $A2=0;
+				}
+				if (empty($C3)){
+				    $C3=0.0;
+				}
+				if (empty($A3)){
+				    $A3=0;
+				}
+				if (empty($C4)){
+				    $C4=0.0;
+				}
+				if (empty($A4)){
+				    $A4=0;
+				}
+				if (empty($C5)){
+				    $C5=0.0;
+				}
+				if (empty($A5)){
+				    $A5=0;
+				}
+				if (empty($C6)){
+				    $C6=0.0;
+				}
+				if (empty($A6)){
+				    $A6=0;
+				}
+				if (empty($C7)){
+				    $C7=0.0;
+				}
+				if (empty($A7)){
+				    $A7=0;
+				}
+				if (empty($C8)){
+				    $C8=0.0;
+				}
+				if (empty($A8)){
+				    $A8=0;
+				}
 				
 				//echo $name;
 				

@@ -154,6 +154,181 @@
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
+						  if( $row["school10"]!=$row1["school10"])
+		                  {
+		                      @$school10=$row1["school10"];
+		                      echo "Edited 10th School name: $school10";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["mark10"]!=$row1["mark10"])
+		                  {
+		                      @$mark10=$row1["mark10"];
+		                      echo "Edited 10th Mark: $mark10";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["perc10"]!=$row1["perc10"])
+		                  {
+		                      @$perc10=$row1["perc10"];
+		                      echo "Edited 10th percentage: $perc10";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["school12"]!=$row1["school12"])
+		                  {
+		                      @$school12=$row1["school12"];
+		                      echo "Edited 12th School name: $school13";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["mark12"]!=$row1["mark12"])
+		                  {
+		                      @$mark12=$row1["mark12"];
+		                      echo "Edited 12th Mark: $mark12";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["perc12"]!=$row1["perc12"])
+		                  {
+		                      @$perc12=$row1["perc12"];
+		                      echo "Edited 12th percentage: $perc12";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["othername"]!=$row1["othername"])
+		                  {
+		                      @$othername=$row1["othername"];
+		                      echo "Edited other School name: $othername";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["othermark"]!=$row1["othermark"])
+		                  {
+		                      @$othermark=$row1["othermark"];
+		                      echo "Edited other mark: $othermark";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["otherperc"]!=$row1["otherperc"])
+		                  {
+		                      @$otherperc=$row1["otherperc"];
+		                      echo "Edited other percentage: $otherperc";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["C1"]!=$row1["C1"])
+		                  {
+		                      @$C1=$row1["C1"];
+		                      echo "Edited C1: $C1";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["A1"]!=$row1["A1"])
+		                  {
+		                      @$A1=$row1["A1"];
+		                      echo "A1: $A1";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["C2"]!=$row1["C2"])
+		                  {
+		                      @$C2=$row1["C2"];
+		                      echo "Edited C2: $C2";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["A2"]!=$row1["A2"])
+		                  {
+		                      @$A2=$row1["A2"];
+		                      echo "Edited A2: $A2";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["C3"]!=$row1["C3"])
+		                  {
+		                      @$C3=$row1["C3"];
+		                      echo "Edited C3: $C3";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["A3"]!=$row1["A3"])
+		                  {
+		                      @$A3=$row1["A3"];
+		                      echo "Edited A3: $A3";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["C4"]!=$row1["C4"])
+		                  {
+		                      @$C4=$row1["C4"];
+		                      echo "Edited C4: $C4";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["A4"]!=$row1["A4"])
+		                  {
+		                      @$A4=$row1["A4"];
+		                      echo "Edited A4: $A4";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["C5"]!=$row1["C5"])
+		                  {
+		                      @$C5=$row1["C5"];
+		                      echo "Edited C5: $C5";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["A5"]!=$row1["A5"])
+		                  {
+		                      @$A5=$row1["A5"];
+		                      echo "Edited A5: $A5";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["C6"]!=$row1["C6"])
+		                  {
+		                      @$C6=$row1["C6"];
+		                      echo "Edited C6: $C6";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["A6"]!=$row1["A6"])
+		                  {
+		                      @$A6=$row1["A6"];
+		                      echo "Edited A6: $A6";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["C7"]!=$row1["C7"])
+		                  {
+		                      @$C7=$row1["C7"];
+		                      echo "Edited C7: $C7";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["A7"]!=$row1["A7"])
+		                  {
+		                      @$A7=$row1["A7"];
+		                      echo "Edited A7: $A7";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["C8"]!=$row1["C8"])
+		                  {
+		                      @$C8=$row1["C8"];
+		                      echo "Edited C8: $C8";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
+						  if( $row["A8"]!=$row1["A8"])
+		                  {
+		                      @$A8=$row1["A8"];
+		                      echo "Edited A8: $A8";
+		                      echo "<br>";
+		                      echo "<br>";
+						  }
 				
 		                  @$name=$row1['name'];
 		                  @$dateofbirth=$row1['dateofbirth'];
@@ -164,6 +339,31 @@
 						  @$focc=$row1['focc'];
 						  @$mother=$row1['mother'];
 						  @$mocc=$row1['mocc'];
+						  @$school10=$row1['school10'];
+						  @$mark10=$row1['mark10'];
+						  @$perc10=$row1['perc10'];
+						  @$school12=$row1['school12'];
+						  @$mark12=$row1['mark12'];
+						  @$perc12=$row1['perc12'];
+						  @$otherschool=$row1['otherschool'];
+						  @$othermark=$row1['othermark'];
+						  @$otherperc=$row1['otherperc'];
+						  @$C1=$row1['C1'];
+						  @$A1=$row1['A1'];
+						  @$C2=$row1['C2'];
+						  @$A2=$row1['A2'];
+						  @$C3=$row1['C3'];
+						  @$A3=$row1['A3'];
+						  @$C4=$row1['C4'];
+						  @$A4=$row1['A4'];
+						  @$C5=$row1['C5'];
+						  @$A5=$row1['A5'];
+						  @$C6=$row1['C6'];
+						  @$A6=$row1['A6'];
+						  @$C7=$row1['C7'];
+						  @$A7=$row1['A7'];
+						  @$C8=$row1['C8'];
+						  @$A8=$row1['A8'];
 		            }
 		        }
 		        }
@@ -179,13 +379,13 @@
 			{
 				
 				echo "$username";
-	            $query = "update student set $name='$name',$dateofbirth='$dateofbirth',$address='$address',$email='$email',$phone_no='$phone_no',$father='$father',$focc='$focc',$mother='$mother',$mocc='$mocc',edit='0' where username='$username'";
+	            $query = "update student set name='$name',dateofbirth='$dateofbirth',address='$address',email='$email',phone_no='$phone_no',father='$father',focc='$focc',mother='$mother',mocc='$mocc',school10='$school10',mark10='$mark10',perc10='$perc10',school12='$school12',mark12='$mark12',perc12='$perc12',C1='$C1',A1='$A1',C2='$C2',A2='$A2',C3='$C3',A3='$A3',C4='$C4',A4='$A4',C5='$C5',A5='$A5',C6='$C6',A6='$A6',C7='$C7',A7='$A7',C8='$C8',A8='$A8',edit='0' where username='$username'";
 				$query_run= mysqli_query($con,$query);
 				if($query_run)
 				{
 				    $query = "delete from temp_student where username='$username'";
 				    $query_run= mysqli_query($con,$query);
-					echo '< type="text/javascript">alert("Update success for user")<script>';
+					echo '<script type="text/javascript">alert("Update success for user")</script>';
 				    echo "<script>window.location.href='advisor.php';</script>";
 				}
 				else

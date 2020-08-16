@@ -47,26 +47,27 @@
 
 		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
-                 <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+                 <!-- <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
 					<img src="../imgs/avatar.png" /> 
-				</div>
-				<div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
+				</div> -->
+				 <div class="w-full  py-6 overflow-y-hidden"> 
 					<div class="mb-4">
-						<label class="block text-gray-700 text-sm font-bold mb-2" >
-							Professional Details:
+						<label class="block text-gray-700 text-md font-bold mb-2" >
+							PROFESSIONAL DETAILS
 						</label>
-						<p class="text-gray-700 text-base">Admission No: <?php echo $row['username'];?></p>
-						<p class="text-gray-700 text-base">Batch: <?php echo $row['start_yr'];?> - <?php echo $row['end_yr'];?></p>
-						<p class="text-gray-700 text-base">Department: <?php echo $row['dept'];?></p>
+						<p class="text-gray-700 text-base"><b>Admission No:</b> <?php echo $row['username'];?></p>
+						<p class="text-gray-700 text-base"><b>Batch: </b><?php echo $row['start_yr'];?> - <?php echo $row['end_yr'];?></p>
+						<p class="text-gray-700 text-base"><b>Department:</b> <?php echo $row['dept'];?></p>
 					</div>
+					<br />
 					<div class="mb-6">
-						<label class="block text-gray-700 text-sm font-bold mb-2" >
-							Personal Details:
+						<label class="block text-gray-700 text-md font-bold mb-2" >
+							PERSONAL DETAILS
 						</label>
-						<p class="text-gray-700 text-base">Name    : <?php echo $row['name'];?></p>
-						<p class="text-gray-700 text-base">Email ID: <?php echo $row['email'];?></p>
-						<p class="text-gray-700 text-base">DOB     : <?php echo $row['dateofbirth'];?></p>
-						<p class="text-gray-700 text-base">AGE     : 
+						<p class="text-gray-700 text-base"><b>Name    : </b><?php echo $row['name'];?></p>
+						<p class="text-gray-700 text-base"><b>Email ID: </b><?php echo $row['email'];?></p>
+						<p class="text-gray-700 text-base"><b>DOB     : </b><?php echo $row['dateofbirth'];?></p>
+						<p class="text-gray-700 text-base"><b>Age     : </b>
 						<?php 
 						//age calculations
 						 $dob=new DateTime($row['dateofbirth']);
@@ -74,16 +75,16 @@
 						 $age=$dob -> diff(new DateTime);
 						 echo $age->y;
 						 ?></p>
-                        <p class="text-gray-700 text-base">Gender  : <?php echo $row['gender'];?></p>
-						<p class="text-gray-700 text-base">Address : <?php echo $row['address'];?></p>
-                        <p class="text-gray-700 text-base">Contact : <?php echo $row['phone_no'];?></p>
-						<p class="text-gray-700 text-base">Father  : <?php echo $row['father'];?></p>
-						<p class="text-gray-700 text-base">Occupation: <?php echo $row['focc'];?></p>
-						<p class="text-gray-700 text-base">Mother  : <?php echo $row['mother'];?></p>
-                        <p class="text-gray-700 text-base">Occupation: <?php echo $row['mocc'];?></p>
+                        <p class="text-gray-700 text-base"><b>Gender  : </b><?php echo $row['gender'];?></p>
+						<p class="text-gray-700 text-base"><b>Address : </b><?php echo $row['address'];?></p>
+                        <p class="text-gray-700 text-base"><b>Contact : </b><?php echo $row['phone_no'];?></p>
+						<p class="text-gray-700 text-base"><b>Father  : </b><?php echo $row['father'];?></p>
+						<p class="text-gray-700 text-base"><b>Occupation: </b><?php echo $row['focc'];?></p>
+						<p class="text-gray-700 text-base"><b>Mother  : </b><?php echo $row['mother'];?></p>
+                        <p class="text-gray-700 text-base"><b>Occupation: </b><?php echo $row['mocc'];?></p>
 					</div>
                     <div class="container">
-            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
+            <label class="block uppercase tracking-wide text-grey-darker text-md font-bold mb-2" >
 			   Academic details
 			</label>
 			<div class="shadow overflow-hidden rounded border-b border-gray-200">
@@ -120,7 +121,7 @@
   	  </div>
 	</div>
     <div class="md:px-32 py w-full">
-            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
+            <label class="block uppercase tracking-wide text-grey-darker text-md font-bold mb-2" >
 				Semester wise performance
 			</label>
             <div class="shadow overflow-hidden rounded border-b border-gray-200">
