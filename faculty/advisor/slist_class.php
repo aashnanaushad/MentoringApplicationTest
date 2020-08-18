@@ -54,7 +54,7 @@
             $sy=$row['start_yr'];  
             $ey=$row['end_yr'];
             $user_email=$row['email']; 
-            $mentor=$row['mentor'];
+            $mentor=$row['mentorship'];
   
         ?>  
         <form action="slist_class.php" method="post">
@@ -66,8 +66,10 @@
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $ey;  ?></td>
             <td class="p-4 w-1/6 overflow-x-scroll overflow-y-hidden"><?php echo $user_email; ?></td>
             <td class="p-4 w-1/6 overflow-hidden"><a href="slist_class.php"><button class="text-red-400" type="submit" name="<?php echo $user_id; ?>">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
+            </form>
+            <form action="slist_class.php" method="post">
             <?php  if ($mentor == NULL) { ?>
-            <td class="p-4 w-1/6 overflow-hidden"><input type="text" name="mentor" value=" "/></td>  
+            <td class="p-4 w-1/6 overflow-hidden"><input type="text" name="mentor"  required/></td>  
             <?php }
                 else { ?>
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $mentor;  ?></td>
@@ -100,12 +102,12 @@
             if(isset($_POST["assign$user_id"]))
 			{
 				$mentor=$_POST['mentor'];
-				$query="update student set mentor='$mentor' where username='$user_id'";
+				$query="update student set mentorship='$mentor' where username='$user_id'";
 			    $query_run = mysqli_query($con,$query);
 			    if($query_run)
 			    {
 					      echo '<script type="text/javascript">alert("Mentor assigned successfully ")</script>';
-					        echo "<script>window.location.href='advisor.php';</script>";
+					        echo "<script>window.location.href='slist_class.php';</script>";
 				}
 			    else
 			    {
@@ -115,7 +117,7 @@
             if(isset($_POST["deassign$user_id"]))
 			{
 				// $mentor=$_POST['mentor'];
-				$query="update student set mentor=NULL where username='$user_id'";
+				$query="update student set mentorship=NULL where username='$user_id'";
 			    $query_run = mysqli_query($con,$query);
 			    if($query_run)
 			    {
