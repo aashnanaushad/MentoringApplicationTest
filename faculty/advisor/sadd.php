@@ -172,7 +172,7 @@
                 <th class="w-1/4 p-4">PERCENTAGE</td>
             </tr>
             </thead>
-            <tbody class="text-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full" >
+            <tbody class="text-grey-light flex flex-col items-center justify-between w-full" >
             <tr class="flex w-full mb-1">
                 <td class="w-1/4 text-left p-4">GRADE X</td>
        			<td class="w-1/4 text-left p-4"><input name="school10" type="text" placeholder="Name of school,Syllabus" class="w-2/3"></td>
@@ -210,7 +210,7 @@
                 <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">NO: OF ARREARS</th>
             </tr>
             </thead>
-            <tbody class="text-grey-700 flex flex-col items-center justify-between overflow-y-scroll w-full" >
+            <tbody class="text-grey-700 flex flex-col items-center justify-between w-full" >
             <tr class="flex w-full mb-1">
                 <td class="w-1/3 text-left p-4">SEMESTER 1</td>
        			<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C1" type="text" placeholder="0.00"></td>
