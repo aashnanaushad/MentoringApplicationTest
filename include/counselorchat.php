@@ -13,23 +13,8 @@
     <link rel="stylesheet" href="../css/tailwind.min.css">
     <style>
          *{
-             font-size:16px;
+             font-size:12px;
          }
-        #left-col{
-            position:relative;
-            float:left;
-            width:60%;
-        }
-        #left-col-container{
-            width:60%;
-            height:80%;
-            top:30px;
-            left:45px;
-            border:border-box;
-            border-color:black;
-            margin:0px auto;
-            overflow:auto;
-        }
         .req{
             position:relative;
             float:right;
@@ -151,7 +136,9 @@
             border-sizing:border-box;
             background:blue;
             color:white;
-            padding:3px;
+            padding-left:9px;
+            font-size:12px;
+            margin-left:7px;
         }
         .chome:hover{
             color:#39FF14;
@@ -180,6 +167,54 @@
             background-color:#AEB6BF;
             border-radius:7px;
         }
+        #feedback{
+            font-size:20px;
+            z-index:2;
+            width:500px;
+            height:300px;
+            background-color:#D4E6F1;
+            position:fixed;
+            left:30.33%;
+            top:25%;
+            border:1px black;
+            background-color:#D4E6F1;
+            padding:10px;
+            display:flex;
+            justify-content:center;
+            z-index:-1;
+            
+        }
+        h1{
+            font-size:30px;
+            font-weight:2px;
+            text-align:center;
+            
+       }
+       .message-input{
+           font-size:22px;
+           width:400px;
+           height:150px;
+           overflow:auto;
+       }
+       .endl{
+           height:40px;
+           padding:8px 8px;
+           color:black;
+           background-color:white;
+           border:2px solid black;
+
+       }
+        .b1{
+            float:right;
+            right:10px;
+            border:2px solid black;
+            color:black;
+            text-align:center;
+            background-color:white;
+            padding:8px 8px;
+
+             
+       }
          
 
     </style>
@@ -193,9 +228,19 @@
                 echo $_GET['user'];
             }
             ?>
-                    <button onClick="myFunc" class="chome" type="button">END</button>
+                    
                     <a href="../counselor/home.php"><button class="chome" type="button">HOME</button></a>
+                    <button onclick="myFunction()" class="chome" type="button" style="border = 1px solid red;background-color=#FADBD8;">END</button>
          </div> 
+         <div id="feedback">
+         <form  method="post" action="feedback.php" class="align-center">
+            <h1>FEEDBACK FORM</h1>
+            <input type="hidden" name="username" value="<?php echo $_GET['user'];?>">
+            <textarea class="message-input" name="message" placeholder="ENTER YOUR FEEDBACK HERE!"></textarea><br><br>
+            <input class="endl" type="submit" value="SEND" name="send" id="send">
+            <button onclick="hide()" class="b1" type="button">CANCEL</button>
+        </form>
+         </div>
          <div id="message-container">
                         <?php
                         $no_messages=false;
@@ -254,5 +299,13 @@
                     </div>
                 </div>
         </div>
+<script>
+function myFunction(){
+    document.getElementById("feedback").style.zIndex="2";
+}
+function hide(){
+    document.getElementById("feedback").style.zIndex="-1";
+}
+</script>
 </body>
 </html>
