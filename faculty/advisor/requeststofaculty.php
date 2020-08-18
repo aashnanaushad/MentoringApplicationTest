@@ -564,7 +564,7 @@
     //  $dept=$_POST['dept'];
      $approve=1;
      
-     $sql = "DELETE FROM request WHERE username='$username';";
+     $sql = "DELETE FROM request WHERE username='$username1';";
      $stmt = mysqli_stmt_init($con);
      if(!mysqli_stmt_prepare($stmt,$sql)){
          echo "There was an error";
