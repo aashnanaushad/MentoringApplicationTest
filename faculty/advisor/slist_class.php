@@ -67,7 +67,7 @@
             <td class="p-4 w-1/6 overflow-x-scroll overflow-y-hidden"><?php echo $user_email; ?></td>
             <td class="p-4 w-1/6 overflow-hidden"><a href="slist_class.php"><button class="text-red-400" type="submit" name="<?php echo $user_id; ?>">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
             <?php  if ($mentor == NULL) { ?>
-            <td class="p-4 w-1/6 overflow-hidden"><input type="text" name="mentor" value=" "/></td>  
+            <td class="p-4 w-1/6 overflow-hidden"><input type="text" name="mentor" value=" " required/></td>  
             <?php }
                 else { ?>
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $mentor;  ?></td>
