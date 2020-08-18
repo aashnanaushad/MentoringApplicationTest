@@ -1,10 +1,20 @@
 <?php
 	session_start();
 	require_once('../dbconfig/config.php');
-	if(!isset($_SESSION['username'])){
-    echo "<script>window.location.href='../index.php';</script>";
+	$flag=0;
+	$username;
+	if(isset($_GET['user'])){
+		$_GET['user'] = $_GET['user'];
+		$username=$_GET['user'];
+		$flag=1;
+	}else{
+		if(!isset($_SESSION['username'])){
+    			echo "<script>window.location.href='../index.php';</script>";
+		}else{
+			$username=$_SESSION['username'];
+		}
 	}
-			    $username=$_SESSION['username'];
+			    
 			    $query="select * from student where username='$username'";
 			    $query_run = mysqli_query($con,$query);
 			    if($query_run)
@@ -23,6 +33,11 @@
 <link rel="stylesheet" href="../css/tailwind.min.css">
 </head>
 <body class=" bg-blue-400 ">
+<?php
+	if($flag==1){
+		//no navbar
+	}else{
+		?>
 	<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
 		<div class="flex items-center flex-shrink-0 text-blue-600 mr-6 ">
 				<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $row['name'];?>)</span>
@@ -44,6 +59,9 @@
 				</div>
 			</div>
 			</nav>
+			<?php
+			}
+			?>
 
 		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
@@ -182,15 +200,39 @@
 					<br>
 					<br>
 					<div class="flex items-center justify-between">
+					<?php
+					if($flag==1){
+					?>
+						<?php echo '<a href="personal_view.php?user='.$username.'"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
+							More Details
+						</button></a>'; ?>						
+						<?php
+					}else{
+						?>
 						<a href="personal_view.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
 							More Details
 						</button></a>
+						<?php
+					}
+					?>
 						<br>
                     <br>
+					<?php
+					if($flag==1){
+						?>
+						<?php echo '<a href="../include/rqststudents.php?user='.$_SESSION['username'].'"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
+							Back
+						</button></a>'; ?>
+						<?php
+					}else{
+						?>
 					<div class="flex items-center justify-between">
 						<a href="edit.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
 							Edit Profile
 						</button></a>
+						<?php
+					}
+					?>
 					</div>
 					</div>
 				</div>

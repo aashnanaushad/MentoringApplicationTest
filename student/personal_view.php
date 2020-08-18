@@ -1,10 +1,19 @@
 <?php
 	session_start();
 	require_once('../dbconfig/config.php');
-	if(!isset($_SESSION['username'])){
-    echo "<script>window.location.href='../index.php';</script>";
+	$flag=0;
+	$username;
+	if(isset($_GET['user'])){
+		$_GET['user'] = $_GET['user'];
+		$username=$_GET['user'];
+		$flag=1;
+	}else{
+		if(!isset($_SESSION['username'])){
+    			echo "<script>window.location.href='../index.php';</script>";
+		}else{
+			$username=$_SESSION['username'];
+		}
 	}
-				$username=$_SESSION['username'];
 				$q = "select * from student where username='$username'";
 				$q_run = mysqli_query($con,$q);
 				if($q_run)
@@ -29,6 +38,11 @@
 <link rel="stylesheet" href="../css/tailwind.min.css">
 </head>
 <body class=" bg-blue-400 ">
+	<?php
+	if($flag==1){
+		//no navbar
+	}else{
+	?>
 	<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
 		<div class="flex items-center flex-shrink-0 text-blue-600 mr-6 ">
 				<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $r['name'];?>)</span>
@@ -50,6 +64,9 @@
 				</div>
 			</div>
 			</nav>
+			<?php
+	}
+	?>
 
 		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
@@ -58,7 +75,7 @@
 					
                 <div class=mb-6>
 	            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"  >
-			       More Details:
+			       More Details:<?php if($flag==1){echo $r['name'];}?>
 	            </label>
 	                    <p class="text-gray-700 text-base"><b>Family Tree : </b> <br><?php echo $row['famtree'];?></p>
 						<br>
@@ -95,6 +112,9 @@
                     
 					<br>
 					<br>
+					<?php
+					if($flag==0){
+					?>
 					<div class="flex items-center justify-between">
 						<a href="personal.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
 							Update details
@@ -106,6 +126,20 @@
 							Back
 					    </button></a>
 					</div>
+					<?php
+					}else{
+						?>
+					<div class="flex items-center justify-between">
+					<br>
+					<br>
+					<div class="flex items-center justify-between">
+					 <?php echo'<a href="view.php?user='.$username.'"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
+							Back
+					    </button></a>';?>
+					</div>
+					<?php
+					}
+					?>
 				</div>
 					
 			</div>
