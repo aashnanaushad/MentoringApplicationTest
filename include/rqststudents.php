@@ -137,25 +137,10 @@
                         //sender  added
                         ?>
                             <div class="back">
-                                <?php 
-                                    $flag =0;
-                                    $query1 = 'SELECT `sender_name` from `message` where date_time=( select max(date_time) from `message` where `sender_name`="'.$sender_name.'")';
-                                    $query_run1 = mysqli_query($con,$query1);
-                                    // $row1=$query_run1->fetch_assoc();
-                                    if($query_run1 == $sender_name){
-                                        $flag=1;
-                                    }
-                                
-                                ?>
                                <?php echo'<a href="#">'.$sender_name.'</a>'?>
                                <div class="req">
-                               <?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="req-elements" name="profile">PROFILE</button></a>';?>
-                                <?php if ($flag == 0) {?>                  
+                               <?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="req-elements" name="profile">PROFILE</button></a>';?>               
                                <?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="req-elements" name="chat">CHAT</button></a>';?>
-                                <?php }
-                                    else { ?>
-                                    <?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="notify-elements" name="chat">CHAT</button></a>';?>
-                                    <?php } ?>
                                </div>
                             </div>
                         <?php
