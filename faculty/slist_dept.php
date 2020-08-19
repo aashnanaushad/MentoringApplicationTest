@@ -104,8 +104,8 @@
   
     </table> 
     </br>
-    <form action="slist_dept.php" method="post">
-    <a href="slist_dept.php"><button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
+    <form action="home.php" method="post">
+    <a href="home.php"><button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
 								back
 		</button> </a>
         </form>
@@ -114,7 +114,7 @@
 			{
 				if($type=='HOD')
 				 {
-					echo "<script>window.location.href='hod/hod.php';</script>";
+			     echo "<script>window.location.href='hod/hod.php';</script>";
 				 }
 				 if($type=='advisor')
 				 {

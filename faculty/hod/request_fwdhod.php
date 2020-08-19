@@ -53,7 +53,7 @@
 			</div>
 			</nav>
 			<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
-				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
+				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
 		<?php
 			$flag=0;
 			$flag1=0;
@@ -90,7 +90,6 @@
 		      <form method="post" action="request_fwdhod.php">
 		      <input type="hidden" name="user1" value="<?php echo $username; ?>">
 			  <button name="forward" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Approve</button></a>
-			  <button name="reject" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Reject</button></a>
 			    </form>
 				  <?php }
 				  else {
@@ -108,28 +107,6 @@
 				{
 					echo '<script type="text/javascript">alert("request approved successfully")</script>';
 					echo "<script>window.location.href='hod.php';</script>";
-				}
-				else
-				{
-					echo '<p class="bg-danger msg-block">Sorry, request could not be granted!</p>';
-				}
-			}
-			if(isset($_POST['reject']))
-			{
-				$username=$_POST['user1'];
-				$query = "delete from request where username='$username'";
-				$query_run = mysqli_query($con,$query);
-				if($query_run)
-				{
-					$query = "update student set rqstcon='0' where username='$username';";
-					$query_run = mysqli_query($con,$query);
-					if($query_run){
-						echo '<script type="text/javascript"> alert("Rejection of request successfull.")</script>';
-						echo "<script>window.location.href='hod.php';</script>";
-					}
-					else {
-						echo '<p class="bg-danger msg-block">Sorry, request could not be granted!</p>';
-					}
 				}
 				else
 				{

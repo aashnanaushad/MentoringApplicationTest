@@ -22,34 +22,34 @@
 <link rel="stylesheet" href="../css/tailwind.min.css">
 </head>
 <body class=" bg-blue-400 ">
-<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
+	<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
 		<div class="flex items-center flex-shrink-0 text-blue-600 mr-6 ">
 				<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $row['name'];?>)</span>
-		</div>
-		<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+			</div>
+			<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
 				<div class="text-sm lg:flex-grow">
-					<a href="view.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
-						Profile
-					</a>
-					<a href="request_counselor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
-						Request Counselor
-					</a>
-					<a href="changepass.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200">
-						Change Password
-					</a>
-				</div> 
-		<div>
-		<a href="../logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Logout</a>
-		</div>
-		</div>
-	</nav>
-	<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
+				<a href="view.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Profile
+				</a>
+				<a href="request_counselor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Request Counselor
+				</a>
+				<a href="changepass.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200">
+					Change Password
+				</a>
+				 </div> 
+				<div>
+				<a href="../logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Logout</a>
+				</div>
+			</div>
+			</nav>
+			<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
 			<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
 			<form action="edit.php" method="post">
-			<div class="-mx-3 md:flex mb-6">
+		<div class="-mx-3 md:flex mb-6">
 				
-				<div class="md:w-1/2 px-3 mb-6 md:mb-0">
+			<div class="md:w-1/2 px-3 mb-6 md:mb-0">
 			
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
 				Name
@@ -80,6 +80,7 @@
 			</label>
 			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="gender"  type="text" value="<?php echo $row['gender'];?>" >
 			</div>
+			<div></div>
 		</div>
 		<div class="-mx-3 md:flex mb-">
 			
@@ -127,37 +128,37 @@
 			</div>
 		</div>	
 		<div class="container">
-		<div class="-mx-3 md:flex mb-6">
-			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
+            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
 			   Academic details
 			</label>
-             <table class="text-left w-full ml-8">
-              <thead class="bg-gray-800 flex text-white w-full">
-            	<tr class="flex w-full mb-4">
-					<th class="w-1/4 p-4">QUALIFICATION</th>
-					<th class="w-1/4 p-4">NAME OF SCHOOL & SYLLABUS</th>
-					<th class="w-1/4 p-4">TOTAL MARKS</th>
-					<th class="w-1/4 p-4">PERCENTAGE</td>
-            	</tr>
-               </thead>
-			   <tbody class="text-grey-light flex flex-col items-center justify-between w-full" >
-			   <tr class="flex w-full mb-1">
-					<td class="w-1/4 text-left p-4">GRADE X</td>
-					<td class="w-1/4 text-left p-4"><input class="w-2/3" name="school10" type="text" placeholder="Name of school,Syllabus" value="<?php echo $row['school10'];?>"></td>
-					<td class="w-1/4 text-left p-4"><input class="w-2/3" name="mark10" type="text" placeholder="Total Marks/Grade[X]" value="<?php echo $row['mark10'];?>"></td>
-					<td class="w-1/4 text-left p-4"><input class="w-2/3" name="perc10" type="text" placeholder="Percentage[X]" value="<?php echo $row['perc10'];?>"></td>
+			<div class="shadow overflow-hidden rounded border-b border-gray-200">
+             <table class="min-w-full bg-white">
+              <thead class="bg-gray-800 text-white">
+            <tr>
+                <th class="w-1/20 text-left py-3 px-4 ">QUALIFICATION</th>
+                <th class="w-1/20 text-left py-3 px-4 ">NAME OF SCHOOL & SYLLABUS</th>
+                <th class="w-1/20 text-left py-3 px-4 ">TOTAL MARKS</th>
+                <th class="w-1/20 text-left py-3 px-4 ">PERCENTAGE</td>
+            </tr>
+            </thead>
+            <tbody class="text-gray-700">
+            <tr>
+                <td class="w-1/20 text-left py-3 px-4">GRADE X</td>
+       			<td class="w-1/20 text-left py-3 px-4"><input name="school10" type="text" placeholder="Name of school,Syllabus" value="<?php echo $row['school10'];?>"></td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="mark10" type="text" placeholder="Total Marks/Grade[X]" value="<?php echo $row['mark10'];?>"></td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="perc10" type="text" placeholder="Percentage[X]" value="<?php echo $row['perc10'];?>"></td>
       		</tr>
-      		<tr class="flex w-full mb-1">
-					<td class="w-1/4 text-left p-4">GRADE XII</td>
-					<td class="w-1/4 text-left p-4"><input class="w-2/3" name="school12" type="text" placeholder="Name of school,Syllabus" value="<?php echo $row['school12'];?>"></td>
-					<td class="w-1/4 text-left p-4"><input class="w-2/3" name="mark12" type="text" placeholder="Total Marks/Grade[XII]" value="<?php echo $row['mark12'];?>"></td>
-					<td class="w-1/4 text-left p-4"><input class="w-2/3" name="perc12" type="text" placeholder="Percentage[XII]" value="<?php echo $row['perc12'];?>"></td>
+      		<tr class="bg-gray-100">
+        		<td class="w-1/20 text-left py-3 px-4">GRADE XII</td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="school12" type="text" placeholder="Name of school,Syllabus" value="<?php echo $row['school12'];?>"></td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="mark12" type="text" placeholder="Total Marks/Grade[XII]" value="<?php echo $row['mark12'];?>"></td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="perc12" type="text" placeholder="Percentage[XII]" value="<?php echo $row['perc12'];?>"></td>
       		</tr>
-      		<tr class="flex w-full mb-1">
-					<td class="w-1/4 text-left p-4">Any Other</td>
-					<td class="w-1/4 text-left p-4"><input class="w-2/3" name="othername" type="text" placeholder="Name of school,Syllabus" value="<?php echo $row['othername'];?>"></td>
-					<td class="w-1/4 text-left p-4"><input class="w-2/3" name="othermark" type="text" placeholder="Total Marks/Grade" value="<?php echo $row['othermark'];?>"></td>
-					<td class="w-1/4 text-left p-4"><input class="w-2/3" name="otherperc" type="text" placeholder="Percetage" value="<?php echo $row['otherperc'];?>"></td>
+      		<tr>
+        		<td class="w-1/20 text-left py-3 px-4">Any Other</td>
+       		 	<td class="w-1/20 text-left py-3 px-4"><input name="othername" type="text" placeholder="Name of school,Syllabus" value="<?php echo $row['othername'];?>"></td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="othermark" type="text" placeholder="Total Marks/Grade" value="<?php echo $row['othermark'];?>"></td>
+        		<td class="w-1/20 text-left py-3 px-4"><input name="otherperc" type="text" placeholder="Percetage" value="<?php echo $row['otherperc'];?>"></td>
       		</tr>
     		</tbody>
     		</table>
@@ -165,63 +166,61 @@
 	</div>
     
 	<div class="md:px-32 py w-full">
-	<div class="-mx-3 md:flex mb-6">
             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
 				Semester wise performance
 			</label>
-            <!-- <div class="shadow overflow-hidden rounded "> -->
-            <table class="w-full ml-8">
-            <thead class="bg-gray-800 text-white w-full flex">
-            <tr class="flex w-full mb-4">
-				<th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">SEMESTER</th>
-				<th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">CGPA</th>
-				<th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">NO: OF ARREARS</th>
+            <div class="shadow overflow-hidden rounded border-b border-gray-200">
+            <table class="min-w-full bg-white">
+            <thead class="bg-gray-800 text-white">
+            <tr>
+                <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">SEMESTER</th>
+                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">CGPA</th>
+                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">NO: OF ARREARS</th>
             </tr>
             </thead>
-            <tbody class="text-grey-700 flex flex-col items-center justify-between w-full" >
-            <tr class="flex w-full mb-1">
-				<td class="w-1/3 text-left p-4">SEMESTER 1</td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C1" type="text" placeholder="0.00" value="<?php echo $row['C1'];?>"></td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A1" type="text" placeholder="0" value="<?php echo $row['A1'];?>"></td>
+            <tbody class="text-gray-700">
+            <tr>
+                <td class="w-1/3 text-left py-3 px-4">SEMESTER 1</td>
+       			<td><input class="text-left py-3 px-4" name="C1" type="text" placeholder="0.00" value="<?php echo $row['C1'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A1" type="text" placeholder="0" value="<?php echo $row['A1'];?>"></td>
       		</tr>
-      		<tr class="bg-gray-100 flex w-full mb-1">
-			  <td class="w-1/3 text-left p-4">SEMESTER 2</td>
-			  <td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C2" type="text" placeholder="0.00" value="<?php echo $row['C2'];?>"></td>
-			  <td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A2" type="text" placeholder="0" value="<?php echo $row['A2'];?>"></td>
+      		<tr class="bg-gray-100">
+        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 2</td>
+        		<td><input class="text-left py-3 px-4" name="C2" type="text" placeholder="0.00" value="<?php echo $row['C2'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A2" type="text" placeholder="0" value="<?php echo $row['A2'];?>"></td>
       		</tr>
-			<tr class="flex w-full mb-1">
-				<td class="w-1/3 text-left p-4">SEMESTER 3</td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C3" type="text" placeholder="0.00" value="<?php echo $row['C3'];?>"></td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A3" type="text" placeholder="0" value="<?php echo $row['A3'];?>"></td>
+			<tr>
+                <td class="w-1/3 text-left py-3 px-4">SEMESTER 3</td>
+       			<td><input class="text-left py-3 px-4" name="C3" type="text" placeholder="0.00" value="<?php echo $row['C3'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A3" type="text" placeholder="0" value="<?php echo $row['A3'];?>"></td>
       		</tr>
-			<tr class="bg-gray-100 flex w-full mb-1">
-				<td class="w-1/3 text-left p-4">SEMESTER 4</td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C4" type="text" placeholder="0.00" value="<?php echo $row['C4'];?>"></td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A4" type="text" placeholder="0" value="<?php echo $row['A4'];?>"></td>
+			<tr class="bg-gray-100">
+        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 4</td>
+        		<td><input class="text-left py-3 px-4" name="C4" type="text" placeholder="0.00" value="<?php echo $row['C4'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A4" type="text" placeholder="0" value="<?php echo $row['A4'];?>"></td>
       		</tr>
-			<tr class="flex w-full mb-1">
-				<td class="w-1/3 text-left p-4">SEMESTER 5</td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C5" type="text" placeholder="0.00" value="<?php echo $row['C5'];?>"></td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A5" type="text" placeholder="0" value="<?php echo $row['A5'];?>"></td>
+			<tr>
+                <td class="w-1/3 text-left py-3 px-4">SEMESTER 5</td>
+       			<td><input class="text-left py-3 px-4" name="C5" type="text" placeholder="0.00" value="<?php echo $row['C5'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A5" type="text" placeholder="0" value="<?php echo $row['A5'];?>"></td>
       		</tr>
-			<tr class="bg-gray-100 flex w-full mb-1">
-				<td class="w-1/3 text-left p-4">SEMESTER 6</td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C6" type="text" placeholder="0.00" value="<?php echo $row['C6'];?>"></td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A6" type="text" placeholder="0" value="<?php echo $row['A6'];?>"></td>
+			<tr class="bg-gray-100">
+        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 6</td>
+        		<td><input class="text-left py-3 px-4" name="C6" type="text" placeholder="0.00" value="<?php echo $row['C6'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A6" type="text" placeholder="0" value="<?php echo $row['A6'];?>"></td>
       		</tr>
-			<tr class="flex w-full mb-1">
-				<td class="w-1/3 text-left p-4">SEMESTER 7</td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C7" type="text" placeholder="0.00" value="<?php echo $row['C7'];?>"></td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A7" type="text" placeholder="0" value="<?php echo $row['A7'];?>"></td>
+			<tr>
+                <td class="w-1/3 text-left py-3 px-4">SEMESTER 7</td>
+       			<td><input class="text-left py-3 px-4" name="C7" type="text" placeholder="0.00" value="<?php echo $row['C7'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A7" type="text" placeholder="0" value="<?php echo $row['A7'];?>"></td>
       		</tr>
-			<tr class="bg-gray-100 flex w-full mb-1">
-				<td class="w-1/3 text-left p-4">SEMESTER 8</td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C8" type="text" placeholder="0.00" value="<?php echo $row['C8'];?>"></td>
-				<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A8" type="text" placeholder="0" value="<?php echo $row['A8'];?>"></td>
+			<tr class="bg-gray-100">
+        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 8</td>
+        		<td><input class="text-left py-3 px-4" name="C8" type="text" placeholder="0.00" value="<?php echo $row['C8'];?>"></td>
+        		<td><input class="text-left py-3 px-4" name="A8" type="text" placeholder="0" value="<?php echo $row['A8'];?>"></td>
       		</tr>
       		</tbody>
     		</table>
-			</div>
   		</div>
 			
 		
