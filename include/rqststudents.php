@@ -46,12 +46,6 @@
             padding-right:8px;
             padding-left:8px;
         }
-        .notify-elements{
-            background-color:#32CD32;
-            position:relative;
-            padding-right:8px;
-            padding-left:8px;
-        }
         a,.req{
             padding-left:12px;
         }
@@ -130,8 +124,8 @@
         $counter=0;
         if(mysqli_num_rows($r)>0){
             while($row=mysqli_fetch_assoc($r)){
-                $receiver_name=$row['sender_name'];
-                if(in_array($receiver_name,$added_user)){
+                $sender_name=$row['sender_name'];
+                if(in_array($sender_name,$added_user)){
                         //not added
                     }else{
                         //sender  added
@@ -139,13 +133,13 @@
                             <div class="back">
                                <?php echo'<a href="#">'.$sender_name.'</a>'?>
                                <div class="req">
-                               <?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="req-elements" name="profile">PROFILE</button></a>';?>               
+                               <?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="req-elements" name="profile">PROFILE</button></a>';?>                  
                                <?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="req-elements" name="chat">CHAT</button></a>';?>
                                </div>
                             </div>
                         <?php
                         //receiver name to array
-                        $added_user[]=$receiver_name;
+                        $added_user[]=$sender_name;
                         //$counter++;
                         
                     }

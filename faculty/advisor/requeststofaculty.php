@@ -56,19 +56,18 @@
             </div>
 			
 		</nav>
-        <!-- <div class="h-screen pb-14 bg-right bg-cover"> -->
+        <div class="h-screen pb-14 bg-right bg-cover" ">
 			
-			<!-- <div class="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center"> -->
+			<div class="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
 				
 
         <!--Left Col-->
-				<!-- <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden"> -->
+				<div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
                 
 		           
                    <div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
-				<div class=" g:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
-                <div>Approve Edit Request here:</div><br /> 
-				
+				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
+                Edit Request
 		<?php
 		    $flag=0;
 		    $query="select * from student where dept='$dept' and start_yr='$batch'";
@@ -371,9 +370,8 @@
 		    }
 		  ?>
 		      <form action="requeststofaculty.php" method="post">
-			  <br /><br /><button name="confirm" class="w-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit">Confirm</button><br /><br />
-			  <button name="discard" class="w-20 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit">Discard</button>
-				</form>
+			  <button name="confirm" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Confirm</button></a>
+			    </form>
 
 		  
 		  <?php
@@ -398,40 +396,18 @@
 			else
 			{
 			}
-			if(isset($_POST['discard']))
-			{
-				
-				echo "$username";
-	            $query = "delete from temp_student where username='$username'";
-				$query_run= mysqli_query($con,$query);
-				if($query_run)
-				{
-					$query = "update student set edit=0 where username='$username'";
-					$query_run = mysqli_query($con,$query);
-					echo '<script type="text/javascript">alert("Edit discarded successfully!!")</script>';
-				    echo "<script>window.location.href='advisor.php';</script>";
-				}
-				else
-				{
-					echo '<p class="bg-danger msg-block">Sorry, request could not be granted!</p>';
-				}
-			}
-			else
-			{
-			}
 		?>
 		  </div>
-
 	</div>
 
-				<!-- </div> -->
+				</div>
 				
 				<!--Right Col-->
-				<!-- <div class="w-full xl:w-3/5 py-6 overflow-y-hidden"> -->
+				<div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
                                         
-            <div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
-				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
-                Approve Counselor Request here:
+                                        <div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
+				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
+                Counselor Request
 		<?php
 		    $flag=0;
 		    $query="select * from request where dept='$dept' and start_yr='$batch'";
@@ -462,9 +438,8 @@
 		  ?>
 		      <form method="post" action="requeststofaculty.php">
 		      <input type="hidden" name="user" value="<?php echo $username ?>">
-			  <br /><br /><button name="forward" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Forward</button></a>
-			  <button name="reject" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Reject</button>
-				</form>
+			  <button name="forward" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Forward</button></a>
+			    </form>
 
 		  
 		  <?php
@@ -484,109 +459,15 @@
 					echo '<p class="bg-danger msg-block">Sorry, request could not be granted!</p>';
 				}
 			}
-			if(isset($_POST['reject']))
-			{
-				$username=$_POST['user'];
-				$query = "delete from request where username='$username'";
-				$query_run = mysqli_query($con,$query);
-				if($query_run)
-				{
-					$query = "update student set rqstcon='0' where username='$username';";
-					$query_run = mysqli_query($con,$query);
-					if($query_run){
-						echo '<script type="text/javascript"> alert("Rejection of request successfull.")</script>';
-						echo "<script>window.location.href='advisor.php';</script>";
-					}
-					else {
-						echo '<p class="bg-danger msg-block">Sorry, request could not be granted!</p>';
-					}
-				}
-				else
-				{
-					echo '<p class="bg-danger msg-block">Sorry, request could not be granted!</p>';
-				}
-			}
 
 		?>
 		  
 	</div>
-	
-		  </div>
-		  
-	<!-- </div> -->
-	
-				<!-- </div> -->
-				
-        
-        <!-- </div> -->
-		<!-- <div class="w-full xl:w-3/5 py-6 overflow-y-hidden"> -->
-                                        
-                <div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
-				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
-                Request counselor for a student: <br/>
-				<form action="requeststofaculty.php" method="post"  >
-                    <!-- <input type="hidden" name="username" value="<?php echo $username; ?>">
-				    <input type="hidden" name="dept" value="<?php echo $dept1; ?>"> -->
-					<div class="-mx-3 md:flex mb-6">
-				
-						<div class="md:w-full px-3 mb-6 md:mb-0">
-			
-							<br/><label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
-								username(collegeid):
-							</label>
-							<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" name="username1" type="text" >
-						</div>
-					</div>
-					<div class="mb-4">
-					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
-								why would you suggest?
-							</label>
-						<input class="shadow appearance-none border rounded w-full py-12 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="reason" type="text" placeholder="Please specify a reason for request here..." class="reason" required>
-					</div>
-					<div class="flex items-center justify-between">
-						<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="request_counselor" type="submit">
-							Request
-						</button>
-					
-                    </form>
 		  </div>
 	</div>
+				</div>
+        
+        </div>
         </div>
 </body>
 <html>
-<?php
-  if(isset($_POST["request_counselor"])){
-	$username1=$_POST['username1'];
-     $query = "update student set rqstcon=1 where username='$username1';";
-	 $query_run = mysqli_query($con,$query);
-     
-     $reason=$_POST['reason'];
-    //  $dept=$_POST['dept'];
-     $approve=1;
-     
-     $sql = "DELETE FROM request WHERE username='$username1';";
-     $stmt = mysqli_stmt_init($con);
-     if(!mysqli_stmt_prepare($stmt,$sql)){
-         echo "There was an error";
-         exit();
-     }
-     else{
-        //  mysqli_stmt_bind_param($stmt,"s",$userEmail);
-       
-         mysqli_stmt_execute($stmt);
-     }
-     echo $username1,$reason,$approve,$dept,$batch;
-     $sql = "INSERT INTO request (username,reason,dept,start_yr,approve) values (?,?,?,?,$approve);";
-     $stmt = mysqli_stmt_init($con);
-     if(!mysqli_stmt_prepare($stmt,$sql)){
-         echo "There was an error!!!";
-         exit();
-     }
-     else{
-         mysqli_stmt_bind_param($stmt,"ssss",$username1,$reason,$dept,$batch);
-         mysqli_stmt_execute($stmt);
-         echo '<script type="text/javascript">alert("Request Successful")</script>';
-         echo "<script>window.location.href='advisor.php';</script>";
-     }
-  }
-?>

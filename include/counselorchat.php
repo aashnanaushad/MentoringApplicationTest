@@ -103,13 +103,14 @@
             width:96%;
         }
         .textarea{
+            font-size:20px
             border:1px #AEB6BF;
             position:fixed;
             color:black;
-            width:75%;
+            width:65%;
             height:8%;
             bottom:8%;
-            left:7.8%;
+            left:13%;
             padding:7px;
             
         }
@@ -121,7 +122,7 @@
             height:8%;
             position:absolute;
             bottom:8%;
-            right:7.8%;
+            right:12%;
             margin-right:2px;
             
         }
