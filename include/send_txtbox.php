@@ -7,7 +7,7 @@
             //empty message
             if($_POST['text']!=''){
                 //insert
-                
+                $flag=$_POST['flag'];
                 $sender_name=$_SESSION['username'];
                 $receiver_name=$_POST['user'];
                 $message=$_POST['text'];
@@ -15,7 +15,11 @@
                 $sql='INSERT INTO message (sender_name,receiver_name,message_text,date_time) VALUES ("'.$sender_name.'","'.$receiver_name.'","'.$message.'","'.$date.'");';
                  $r=mysqli_query($con,$sql);
                  if($r){
-                     echo "<script>window.location.href='../active_chats.php?user=$receiver_name';</script>";
+                     if($flag==0){
+                        echo "<script>window.location.href='right_col.php?user=$receiver_name';</script>";
+                     }else{
+                        echo "<script>window.location.href='counselorchat.php?user=$receiver_name';</script>";
+                     }
                  }
                  else{
                     echo "error";

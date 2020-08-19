@@ -80,7 +80,7 @@ if(isset($_POST['reset-password-submit'])){
                                         else{
                                              mysqli_stmt_bind_param($stmt,"s",$tokenEmail);
                                              mysqli_stmt_execute($stmt);
-                                             echo"<script>window.location.href='../slogin.php?newpwd=passwordupdated';</script>";
+                                             echo"<script>window.location.href='../student/login.php?newpwd=passwordupdated';</script>";
                                         }
                                     }
                                 }
@@ -123,7 +123,7 @@ if(isset($_POST['reset-password-submit'])){
                                     else{
                                          mysqli_stmt_bind_param($stmt,"s",$tokenEmail);
                                          mysqli_stmt_execute($stmt);
-                                         echo"<script>window.location.href='../flogin.php?newpwd=passwordupdated';</script>";
+                                         echo"<script>window.location.href='../faculty/login.php?newpwd=passwordupdated';</script>";
                                     }
                                 }
                                 }
@@ -165,7 +165,7 @@ if(isset($_POST['reset-password-submit'])){
                                      else{
                                          mysqli_stmt_bind_param($stmt,"s",$tokenEmail);
                                          mysqli_stmt_execute($stmt);
-                                         echo"<script>window.location.href='../clogin.php?newpwd=passwordupdated';</script>";
+                                         echo"<script>window.location.href='../counselor/login.php?newpwd=passwordupdated';</script>";
                                      }
                                 }
                                 }
@@ -207,7 +207,7 @@ if(isset($_POST['reset-password-submit'])){
                                      else{
                                          mysqli_stmt_bind_param($stmt,"s",$tokenEmail);
                                          mysqli_stmt_execute($stmt);
-                                         echo"<script>window.location.href='../login.php?newpwd=passwordupdated;</script>";
+                                         echo"<script>window.location.href='../admin/login.php?newpwd=passwordupdated';</script>";
                                     }
                                  }
                                 }

@@ -1,6 +1,6 @@
 <?php
     //session_start();
-    require 'dbconfig/config.php';
+    require '../dbconfig/config.php';
 ?>
     <div id="left-col-container">
     <?php
