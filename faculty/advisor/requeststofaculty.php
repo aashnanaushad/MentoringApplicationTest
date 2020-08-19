@@ -44,7 +44,7 @@
 					Class List
 				</a>
 				<a href="requeststofaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
-					Requests
+					Advisorship
 				</a>
 				<a href="changepassword.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Change Password
@@ -463,11 +463,117 @@
 		?>
 		  
 	</div>
+<<<<<<< HEAD
 		  </div>
 	</div>
 				</div>
         
         </div>
+=======
+	
+		  </div>
+		  
+	<!-- </div> -->
+	
+				<!-- </div> -->
+				
+        
+        <!-- </div> -->
+		<!-- <div class="w-full xl:w-3/5 py-6 overflow-y-hidden"> -->
+                                        
+                <div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
+				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
+                Request counselor for a student: <br/>
+				<form action="requeststofaculty.php" method="post"  >
+					<div class="-mx-3 md:flex mb-6">
+				
+						<div class="md:w-full px-3 mb-6 md:mb-0">
+			
+							<br/><label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
+								username(collegeid):
+							</label>
+							<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" name="username1" type="text" >
+						</div>
+					</div>
+					<div class="mb-4">
+					<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
+								why would you suggest?
+							</label>
+						<input class="shadow appearance-none border rounded w-full py-12 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="reason" type="text" placeholder="Please specify a reason for request here..." class="reason" required>
+					</div>
+					<div class="flex items-center justify-between">
+						<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="request_counselor" type="submit">
+							Request
+						</button>
+					
+                    </form>
+		  </div>
+	</div>
+			
+>>>>>>> 40fa4cd9920ff8e1371b4dfba2de08c43f619eac
         </div>
+		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
+				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
+                Counsellor Feedbacks: <br/><br/>
+				<table class="text-left w-full ml-8">
+					<thead class="bg-blue-500 flex text-white w-full"> 
+					<tr class="flex w-full mb-4"> 
+  
+  							<th class="p-4 w-1/6">Student ID</th> 
+							  <th class="p-4 w-1/6">Student Name</th> 
+  							<th class="p-4 w-3/6">Feedback</th>  
+							  <th class="p-4 w-1/6"></th> 
+					</tr> 
+
+					</thead>
+					<tbody class="bg-grey-light flex flex-col items-center justify-between w-full" >
+					
+					<tr ><td><p class="text-red-600">Counselor feedbacks once closed is considered lost forever!!!</p></td></tr>
+					<?php 
+						$view_feedback="select * from request where dept='$dept' and start_yr='$batch' and approve=3";//select query for viewing users.  
+						$run=mysqli_query($con,$view_feedback);//here run the sql query.  
+				  		
+						while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
+						{ 
+
+							$user_id=$row['username'];  
+							$department=$row['dept'];  
+							$sy=$row['start_yr'];  
+							$feedback=$row['feedback'];
+							$view_name="select * from student where username='$user_id'";
+							$run1=mysqli_query($con,$view_name);
+							$row2=mysqli_fetch_array($run1);
+					?>
+						<tr class="flex w-full mb-1"> 
+							<td class="p-4 w-1/6 overflow-hidden"><?php echo $user_id; ?></td>  
+							<td class="p-4 w-1/6 overflow-hidden"><?php echo $row2["name"]; ?></td>  
+							<td class="p-4 w-3/6 overflow-hidden"><?php echo $feedback; ?></td>  
+							<form action="requeststofaculty.php" method="post">
+								<td class="p-4 w-1/6 overflow-hidden"><a href="requeststofaculty.php"><button type="submit" class="w-20 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="notifyclose<?php echo $user_id; ?>">Close </button></a></td>
+							</form>
+						</tr>
+						<?php 
+							if(isset($_POST["notifyclose$user_id"]))
+							{
+								$query="delete from request where username='$user_id'";
+								$query_run = mysqli_query($con,$query);
+								if($query_run)
+								{
+										  echo '<script type="text/javascript">alert("Notification closed successfully!")</script>';
+										  echo "<script>window.location.href='requeststofaculty.php';</script>";
+								}
+								else
+								{
+									echo '<script type="text/javascript">alert("DB error")</script>';
+								}
+							}
+						
+						?>
+						<?php }?>
+					</tbody>
+				</table>
+		  		</div>
+		</div>
+		</div>
 </body>
 <html>
