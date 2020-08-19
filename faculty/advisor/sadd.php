@@ -22,12 +22,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class=" bg-blue-400 ">
-<nav class=" flex items-center justify-between flex-wrap bg-white ">
-		<div class="flex items-center flex-shrink-0 text-blue-600 mr- ">
-				<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $row1['name'];?>)</span>
+<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
+		<div class="flex items-center flex-shrink-0 text-blue-600 mr-6 ">
+		<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $row1['name'];?>)</span>
 		</div>
 
 		<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+				
 				<div class="text-sm lg:flex-grow">
 				<a href="advisor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Profile
@@ -54,18 +55,19 @@
             </div>
 			
 		</nav>
-	<div class=" px-3 py-20 pt-20 bg-blue-400 flex justify-center">
-				<div class="lg:flex bg-white shadow-md rounded px-20 pt-20 pb-20 mb-20 " >
-			<div class="bg-white shadow-md rounded px-1 pt-1 pb-1 mb-4 flex flex-col my-2">
+		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
+				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
+			<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
 		<form action="sadd.php" method="post">
-		<div class="-mx-3 md:flex mb-">
+		
+		<div class="-mx-3 md:flex mb-6">
 				
-			<div class="md:w-1/2 px-3 mb-1 md:mb-0">
+			<div class="md:w-1/2 px-3 mb-6 md:mb-0">
 			
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
-				Username
+				Username <div class="inline text-red-700">*</div>
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" name="username" type="text" placeholder="XXX00XX000">
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" name="username" type="text" placeholder="XXX00XX000" required>
 			</div>
 			<div class="md:w-1/2 px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
@@ -74,8 +76,8 @@
 			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="name" type="text" placeholder="example">
 			</div>
 		</div>
-		<div class="-mx-3 md:flex mb-">
-			<div class="md:w-full px-3">
+		<div class="-mx-3 md:flex mb-6">
+			<div class="md:w-full px-3 mb-6 md:mb-0">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
 				Email ID
 			</label>
@@ -83,9 +85,9 @@
 
 			</div>
 		</div>
-		<div class="-mx-3 md:flex mb-">
+		<div class="-mx-3 md:flex mb-6">
 			
-			<div class="md:w-full px-3">
+			<div class="md:w-full px-3 mb-6 md:mb-0">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
 				Address
 			</label>
@@ -93,13 +95,13 @@
 
 			</div>
 		</div>
-		<div class="-mx-3 md:flex mb-">
+		<div class="-mx-3 md:flex mb-6">
 			
-			<div class="md:w-1/2 px-3 mb-1 md:mb-0">
-			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-city">
-				DOB
+			<div class="md:w-1/2 px-3 mb-6 md:mb-0">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-dateofbirth">
+				DOB <div class="inline text-red-700">*</div>
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="dateofbirth"  type="text" placeholder="0000-00-00" >
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="dateofbirth"  type="text" placeholder="0000-00-00" required>
 			</div>
 			<div class="md:w-1/2 px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
@@ -109,9 +111,9 @@
 			</div>
 		</div>
 
-        <div class="-mx-3 md:flex mb-">
+        <div class="-mx-3 md:flex mb-6">
 				
-			<div class="md:w-1/2 px-3 mb-1 md:mb-0">
+			<div class="md:w-1/2 px-3 mb-6 md:mb-0">
    
             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
 				Gender
@@ -121,25 +123,25 @@
             <input name="gender" type="radio" id="other" value="other"><label for="other">Other</label><br>
 		    </div>
 		</div>
-		<div class="-mx-3 md:flex mb-">
+		<div class="-mx-3 md:flex mb-6">
 				
-			<div class="md:w-1/2 px-3 mb-1 md:mb-0">
+			<div class="md:w-1/2 px-3 mb-6 md:mb-0">
 			
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
 				Father's Name
 			</label>
 			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" name="father" type="text" placeholder="Name">
 			</div>
-			<div class="md:w-1/2 px-3">
+			<div class="md:w-1/2 px-3 ">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				Occupation
 			</label>
 			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="focc" type="text" placeholder="Occupation">
 			</div>
 		</div>
-		<div class="-mx-3 md:flex mb-">
+		<div class="-mx-3 md:flex mb-6">
 				
-			<div class="md:w-1/2 px-3 mb-1 md:mb-0">
+			<div class="md:w-1/2 px-3 mb-6 md:mb-0">
 			
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
 				Mother's Name
@@ -155,37 +157,39 @@
 		</div>
         
 		<div class="container">
-            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
+            
+			<!-- <div class="shadow overflow-hidden rounded border-b border-gray-200"> -->
+			<div class="-mx-3 md:flex mb-6">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
 			   Academic details
 			</label>
-			<div class="shadow overflow-hidden rounded border-b border-gray-200">
-             <table class="min-w-full bg-white">
-              <thead class="bg-gray-800 text-white">
-            <tr>
-                <th class="w-1/20 text-left py-3 px-4 ">QUALIFICATION</th>
-                <th class="w-1/20 text-left py-3 px-4 ">NAME OF SCHOOL & SYLLABUS</th>
-                <th class="w-1/20 text-left py-3 px-4 ">TOTAL MARKS</th>
-                <th class="w-1/20 text-left py-3 px-4 ">PERCENTAGE</td>
+             <table class="text-left w-full ml-8">
+              <thead class="bg-gray-800 flex text-white w-full">
+            <tr class="flex w-full mb-4">
+                <th class="w-1/4 p-4">QUALIFICATION</th>
+                <th class="w-1/4 p-4">NAME OF SCHOOL & SYLLABUS</th>
+                <th class="w-1/4 p-4">TOTAL MARKS</th>
+                <th class="w-1/4 p-4">PERCENTAGE</td>
             </tr>
             </thead>
-            <tbody class="text-gray-700">
-            <tr>
-                <td class="w-1/20 text-left py-3 px-4">GRADE X</td>
-       			<td class="w-1/20 text-left py-3 px-4"><input name="school10" type="text" placeholder="Name of school,Syllabus"></td>
-        		<td class="w-1/20 text-left py-3 px-4"><input name="mark10" type="text" placeholder="Total Marks/Grade[X]"></td>
-        		<td class="w-1/20 text-left py-3 px-4"><input name="perc10" type="text" placeholder="Percentage[X]"></td>
+            <tbody class="text-grey-light flex flex-col items-center justify-between w-full" >
+            <tr class="flex w-full mb-1">
+                <td class="w-1/4 text-left p-4">GRADE X</td>
+       			<td class="w-1/4 text-left p-4"><input name="school10" type="text" placeholder="Name of school,Syllabus" class="w-2/3"></td>
+        		<td class="w-1/4 text-left p-4"><input name="mark10" type="text" placeholder="Total Marks/Grade[X]" class="w-2/3"></td>
+        		<td class="w-1/4 text-left p-4"><input name="perc10" type="text" placeholder="Percentage[X]" class="w-2/3"></td>
       		</tr>
-      		<tr class="bg-gray-100">
-        		<td class="w-1/20 text-left py-3 px-4">GRADE XII</td>
-        		<td class="w-1/20 text-left py-3 px-4"><input name="school12" type="text" placeholder="Name of school,Syllabus"></td>
-        		<td class="w-1/20 text-left py-3 px-4"><input name="mark12" type="text" placeholder="Total Marks/Grade[XII]"></td>
-        		<td class="w-1/20 text-left py-3 px-4"><input name="perc12" type="text" placeholder="Percentage[XII]"></td>
+      		<tr class="flex w-full mb-1">
+        		<td class="w-1/4 text-left p-4">GRADE XII</td>
+        		<td class="w-1/4 text-left p-4"><input name="school12" type="text" placeholder="Name of school,Syllabus" class="w-2/3"></td>
+        		<td class="w-1/4 text-left p-4"><input name="mark12" type="text" placeholder="Total Marks/Grade[XII]" class="w-2/3"></td>
+        		<td class="w-1/4 text-left p-4"><input name="perc12" type="text" placeholder="Percentage[XII]" class="w-2/3"></td>
       		</tr>
-      		<tr>
-        		<td class="w-1/20 text-left py-3 px-4">Any Other</td>
-       		 	<td class="w-1/20 text-left py-3 px-4"><input name="othername" type="text" placeholder="Name of school,Syllabus"></td>
-        		<td class="w-1/20 text-left py-3 px-4"><input name="othermark" type="text" placeholder="Total Marks/Grade"></td>
-        		<td class="w-1/20 text-left py-3 px-4"><input name="otherperc" type="text" placeholder="Percetage"></td>
+      		<tr class="flex w-full mb-1">
+        		<td class="w-1/4 text-left p-4">Any Other</td>
+       		 	<td class="w-1/4 text-left p-4"><input name="othername" type="text" placeholder="Name of school,Syllabus" class="w-2/3"></td>
+        		<td class="w-1/4 text-left p-4"><input name="othermark" type="text" placeholder="Total Marks/Grade" class="w-2/3"></td>
+        		<td class="w-1/4 text-left p-4"><input name="otherperc" type="text" placeholder="Percetage" class="w-2/3"></td>
       		</tr>
     		</tbody>
     		</table>
@@ -193,63 +197,65 @@
 	</div>
     
 	<div class="md:px-32 py w-full">
+	<div class="-mx-3 md:flex mb-6">
             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
 				Semester wise performance
 			</label>
-            <div class="shadow overflow-hidden rounded border-b border-gray-200">
-            <table class="min-w-full bg-white">
-            <thead class="bg-gray-800 text-white">
-            <tr>
+            <!-- <div class="shadow overflow-hidden rounded "> -->
+            <table class="w-full ml-8">
+            <thead class="bg-gray-800 text-white w-full flex">
+            <tr class="flex w-full mb-4">
                 <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">SEMESTER</th>
-                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">CGPA</th>
-                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">NO: OF ARREARS</th>
+                <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">CGPA</th>
+                <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">NO: OF ARREARS</th>
             </tr>
             </thead>
-            <tbody class="text-gray-700">
-            <tr>
-                <td class="w-1/3 text-left py-3 px-4">SEMESTER 1</td>
-       			<td><input class="text-left py-3 px-4" name="C1" type="text" placeholder="0.00"></td>
-        		<td><input class="text-left py-3 px-4" name="A1" type="text" placeholder="0"></td>
+            <tbody class="text-grey-700 flex flex-col items-center justify-between w-full" >
+            <tr class="flex w-full mb-1">
+                <td class="w-1/3 text-left p-4">SEMESTER 1</td>
+       			<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C1" type="text" placeholder="0.00"></td>
+        		<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A1" type="text" placeholder="0"></td>
       		</tr>
-      		<tr class="bg-gray-100">
-        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 2</td>
-        		<td><input class="text-left py-3 px-4" name="C2" type="text" placeholder="0.00"></td>
-        		<td><input class="text-left py-3 px-4" name="A2" type="text" placeholder="0"></td>
+      		<tr class="bg-gray-100 flex w-full mb-1">
+        		<td class="w-1/3 text-left p-4">SEMESTER 2</td>
+        		<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C2" type="text" placeholder="0.00"></td>
+        		<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A2" type="text" placeholder="0"></td>
       		</tr>
-			<tr>
-                <td class="w-1/3 text-left py-3 px-4">SEMESTER 3</td>
-       			<td><input class="text-left py-3 px-4" name="C3" type="text" placeholder="0.00"></td>
-        		<td><input class="text-left py-3 px-4" name="A3" type="text" placeholder="0"></td>
+			  <tr class="flex w-full mb-1">
+                <td class="w-1/3 text-left p-4">SEMESTER 3</td>
+       			<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C3" type="text" placeholder="0.00"></td>
+        		<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A3" type="text" placeholder="0"></td>
       		</tr>
-			<tr class="bg-gray-100">
-        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 4</td>
-        		<td><input class="text-left py-3 px-4" name="C4" type="text" placeholder="0.00"></td>
-        		<td><input class="text-left py-3 px-4" name="A4" type="text" placeholder="0"></td>
+			<tr class="bg-gray-100 flex w-full mb-1">
+        		<td class="w-1/3 text-left p-4">SEMESTER 4</td>
+        		<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C4" type="text" placeholder="0.00"></td>
+        		<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A4" type="text" placeholder="0"></td>
       		</tr>
-			<tr>
-                <td class="w-1/3 text-left py-3 px-4">SEMESTER 5</td>
-       			<td><input class="text-left py-3 px-4" name="C5" type="text" placeholder="0.00"></td>
-        		<td><input class="text-left py-3 px-4" name="A5" type="text" placeholder="0"></td>
+			<tr class="flex w-full mb-1">
+                <td class="w-1/3 text-left p-4">SEMESTER 5</td>
+       			<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C5" type="text" placeholder="0.00"></td>
+        		<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A5" type="text" placeholder="0"></td>
       		</tr>
-			<tr class="bg-gray-100">
-        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 6</td>
-        		<td><input class="text-left py-3 px-4" name="C6" type="text" placeholder="0.00"></td>
-        		<td><input class="text-left py-3 px-4" name="A6" type="text" placeholder="0"></td>
+			<tr class="bg-gray-100 flex w-full mb-1">
+        		<td class="w-1/3 text-left p-4">SEMESTER 6</td>
+        		<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C6" type="text" placeholder="0.00"></td>
+        		<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A6" type="text" placeholder="0"></td>
       		</tr>
-			<tr>
-                <td class="w-1/3 text-left py-3 px-4">SEMESTER 7</td>
-       			<td><input class="text-left py-3 px-4" name="C7" type="text" placeholder="0.00"></td>
-        		<td><input class="text-left py-3 px-4" name="A7" type="text" placeholder="0"></td>
+			<tr class="flex w-full mb-1">
+                <td class="w-1/3 text-left p-4">SEMESTER 7</td>
+       			<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C7" type="text" placeholder="0.00"></td>
+        		<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A7" type="text" placeholder="0"></td>
       		</tr>
-			<tr class="bg-gray-100">
-        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 8</td>
-        		<td><input class="text-left py-3 px-4" name="C8" type="text" placeholder="0.00"></td>
-        		<td><input class="text-left py-3 px-4" name="A8" type="text" placeholder="0"></td>
+			<tr class="bg-gray-100 flex w-full mb-1">
+        		<td class="w-1/3 text-left p-4">SEMESTER 8</td>
+        		<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="C8" type="text" placeholder="0.00"></td>
+        		<td class="w-1/3 text-left p-4"><input class="w-2/3 text-left p-4" name="A8" type="text" placeholder="0"></td>
       		</tr>
       		</tbody>
     		</table>
   		</div>
 	</div>
+		
 		<div class="flex items-center justify-between float-right">
 						<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="sadd" type="submit">
 							Add
@@ -303,13 +309,14 @@
 				@$end_yr=$batch+$end;
 				@$edit=0;
 				@$reqcon=0;
-				$dept=$dept;
+				@$dept=$dept;
+				@$mentor=NULL;
 				
 				if (empty($name)){
 				    $name=" ";
 				}
 				if (empty($dateofbirth)){
-				    $dob='00000000';
+				    $dateofbirth='0000-00-00';
 				}
 				if (empty($address)){
 				    $address=" ";
@@ -426,8 +433,8 @@
 						else
 						{
 							
-							echo $reqcon ;
-							$query = "insert into student values('$name','$username','$dept','$start_yr','$end_yr','$dateofbirth','$address','$email','$password','$edit','$reqcon','$phone_no','$gender','$father','$focc','$mother','$mocc','$school10','$mark10','$perc10','$school12','$mark12','$perc12','$othername','$othermark','$otherperc','$C1','$A1','$C2','$A2','$C3','$A3','$C4','$A4','$C5','$A5','$C6','$A6','$C7','$A7','$C8','$A8')";
+							// echo $reqcon ;
+							$query = "insert into student values('$name','$username','$dept','$start_yr','$end_yr','$dateofbirth','$address','$email','$password','$mentor','$edit','$reqcon','$phone_no','$gender','$father','$focc','$mother','$mocc','$school10','$mark10','$perc10','$school12','$mark12','$perc12','$othername','$othermark','$otherperc','$C1','$A1','$C2','$A2','$C3','$A3','$C4','$A4','$C5','$A5','$C6','$A6','$C7','$A7','$C8','$A8')";
 							$query_run = mysqli_query($con,$query);
 							if($query_run)
 							{

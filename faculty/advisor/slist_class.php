@@ -11,7 +11,7 @@
 	$result=mysqli_query($con,$query);
 	$row1=mysqli_fetch_array($result);
 	$dept1=$row1['dept'];
-	$batch=$row1['batch'];
+    $batch=$row1['batch'];
 ?>
 
 <html>  
@@ -36,7 +36,9 @@
             <th class="p-4 w-1/6">Year of Join</th>  
             <th class="p-4 w-1/6">Year of Passout</th>  
             <th class="p-4 w-1/6">Email</th>
-            <th class="p-4 w-1/6">Edit User</th>  
+            <th class="p-4 w-1/6">Edit User</th>
+            <th class="p-4 w-1/6">Mentor Id</th>
+            <th class="p-4 w-1/6">Assign/Deassign</th>  
         </tr>  
         </thead>  
         <tbody class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full" style="height: 50vh;">
@@ -52,6 +54,7 @@
             $sy=$row['start_yr'];  
             $ey=$row['end_yr'];
             $user_email=$row['email']; 
+            $mentor=$row['mentorship'];
   
         ?>  
         <form action="slist_class.php" method="post">
@@ -61,8 +64,22 @@
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $department;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $sy;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $ey;  ?></td>
-            <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_email; ?></td>
+            <td class="p-4 w-1/6 overflow-x-scroll overflow-y-hidden"><?php echo $user_email; ?></td>
             <td class="p-4 w-1/6 overflow-hidden"><a href="slist_class.php"><button class="text-red-400" type="submit" name="<?php echo $user_id; ?>">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
+            </form>
+            <form action="slist_class.php" method="post">
+            <?php  if ($mentor == NULL) { ?>
+            <td class="p-4 w-1/6 overflow-hidden"><input type="text" name="mentor"  required/></td>  
+            <?php }
+                else { ?>
+            <td class="p-4 w-1/6 overflow-hidden"><?php echo $mentor;  ?></td>
+            <?php } ?>
+            <?php  if ($mentor == NULL) { ?>
+            <td class="p-4 w-1/6 overflow-hidden"><a href="slist_class.php"><button class="text-green-400" type="submit"  name="assign<?php echo $user_id; ?>">Assign</button></a></td>
+            <?php }
+                else { ?>
+            <td class="p-4 w-1/6 overflow-hidden"><a href="slist_class.php"><button class="text-red-400" type="submit"  name="deassign<?php echo "$user_id"; ?>">DeAssign</button></a></td>
+                <?php } ?>
         </tr>  
         </form>
         
@@ -76,6 +93,36 @@
 			    {
 					      echo '<script type="text/javascript">alert("Student deleted successfully ")</script>';
 					        echo "<script>window.location.href='advisor.php';</script>";
+				}
+			    else
+			    {
+			        echo '<script type="text/javascript">alert("DB error")</script>';
+			    }
+            }
+            if(isset($_POST["assign$user_id"]))
+			{
+				$mentor=$_POST['mentor'];
+				$query="update student set mentorship='$mentor' where username='$user_id'";
+			    $query_run = mysqli_query($con,$query);
+			    if($query_run)
+			    {
+					      echo '<script type="text/javascript">alert("Mentor assigned successfully ")</script>';
+					        echo "<script>window.location.href='slist_class.php';</script>";
+				}
+			    else
+			    {
+			        echo '<script type="text/javascript">alert("DB error")</script>';
+			    }
+            }
+            if(isset($_POST["deassign$user_id"]))
+			{
+				// $mentor=$_POST['mentor'];
+				$query="update student set mentorship=NULL where username='$user_id'";
+			    $query_run = mysqli_query($con,$query);
+			    if($query_run)
+			    {
+					      echo '<script type="text/javascript">alert("Mentor de-assigned successfully ")</script>';
+					        echo "<script>window.location.href='slist_class.php';</script>";
 				}
 			    else
 			    {
