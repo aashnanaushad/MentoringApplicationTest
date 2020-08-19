@@ -525,8 +525,6 @@
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
                 Request counselor for a student: <br/>
 				<form action="requeststofaculty.php" method="post"  >
-                    <!-- <input type="hidden" name="username" value="<?php echo $username; ?>">
-				    <input type="hidden" name="dept" value="<?php echo $dept1; ?>"> -->
 					<div class="-mx-3 md:flex mb-6">
 				
 						<div class="md:w-full px-3 mb-6 md:mb-0">
@@ -551,7 +549,71 @@
                     </form>
 		  </div>
 	</div>
+			
         </div>
+		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
+				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
+                Counsellor Feedbacks: <br/><br/>
+				<table class="text-left w-full ml-8">
+					<thead class="bg-blue-500 flex text-white w-full"> 
+					<tr class="flex w-full mb-4"> 
+  
+  							<th class="p-4 w-1/6">Student ID</th> 
+							  <th class="p-4 w-1/6">Student Name</th> 
+  							<th class="p-4 w-3/6">Feedback</th>  
+							  <th class="p-4 w-1/6"></th> 
+					</tr> 
+
+					</thead>
+					<tbody class="bg-grey-light flex flex-col items-center justify-between w-full" >
+					
+					<tr ><td><p class="text-red-600">Counselor feedbacks once closed is considered lost forever!!!</p></td></tr>
+					<?php 
+						$view_feedback="select * from request where dept='$dept' and start_yr='$batch' and approve=3";//select query for viewing users.  
+						$run=mysqli_query($con,$view_feedback);//here run the sql query.  
+				  		
+						while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
+						{ 
+
+							$user_id=$row['username'];  
+							$department=$row['dept'];  
+							$sy=$row['start_yr'];  
+							$feedback=$row['feedback'];
+							$view_name="select * from student where username='$user_id'";
+							$run1=mysqli_query($con,$view_name);
+							$row2=mysqli_fetch_array($run1);
+					?>
+						<tr class="flex w-full mb-1"> 
+							<td class="p-4 w-1/6 overflow-hidden"><?php echo $user_id; ?></td>  
+							<td class="p-4 w-1/6 overflow-hidden"><?php echo $row2["name"]; ?></td>  
+							<td class="p-4 w-3/6 overflow-hidden"><?php echo $feedback; ?></td>  
+							<form action="requeststofaculty.php" method="post">
+								<td class="p-4 w-1/6 overflow-hidden"><a href="requeststofaculty.php"><button type="submit" class="w-20 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="notifyclose<?php echo $user_id; ?>">Close </button></a></td>
+							</form>
+						</tr>
+						<?php 
+							if(isset($_POST["notifyclose$user_id"]))
+							{
+								$query="delete from request where username='$user_id'";
+								$query_run = mysqli_query($con,$query);
+								if($query_run)
+								{
+										  echo '<script type="text/javascript">alert("Notification closed successfully!")</script>';
+										  echo "<script>window.location.href='requeststofaculty.php';</script>";
+								}
+								else
+								{
+									echo '<script type="text/javascript">alert("DB error")</script>';
+								}
+							}
+						
+						?>
+						<?php }?>
+					</tbody>
+				</table>
+		  		</div>
+		</div>
+		</div>
 </body>
 <html>
 <?php
