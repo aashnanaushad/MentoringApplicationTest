@@ -194,14 +194,7 @@
 							Back
 						</button></a>'; ?>
 						<?php
-					}else{
-						?>
-					<div class="flex items-center justify-between">
-						<a href="edit.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
-							Edit Profile
-						</button></a>
-						<?php
-					}
+					} 
 					?>
 					</div>
 					</div>
