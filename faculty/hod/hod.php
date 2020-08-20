@@ -7,6 +7,15 @@
      }
 	 $username=$_SESSION['username'];
 	$query="select * from faculty where username='$username'";
+	$qry="SELECT * FROM student WHERE mnt='$username'";
+	//echo $qry;
+	$flag =FALSE;
+	$r=mysqli_query($con,$qry);
+		 //if($r){
+		  //if(mysqli_num_rows($r)>0){
+			// $flag=TRUE;
+		 // }
+		//}
 	$query_run = mysqli_query($con,$query);
 	if($query_run)
 	{
@@ -30,12 +39,15 @@
 				<div class="text-sm lg:flex-grow">
 				<a href="hod.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Profile
-				</a>
+					</a>
 				<a href="request_fwdhod.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Requests
 				</a>
 				<a href="assignadvisor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Assign advisor
+				</a>
+				<a href="../mentor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				Mentorship
 				</a>
 				<a href="viewfaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					List Faculty
@@ -60,7 +72,7 @@
 			    {
 			        $row=$query_run->fetch_assoc();
 			        $result=$row['name'];
-			        $dept=$row['dept'];
+					$dept=$row['dept'];
 			        $result1=$row['qualification'];
 			        $result2=$row['designation'];
 			        $result3=$row['email'];
@@ -72,7 +84,6 @@
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
 				<div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
 					<img src="../../imgs/avatar.png" />
-
 				</div>
 				<div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
 					<div class="mb-4">
