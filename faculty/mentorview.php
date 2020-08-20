@@ -7,13 +7,12 @@
 		$_POST['text'] = $_POST['text'];
 		$username=$_POST['text'];
 		$flag=1;
-	}else{
-		if(!isset($_SESSION['username'])){
-    			echo "<script>window.location.href='../index.php';</script>";
-		}else{
-			$username=$_SESSION['username'];
-		}
+	}if(isset($_GET['user'])){
+		$_GET['user'] = $_GET['user'];
+		$username=$_GET['user'];
+		$flag=1;
 	}
+	
 			    
 			    $query="select * from student where username='$username'";
 			    $query_run = mysqli_query($con,$query);
@@ -194,7 +193,14 @@
 							Back
 						</button></a>'; ?>
 						<?php
-					} 
+					}else{
+						?>
+					<div class="flex items-center justify-between">
+						<a href="edit.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
+							Edit Profile
+						</button></a>
+						<?php
+					}
 					?>
 					</div>
 					</div>
