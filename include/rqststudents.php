@@ -78,6 +78,10 @@
             
             color:white;
         }
+        #new{
+            padding:4px;
+            border-radius:50%;
+        }
     </style>
     </head>
     <body>
@@ -89,77 +93,69 @@
     <?php
 
         //echo $user;
-        $sql='SELECT `this_session` FROM `notification` where username="'.$user.'";';
+        $a1=2;
+        $sql='SELECT distinct username FROM request where approve="'.$a1.'";';
         //echo $sql;
         $result=mysqli_query($con,$sql) or die(mysqli_error($con));
         if($result){
             if(mysqli_num_rows($result)>0){
                 while($row=mysqli_fetch_assoc($result)){
-                    $last_session=$row['this_session'];
-                    $sql='UPDATE notification
-                    SET  this_session ="'.$this_session.'"
-                    WHERE username="'.$_SESSION['username'].'";';
+                    $username=$row['username'];
+                    $sql='SELECT username from reply where username="'.$username.'";';
                     $r=mysqli_query($con,$sql);
-                    if (!$r){
-                        echo 'database error !!';
-                    }
+                    if ($r){
+                        if(mysqli_num_rows($r)==0){
+                            $sender_name=$username;
+                                ?>
+                            <div class="back">
+                                <?php echo'<a href="#">'.$sender_name.'</a>'?>
+                                <div class="req">
+                                <?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="req-elements" name="profile">PROFILE</button></a>';?>                  
+                                <?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="req-elements" name="chat">CHAT</button></a>';?>
+                                <button class="req-elements" id="new" name="chat" style="background-color:#00FF00;">new</button>
+                                </div>
+                             </div>   
+                                <?php
+                        
+                         
+                            } 
+                        }
                 }
-            }else{
-                //echo $_SESSION['username'];
-                $sql='INSERT into notification VALUES ("'.$_SESSION['username'].'","'.$this_session.'");';
-                $last_session="2010-01-01 00:00:00";
-                $r=mysqli_query($con,$sql);
-                if(!$r){
-                    echo "database error !!!";
-                }
-        }
         
-        }
-        $sql='SELECT distinct `sender_name` FROM `message` WHERE `receiver_name`="'.$_SESSION['username'].'" 
-        AND date_time BETWEEN "'.$last_session.'" AND "'.$this_session.'";';
+            }
+        }  
+        $a2=1;
+        $sql='SELECT distinct `username` FROM `reply` WHERE reply="'.$a2.'";';
         //
         $r=mysqli_query($con,$sql);
         if($r){
-        $added_user=array();
-        $counter=0;
         if(mysqli_num_rows($r)>0){
             while($row=mysqli_fetch_assoc($r)){
-                $sender_name=$row['sender_name'];
-                if(in_array($sender_name,$added_user)){
-                        //not added
-                    }else{
-                        //sender  added
+                $sender_name=$row['username'];
                         ?>
                             <div class="back">
                                <?php echo'<a href="#">'.$sender_name.'</a>'?>
                                <div class="req">
                                <?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="req-elements" name="profile">PROFILE</button></a>';?>                  
                                <?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="req-elements" name="chat">CHAT</button></a>';?>
+                               <button class="req-elements" id="new" name="chat" style="background-color:#0000FF;">msg</button>
                                </div>
                             </div>
                         <?php
-                        //receiver name to array
-                        $added_user[]=$sender_name;
-                        //$counter++;
-                        
-                    }
-            }
+                    
+                }
                 
-       }
-    }
-    else{
+            }
+        }else{
         echo "error";
-    }
-    $sql='SELECT distinct  `sender_name` FROM `message` WHERE `receiver_name`="'.$_SESSION['username'].'" ;'; 
+        }
+    $a3=0;
+    $sql='SELECT distinct  `username` FROM `reply` WHERE reply="'.$a3.'";'; 
     $r=mysqli_query($con,$sql);
     if($r){
         if(mysqli_num_rows($r)>0){
             while($row=mysqli_fetch_assoc($r)){
-                $sender_name=$row['sender_name'];
-                if(in_array($sender_name,$added_user)){
-                        //not added
-                    }else{
-                        //sender  added
+                $sender_name=$row['username'];
                     ?>
                         <div class="back">
                                <?php echo'<a href="#">'.$sender_name.'</a>'?>
@@ -169,8 +165,7 @@
                                </div>
                             </div>
                         <?php
-                        $added_user[]=$sender_name;
-                    }
+                    
                 }
             }
     }
