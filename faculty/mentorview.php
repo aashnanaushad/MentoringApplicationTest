@@ -7,13 +7,12 @@
 		$_POST['text'] = $_POST['text'];
 		$username=$_POST['text'];
 		$flag=1;
-	}else{
-		if(!isset($_SESSION['username'])){
-    			echo "<script>window.location.href='../index.php';</script>";
-		}else{
-			$username=$_SESSION['username'];
-		}
+	}if(isset($_GET['user'])){
+		$_GET['user'] = $_GET['user'];
+		$username=$_GET['user'];
+		$flag=1;
 	}
+	
 			    
 			    $query="select * from student where username='$username'";
 			    $query_run = mysqli_query($con,$query);
