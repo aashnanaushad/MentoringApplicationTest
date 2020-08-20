@@ -230,7 +230,7 @@
             }
             ?>
                     
-                    <a href="../counselor/home.php"><button class="chome" type="button">HOME</button></a>
+                    <a href="../include/rqststudents.php"><button class="chome" type="button">HOME</button></a>
                     <button onclick="myFunction()" class="chome" type="button" style="border = 1px solid red;background-color=#FADBD8;">END</button>
          </div> 
          <div id="feedback">
