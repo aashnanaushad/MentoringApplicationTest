@@ -115,7 +115,7 @@
 					<br>
 					<div class="flex items-center justify-between">
 						 
-					<?php echo'<a href="view.php?user='.$username.'"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
+					<?php echo'<a href="mentorview.php?user='.$username.'"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
 							Back
 					    </button></a>';?>
 					</div>
