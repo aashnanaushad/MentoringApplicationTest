@@ -3,9 +3,9 @@
 	require_once('../dbconfig/config.php');
 	$flag=0;
 	$username;
-	if(isset($_GET['text'])){
-		$_GET['text'] = $_GET['text'];
-		$username=$_GET['text'];
+	if(isset($_GET['user'])){
+		$_GET['user'] = $_GET['user'];
+		$username=$_GET['user'];
 		$flag=1;
 	}else{
 		if(!isset($_SESSION['username'])){
@@ -114,15 +114,11 @@
 					<br>
 					<br>
 					<div class="flex items-center justify-between">
-						<form action="../faculty/mentorview.php" method="post">
-						<input type="hidden" name="text" value="<?php echo $username; ?>">
-                        <button type="submit"class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >Back</button>
-
-
-						</form>
-						<a href="mentorview.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
+						 
+					<?php echo'<a href="view.php?user='.$username.'"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
 							Back
-					    </button></a>
+					    </button></a>';?>
+					</div>
 					</div>
 
 				</div>
