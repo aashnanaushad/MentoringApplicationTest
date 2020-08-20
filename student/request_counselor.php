@@ -86,17 +86,48 @@
  
                              if($approve==2){
                                  //chat active
-                                 ?>
-                                    <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="../chat/active_chats.php">
-                                     <form action="../include/right_col.php" method="post">
-                                         </br>
-                                         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-bottom" id="chat" name="request_counselor" type="submit">CHAT!</button>
-                                     </form>
-                                    </a>
-                                    </div>
-                                 <?php
-                                
-                                 }
+                                 $sql='SELECT `reply` FROM `reply` WHERE username="'.$username.'";';
+                                 $r=mysqli_query($con,$sql);
+                                 if($r){
+                                    if(mysqli_num_rows($r)>0){
+                                        while($row=mysqli_fetch_assoc($r)){
+                                            $reply=$row['reply'];
+                                            if($reply=='1'){
+                                     ?>
+                                        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="../include/right_col.php">
+                                        <form action="../include/right_col.php" method="post">
+                                           </br>
+                                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-bottom" id="chat" name="request_counselor" type="submit">CHAT!</button>
+                                         </form>
+                                        </a>
+                                        </div>
+                                    <?php
+                                        }else{
+                                            ?>
+                                        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="../include/right_col.php">
+                                        <form action="../include/right_col.php" method="post">
+                                           </br>
+                                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-bottom" id="chat" name="request_counselor" type="submit" style="background-color:#00FF00;">CHAT!</button>
+                                         </form>
+                                        </a>
+                                        </div>    
+                                            <?php
+                                        }
+                                        }
+                                    }else{
+                                        ?>
+                                        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="../include/right_col.php">
+                                        <form action="../include/right_col.php" method="post">
+                                           </br>
+                                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-bottom" id="chat" name="request_counselor" type="submit">CHAT!</button>
+                                         </form>
+                                        </a>
+                                        </div>
+                                    <?php
+
+                                    }
+                                    }
+                                }
                              
                          }
                      }

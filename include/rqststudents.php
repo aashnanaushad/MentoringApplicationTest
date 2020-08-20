@@ -60,7 +60,7 @@
             overflow:auto;
             
         }
-        .white{
+        .white1{
             font-weight:250;
             width:94%;
             height:50px;
@@ -69,26 +69,39 @@
             margin-left:1px;
             margin-top:2px;
             overflow:auto;
-            background-color:#1F2335;
-            color:white;
-        }
-        .white:hover{
-            background-color:#1C1C1C;
-            color:white;
-            
+            background-color:blue;
             color:white;
         }
         #new{
             padding:4px;
             border-radius:50%;
         }
+        .back1{
+            float:right;
+            position:relative;
+            right:8px;
+            bottom:10px;
+            width:75px;
+            height:30px;
+            border:2px solid white;
+            border-sizing:border-box;
+            background:blue;
+            color:white;
+            padding-left:9px;
+            font-size:12px;
+            margin-left:7px;
+        }
+        .txt{
+             top:8px;
+        }
     </style>
     </head>
     <body>
     <div id="left">
     <div id="left-col-container">
-    <div class="white">
-        <p align="center">REQUESTED STUDENTS</p>
+    <div class="white1" style="height:5%;">
+        <h1 style="text-align:center" class="txt">REQUESTED STUDENTS</h1>
+        <a href="../counselor/home.php"><button class="back1" type="button">back</button></a>
     </div>
     <?php
 

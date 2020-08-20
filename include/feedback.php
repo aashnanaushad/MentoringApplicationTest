@@ -18,9 +18,13 @@
             AND `receiver_name`="'.$_SESSION['username'].'";';
             $result=mysqli_query($con,$sql);
             if($result){
-                echo "<script>window.location.href='rqststudents.php';</script>";
-            }else{
-                echo "database error!";
+                $sql='DELETE FROM `reply` where username="'.$username.'";';
+                $result=mysqli_query($con,$sql);
+                if($result){
+                 echo "<script>window.location.href='rqststudents.php';</script>";
+                }else{
+                 echo "database error!";
+                 }
         }
     }else{
             echo "database error!!";
