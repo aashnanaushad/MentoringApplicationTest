@@ -20,6 +20,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/tailwind.min.css">
+<style>
+	.images{
+		position:relative;
+		width:100%;
+		height:100px;
+	}
+	.imgp{
+		width:240px;
+		height:240px;
+		background-color:black;
+	}
+</style>
 </head>
 <body class=" bg-blue-400 ">
 <nav class=" flex items-center justify-between flex-wrap bg-white p-6">
@@ -45,7 +57,22 @@
 	</nav>
 	<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
+			<div class="impg">
+			  <?php
+			   $img=$row['img_destination'];
+			   echo "<img src='upload-images/".$img."' alt='Upload a image'>"; 
+			   ?>
+			</div>
 			<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+			<?php
+			//image upload
+			?>
+			<div class="images">
+				<form action="upload.php" method="post" enctype="multipart/form-data">
+					<input type="file" name="file">
+					<button type="submit" name="submit" style="background-color:cyan;">UPLOAD</button>
+				</form>
+			</div>
 			<form action="edit.php" method="post">
 			<div class="-mx-3 md:flex mb-6">
 				

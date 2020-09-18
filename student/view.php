@@ -68,7 +68,13 @@
                  <!-- <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
 					<img src="../imgs/avatar.png" /> 
 				</div> -->
-				 <div class="w-full  py-6 overflow-y-hidden"> 
+				 <div class="w-full  py-6 overflow-y-hidden">
+					<div class="impg">
+						<?php
+						$img=$row['img_destination'];
+						echo "<img src='upload-images/".$img."' alt='no image'>"; 
+						?>
+					</div> 
 					<div class="mb-4">
 						<label class="block text-gray-700 text-md font-bold mb-2" >
 							PROFESSIONAL DETAILS

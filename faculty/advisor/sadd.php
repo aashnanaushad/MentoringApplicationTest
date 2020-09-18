@@ -311,6 +311,7 @@
 				@$reqcon=0;
 				@$dept=$dept;
 				@$mentor=NULL;
+				@$img="alt.jpg";
 				
 				if (empty($name)){
 				    $name=" ";
@@ -434,7 +435,7 @@
 						{
 							
 							// echo $reqcon ;
-							$query = "insert into student values('$name','$username','$dept','$start_yr','$end_yr','$dateofbirth','$address','$email','$password','$mentor','$edit','$reqcon','$phone_no','$gender','$father','$focc','$mother','$mocc','$school10','$mark10','$perc10','$school12','$mark12','$perc12','$othername','$othermark','$otherperc','$C1','$A1','$C2','$A2','$C3','$A3','$C4','$A4','$C5','$A5','$C6','$A6','$C7','$A7','$C8','$A8')";
+							$query = "insert into student values('$name','$username','$dept','$start_yr','$end_yr','$dateofbirth','$address','$email','$password','$mentor','$edit','$reqcon','$phone_no','$gender','$father','$focc','$mother','$mocc','$school10','$mark10','$perc10','$school12','$mark12','$perc12','$othername','$othermark','$otherperc','$C1','$A1','$C2','$A2','$C3','$A3','$C4','$A4','$C5','$A5','$C6','$A6','$C7','$A7','$C8','$A8','$img')";
 							$query_run = mysqli_query($con,$query);
 							if($query_run)
 							{

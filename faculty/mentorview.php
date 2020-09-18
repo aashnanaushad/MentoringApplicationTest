@@ -34,9 +34,13 @@
 <body class=" bg-blue-400 ">
 <div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
-                 <!-- <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
-					<img src="../imgs/avatar.png" /> 
-				</div> -->
+				<div class="impg">
+						<?php
+						$img=$row['img_destination'];
+						echo "<img src='../student/upload-images/".$img."' alt='Upload a image'>"; 
+						?>
+				</div> 
+	
 				 <div class="w-full  py-6 overflow-y-hidden"> 
 					<div class="mb-4">
 						<label class="block text-gray-700 text-md font-bold mb-2" >
