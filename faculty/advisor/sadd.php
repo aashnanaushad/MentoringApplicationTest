@@ -42,6 +42,9 @@
 				<a href="slist_class.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Class List
 				</a>
+				<a href="../mentor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				Mentorship
+				</a>
 				<a href="requeststofaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Advisorship
 				</a>
@@ -157,12 +160,12 @@
 		</div>
         
 		<div class="container">
-            
-			<!-- <div class="shadow overflow-hidden rounded border-b border-gray-200"> -->
-			<div class="-mx-3 md:flex mb-6">
-			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
+		<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
 			   Academic details
 			</label>
+			<div class="shadow overflow-hidden rounded border-b border-gray-200">
+			<div class="-mx-3 md:flex mb-6">
+			
              <table class="text-left w-full ml-8">
               <thead class="bg-gray-800 flex text-white w-full">
             <tr class="flex w-full mb-4">
@@ -197,11 +200,12 @@
 	</div>
     
 	<div class="md:px-32 py w-full">
-	<div class="-mx-3 md:flex mb-6">
-            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
+	<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2 mt-2" >
 				Semester wise performance
 			</label>
-            <!-- <div class="shadow overflow-hidden rounded "> -->
+	<div class="-mx-3 md:flex mb-6">
+            
+            <div class="shadow overflow-hidden rounded ">
             <table class="w-full ml-8">
             <thead class="bg-gray-800 text-white w-full flex">
             <tr class="flex w-full mb-4">

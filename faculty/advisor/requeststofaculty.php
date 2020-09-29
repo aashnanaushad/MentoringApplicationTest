@@ -43,6 +43,9 @@
 				<a href="slist_class.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Class List
 				</a>
+				<a href="../mentor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Mentorship
+				</a>
 				<a href="requeststofaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Advisorship
 				</a>
@@ -551,10 +554,13 @@
 	</div>
 			
         </div>
-		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
+		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center ">
+		
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
-                Counsellor Feedbacks: <br/><br/>
-				<table class="text-left w-full ml-8">
+				Counsellor Feedbacks:
+				<div class="shadow overflow-hidden rounded border-b border-gray-200">
+                
+				<table class="text-left w-full ">
 					<thead class="bg-blue-500 flex text-white w-full"> 
 					<tr class="flex w-full mb-4"> 
   
