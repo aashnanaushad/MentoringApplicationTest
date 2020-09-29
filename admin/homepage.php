@@ -52,8 +52,7 @@
 			</nav>
 	
 			<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
-				Howdy Admin
-					
+				Welcome Administrator
 			</div>
 </body> 
 </html>
