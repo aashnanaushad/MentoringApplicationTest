@@ -163,6 +163,76 @@
 
 			</div>
 		</div>
+		
+		<div class="-mx-3 md:flex mb-">
+			<div class="md:w-full px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+				Additional skill sets acquired
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="addskill" type="text" placeholder="Mention here" value="<?php echo $row['addskill']?>">
+
+			</div>
+		</div>
+		<div class="-mx-3 md:flex mb-">
+			<div class="md:w-full px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+				Add on courses/certifications
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="courses" type="text" placeholder="Mention about completed courses" value="<?php echo $row['courses']?>">
+
+			</div>
+		</div>
+		<div class="-mx-3 md:flex mb-">
+			<div class="md:w-full px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+				Extracurricular Skills/Achievement
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="extraskill" type="text" placeholder="I am good at.." value="<?php echo $row['extraskill']?>">
+
+			</div>
+		</div>
+		<div class="-mx-3 md:flex mb-">
+			<div class="md:w-full px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+				Projects Undertaken
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="project" type="text" placeholder="Mention here" value="<?php echo $row['project']?>">
+
+			</div>
+		</div>
+		<div class="-mx-3 md:flex mb-">
+			<div class="md:w-full px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+				Internships Undertaken
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="internship" type="text" placeholder="Mention here" value="<?php echo $row['internship']?>">
+
+			</div>
+		</div>
+		<div class="-mx-3 md:flex mb-">
+			<div class="md:w-full px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
+				Events Participated
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="hacks" type="text" placeholder="CONTESTS/EVENTS/HACKATHONS" value="<?php echo $row['hacks']?>">
+
+			</div>
+		</div>
+		<div class="-mx-3 md:flex mb-">
+			<div class="md:w-full px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name" for="aspiration">
+				Aspiration Set
+			</label>
+			<select  name="aspiration" id="aspiration" value="<?php echo $row['aspiration']?>">
+			   <option value="dream">Dream company jobs</option>
+               <option value="placement">Campus cream placements</option>
+			   <option value="abroad">Higher study Abroad</option>
+			   <option value="teir1">Higher study in Teir 1 institutions in India"></option>
+			   <option value="other">Others</option>
+			</select>
+		    If Others: <input name="aspiration" type="varchar" placeholder="Please specify" value="<?php echo $row['aspiration']?>">
+			</div>
+		</div>
 		<div class="-mx-3 md:flex mb-">
 			<div class="md:w-full px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
@@ -209,7 +279,7 @@
 			</div>
 		</div>
 		
-		<div class="flex items-center justify-between float-right">
+        <div class="flex items-center justify-between float-right">
 						<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="personal" type="submit">
 							Update
 						</button>
@@ -237,13 +307,23 @@
 				@$study=$_POST['study'];
 				@$learn=$_POST['learn'];
 				@$attitude=$_POST['attitude'];
+				@$addskill=$_POST['addskill'];
+				@$courses=$_POST['courses'];
+				@$extraskill=$_POST['extraskill'];
+				@$project=$_POST['project'];
+				@$internship=$_POST['internship'];
+				@$hacks=$_POST['hacks'];
+				@$aspiration=$_POST['aspiration'];
 				@$behaviour=$_POST['behaviour'];
 				@$communication=$_POST['communication'];
 				@$concerns=$_POST['concerns'];
 				@$person=$_POST['person'];
 				@$class=$_POST['class'];
+
+
 				
-				$query = "update personal set username='$username',famtree= '$famtree',stay='$stay',life='$life',social='$social',skills='$skills',hobby='$hobby',thrust='$thrust',obj='$obj',study='$study',learn='$learn',attitude='$attitude',behaviour='$behaviour',communication='$communication',concerns='$concerns',person='$person',class='$class'where username='$username'";
+				
+				$query = "update personal set username='$username',famtree= '$famtree',stay='$stay',life='$life',social='$social',skills='$skills',hobby='$hobby',thrust='$thrust',obj='$obj',study='$study',learn='$learn',attitude='$attitude',addskill='$addskill',courses='$courses',extraskill='$extraskill',projects='$project',internship='$internship',hacks='$hacks',aspiration='$aspiration',behaviour='$behaviour',communication='$communication',concerns='$concerns',person='$person',class='$class' where username='$username'";
 				$query_run = mysqli_query($con,$query);
 				if($query_run)
 				{
