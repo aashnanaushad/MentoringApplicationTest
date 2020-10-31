@@ -221,7 +221,7 @@
 		</div>
 		<div class="-mx-3 md:flex mb-">
 			<div class="md:w-full px-3">
-			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name" for="aspiration">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-aspiration" >
 				Aspiration Set
 			</label>
 			<select  name="aspiration" id="aspiration" value="<?php echo $row['aspiration']?>">
@@ -231,7 +231,7 @@
 			   <option value="Higher study in Teir 1 institutions in India">Higher study in Teir 1 institutions in India</option>
 			   <option value="others">Others</option>
 			</select>
-		    If Others: <input name="aspiration1" placeholder="Please specify" value="<?php echo $aspiration1 ?>">
+		    If Others: <input name="aspiration1" id="aspiration1" type = "text" placeholder="Please specify" value=<?php $aspiration1 ?>>
 			</div>
 		</div>
 		<div class="-mx-3 md:flex mb-">
@@ -318,6 +318,11 @@
 				@$concerns=$_POST['concerns'];
 				@$person=$_POST['person'];
 				@$class=$_POST['class'];
+				@$aspiration1=$_POST['aspiration1'];
+
+				if($aspiration == "others"){
+					$aspiration = $aspiration1 ;
+				}
 
 				$query = "select * from personal where username='$username'";
 				$query_run = mysqli_query($con,$query);
