@@ -17,6 +17,7 @@
 	{
 		$row=$query_run->fetch_assoc();
 	}
+	$aspiration1 = "";
 	
 ?>
 <!DOCTYPE html>
@@ -224,13 +225,13 @@
 				Aspiration Set
 			</label>
 			<select  name="aspiration" id="aspiration" value="<?php echo $row['aspiration']?>">
-			   <option value="dream">Dream company jobs</option>
-               <option value="placement">Campus cream placements</option>
-			   <option value="abroad">Higher study Abroad</option>
-			   <option value="teir1">Higher study in Teir 1 institutions in India"></option>
-			   <option value="other">Others</option>
+			   <option value="Dream company jobs">Dream company jobs</option>
+               <option value="Campus cream placements">Campus cream placements</option>
+			   <option value="Higher study Abroad">Higher study Abroad</option>
+			   <option value="Higher study in Teir 1 institutions in India">Higher study in Teir 1 institutions in India</option>
+			   <option value="others">Others</option>
 			</select>
-		    If Others: <input name="aspiration" type="varchar" placeholder="Please specify" value="<?php echo $row['aspiration']?>">
+		    If Others: <input name="aspiration1" placeholder="Please specify" value="<?php echo $aspiration1 ?>">
 			</div>
 		</div>
 		<div class="-mx-3 md:flex mb-">
@@ -318,13 +319,9 @@
 				@$person=$_POST['person'];
 				@$class=$_POST['class'];
 
-				echo '<script type="text/javascript">alert("hello!")</script>';
 				$query = "select * from personal where username='$username'";
-				$t1 = mysqli_num_rows($query_run);
-				echo "<script type='text/javascript'>alert('$t1')</script>";
 				$query_run = mysqli_query($con,$query);
 				if(mysqli_num_rows($query_run)>0){
-					echo '<script type="text/javascript">alert("hello dear!")</script>';
 					$query = "update personal set username='$username',famtree= '$famtree',stay='$stay',life='$life',social='$social',skills='$skills',hobby='$hobby',thrust='$thrust',obj='$obj',study='$study',learn='$learn',attitude='$attitude',addskill='$addskill',courses='$courses',extraskill='$extraskill',project='$project',internship='$internship',hacks='$hacks',aspiration='$aspiration',behaviour='$behaviour',communication='$communication',concerns='$concerns',person='$person',class='$class' where username='$username'";
 					$query_run = mysqli_query($con,$query);
 					if($query_run)
@@ -339,7 +336,6 @@
 				}
 				else
 				{
-					echo '<script type="text/javascript">alert("hello bro!")</script>';
 					$query = "insert into personal values('$username','$famtree','$stay','$life','$social','$skills','$hobby','$thrust','$obj','$study','$learn','$attitude','$addskill','$courses','$extraskill','$project','$internship','$hacks','$aspiration','$behaviour','$communication','$concerns','$person','$class')";
 					$query_run = mysqli_query($con,$query);
 					if($query_run)
