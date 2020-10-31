@@ -292,10 +292,8 @@
 </html>
 <?php
 			if(isset($_POST['personal']))
-			{    
-				$query = "select * from personal where username='$username'";
-				$query_run = mysqli_query($con,$query);
-				@$username=$_SESSION['username'];
+			{   
+				@$username=$_SESSION['username']; 
 				@$famtree=$_POST['famtree'];
 				@$stay=$_POST['stay'];
 				@$life=$_POST['life'];
@@ -320,20 +318,39 @@
 				@$person=$_POST['person'];
 				@$class=$_POST['class'];
 
-
-				
-				
-				$query = "update personal set username='$username',famtree= '$famtree',stay='$stay',life='$life',social='$social',skills='$skills',hobby='$hobby',thrust='$thrust',obj='$obj',study='$study',learn='$learn',attitude='$attitude',addskill='$addskill',courses='$courses',extraskill='$extraskill',projects='$project',internship='$internship',hacks='$hacks',aspiration='$aspiration',behaviour='$behaviour',communication='$communication',concerns='$concerns',person='$person',class='$class' where username='$username'";
+				echo '<script type="text/javascript">alert("hello!")</script>';
+				$query = "select * from personal where username='$username'";
+				$t1 = mysqli_num_rows($query_run);
+				echo "<script type='text/javascript'>alert('$t1')</script>";
 				$query_run = mysqli_query($con,$query);
-				if($query_run)
-				{
-					
-					echo '<script type="text/javascript">alert("Updates saved!")</script>';
-					echo "<script>window.location.href='personal_view.php';</script>";
-				}
+				if(mysqli_num_rows($query_run)>0){
+					echo '<script type="text/javascript">alert("hello dear!")</script>';
+					$query = "update personal set username='$username',famtree= '$famtree',stay='$stay',life='$life',social='$social',skills='$skills',hobby='$hobby',thrust='$thrust',obj='$obj',study='$study',learn='$learn',attitude='$attitude',addskill='$addskill',courses='$courses',extraskill='$extraskill',project='$project',internship='$internship',hacks='$hacks',aspiration='$aspiration',behaviour='$behaviour',communication='$communication',concerns='$concerns',person='$person',class='$class' where username='$username'";
+					$query_run = mysqli_query($con,$query);
+					if($query_run)
+					{
+						echo '<script type="text/javascript">alert("Updates saved!")</script>';
+						echo "<script>window.location.href='personal_view.php';</script>";
+					}
 					else
+					{
+						echo '<p class="bg-danger msg-block">Unsuccessful due to server error. Please try later</p>';
+					}
+				}
+				else
 				{
-					echo '<p class="bg-danger msg-block">Unsuccessful due to server error. Please try later</p>';
-				}		
-    }
+					echo '<script type="text/javascript">alert("hello bro!")</script>';
+					$query = "insert into personal values('$username','$famtree','$stay','$life','$social','$skills','$hobby','$thrust','$obj','$study','$learn','$attitude','$addskill','$courses','$extraskill','$project','$internship','$hacks','$aspiration','$behaviour','$communication','$concerns','$person','$class')";
+					$query_run = mysqli_query($con,$query);
+					if($query_run)
+					{	
+						echo '<script type="text/javascript">alert("Updates saved!")</script>';
+						echo "<script>window.location.href='personal_view.php';</script>";
+					}
+					else
+					{
+						echo '<p class="bg-danger msg-block">Unsuccessful due to server error. Please try later</p>';
+					}
+				}	
+			}
 ?>
