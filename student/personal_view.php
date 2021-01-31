@@ -108,6 +108,27 @@
 						<p class="text-gray-700 text-base"><b>Are you generally a stress free person?</b><br><?php echo $row['person'];?></p>
 						<br>
                         <p class="text-gray-700 text-base" ><b>Do you have any difficulty with your present theory/practical classes ?</b><br><?php echo $row['class'];?></p>
+						<br>
+						<p class="text-gray-700 text-base"><b>Additional Skill sets Acquired</b><br><?php echo $row['addskill'];?></p>
+						<br>
+						<p class="text-gray-700 text-base"><b>Add On Courses/Certifications</b><br><?php echo $row['courses'];?></p>
+						<br>
+						<p class="text-gray-700 text-base"><b>Extracurricular Skills/Acheivements</b><br><?php echo $row['extraskill'];?></p>
+						<br>
+						<p class="text-gray-700 text-base"><b>Projects Undertaken</b><br><?php echo $row['project'];?></p>
+						<br>
+						<p class="text-gray-700 text-base"><b>Internships Undertaken</b><br><?php echo $row['internship'];?></p>
+						<br>
+						<p class="text-gray-700 text-base"><b>Contests/Events/Hackathons Participated</b><br><?php echo $row['hacks'];?></p>
+						<br>
+						<p class="text-gray-700 text-base"><b>Aspiration Set</b><br><?php echo $row['aspiration'];?></p>
+
+
+						
+					
+
+
+
                 </div>
                     
 					<br>

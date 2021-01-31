@@ -20,6 +20,12 @@
 			</div>
 			<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
 				<div class="text-sm lg:flex-grow">
+				<a href="homepage.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Home
+				</a>
+				<a href="sadd.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Add Student
+				</a>
 				<a href="fadd.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Add Faculty
 				</a>
@@ -35,12 +41,12 @@
 				<a href="studentlist.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					List Students
 				</a>
-				<a href="homepage.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 ">
+				<a href="changepass.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 ">
 					Change Password
 				</a>
 				 </div> 
 				<div>
-				<a href="common/logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Logout</a>
+				<a href="../logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Logout</a>
 				</div>
 			</div>
 			</nav>
@@ -98,7 +104,7 @@
 				@$username=$_POST['username'];
 				@$qualification=$_POST['qualification'];
 				@$email=$_POST['email'];
-				@$password=$_POST['username'];
+				@$password=password_hash($_POST['username'],PASSWORD_DEFAULT);
 				
 					$query = "select * from counselor where username='$username'";
 					//echo $query;

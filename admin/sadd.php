@@ -1,63 +1,56 @@
 <?php
-	session_start();
-	require_once('../../dbconfig/config.php');
-	if(!isset($_SESSION['username'])){
-    echo "<script>window.location.href='../../index.php';</script>";
+    session_start();
+	require_once('../dbconfig/config.php');
+		if(!isset($_SESSION['username'])){
+    echo "<script>window.location.href='../index.php';</script>";
 	}
-	$username=$_SESSION['username'];
-	$query="select * from faculty where username='$username'";
-	$result=mysqli_query($con,$query);
-	$row1=mysqli_fetch_array($result);
-	$batch=$row1['batch'];
-	
-	$dept=$row1['dept'];
 	//phpinfo();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Add Student</title>
-<link rel="stylesheet" href="../../css/style.css">
-    <link href="../../css/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+    <link href="../css/tailwind.min.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body class=" bg-blue-400 ">
-<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
+    <nav class=" flex items-center justify-between flex-wrap bg-white p-6">
 		<div class="flex items-center flex-shrink-0 text-blue-600 mr-6 ">
-		<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $row1['name'];?>)</span>
-		</div>
-
-		<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-				
+				<span class="font-semibold text-xl tracking-tight">Administrator</span>
+			</div>
+			<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
 				<div class="text-sm lg:flex-grow">
-				<a href="advisor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
-					Profile
+                <a href="homepage.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Home
 				</a>
-				<a href="sadd.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+                <a href="sadd.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Add Student
 				</a>
-				<a href="../slist_dept.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
-					Student List(Dept)
+				<a href="fadd.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Add Faculty
 				</a>
-				<a href="slist_class.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
-					Class List
+				<a href="cadd.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Add Counselor
 				</a>
-				<a href="../mentor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
-				Mentorship
+				<a href="assignhod.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Assign HOD
 				</a>
-				<a href="requeststofaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
-					Advisorship
+				<a href="viewallfaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					List Faculty
 				</a>
-				<a href="../changepassword.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				<a href="studentlist.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					List Students
+				</a>
+				<a href="changepass.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 ">
 					Change Password
 				</a>
+				 </div> 
+				<div>
+				<a href="../logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Logout</a>
 				</div>
-                <div>
-				<a href="../../logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Logout</a>
-				</div>
-            </div>
-			
-		</nav>
+			</div>
+			</nav>
 		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
 			<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
@@ -77,6 +70,21 @@
 				Name
 			</label>
 			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="name" type="text" placeholder="example">
+			</div>
+		</div>
+        <div class="-mx-3 md:flex mb-6">
+				
+            <div class="md:w-1/2 px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
+				Department <div class="inline text-red-700">*</div>
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="dept" type="text" placeholder="XXX" required>
+			</div>
+			<div class="md:w-1/2 px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
+				Batch <div class="inline text-red-700">*</div>
+			</label>
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="batch" type="text" placeholder="0000" required>
 			</div>
 		</div>
 		<div class="-mx-3 md:flex mb-6">
@@ -272,7 +280,9 @@
 			if(isset($_POST['sadd']))
 			{
 				@$name=$_POST['name'];
-				@$username=$_POST['username'];
+                @$username=$_POST['username'];
+                @$batch=$_POST['batch'];
+				@$dept=$_POST['dept'];
 				@$dateofbirth=$_POST['dateofbirth'];
 				@$address=$_POST['address'];
 				@$email=$_POST['email'];
@@ -307,15 +317,14 @@
 				@$A7=$_POST['A7'];
 				@$C8=$_POST['C8'];
 				@$A8=$_POST['A8'];
-				@$password=$_POST['username'];
+				@$password=password_hash($_POST['username'],PASSWORD_DEFAULT);
 				$end=4;
 				@$start_yr=$batch;
 				@$end_yr=$batch+$end;
 				@$edit=0;
 				@$reqcon=0;
-				@$dept=$dept;
-				@$mentor=NULL;
-				@$img="alt.jpg";
+                @$mentor=NULL;
+                @$img="alt.jpg";
 				
 				if (empty($name)){
 				    $name=" ";
@@ -422,13 +431,8 @@
 				if (empty($A8)){
 				    $A8=0;
 				}
-				
-				//echo $name;
-				
 		    	$query = "select * from student where username='$username'";
-					//echo $query;
 				$query_run = mysqli_query($con,$query);
-				//echo mysql_num_rows($query_run);
 				if($query_run)
 					{
 						if(mysqli_num_rows($query_run)>0)
@@ -437,21 +441,18 @@
 						}
 						else
 						{
-							
-							// echo $reqcon ;
 							$query = "insert into student values('$name','$username','$dept','$start_yr','$end_yr','$dateofbirth','$address','$email','$password','$mentor','$edit','$reqcon','$phone_no','$gender','$father','$focc','$mother','$mocc','$school10','$mark10','$perc10','$school12','$mark12','$perc12','$othername','$othermark','$otherperc','$C1','$A1','$C2','$A2','$C3','$A3','$C4','$A4','$C5','$A5','$C6','$A6','$C7','$A7','$C8','$A8','$img')";
-							$query_run = mysqli_query($con,$query);
+                            $query_run = mysqli_query($con,$query);
 							if($query_run)
 							{
 								echo '<script type="text/javascript">alert("Success! student added")</script>';
-								//$_SESSION['username'] = $username;
-								//$_SESSION['password'] = $password;
-								//header( "Location: index.php");
-								echo "<script>window.location.href='advisor.php';</script>";
+								echo "<script>window.location.href='sadd.php';</script>";
 							}
 							else
 							{
-								echo '<p class="bg-danger msg-block">Unsuccessful due to server error. Please try later</p>';
+                                // echo '<p class="bg-danger msg-block">$query</p>';
+                                echo '<script type="text/javascript">alert("Unsuccessful due to server error. Please try later")</script>';
+								// echo '<p class="bg-danger msg-block">Unsuccessful due to server error. Please try later</p>';
 							}
 						}
 					}
