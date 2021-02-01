@@ -104,7 +104,7 @@
 				@$username=$_POST['username'];
 				@$qualification=$_POST['qualification'];
 				@$email=$_POST['email'];
-				@$password=$_POST['username'];
+				@$password=password_hash($_POST['username'],PASSWORD_DEFAULT);
 				
 					$query = "select * from counselor where username='$username'";
 					//echo $query;

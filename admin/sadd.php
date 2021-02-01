@@ -317,7 +317,7 @@
 				@$A7=$_POST['A7'];
 				@$C8=$_POST['C8'];
 				@$A8=$_POST['A8'];
-				@$password=$_POST['username'];
+				@$password=password_hash($_POST['username'],PASSWORD_DEFAULT);
 				$end=4;
 				@$start_yr=$batch;
 				@$end_yr=$batch+$end;

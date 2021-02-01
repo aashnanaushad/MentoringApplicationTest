@@ -65,8 +65,8 @@
 			if(isset($_POST['login']))
 			{
 				@$username=$_POST['username'];
-				@$password=$_POST['password'];
-				$query = "select * from admin where username='$username' and password='$password' ";
+				@$password= $_POST['password'];
+				$query = "select * from admin where username='$username';";
 				//echo $query;
 				$query_run = mysqli_query($con,$query);
 				//echo mysql_num_rows($query_run);
@@ -74,12 +74,17 @@
 				{
 					if(mysqli_num_rows($query_run)>0)
 					{
-					//$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
+					$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
+					if(password_verify($password,$row['password']) ){
 					
-					$_SESSION['username'] = $username;
-					$_SESSION['password'] = $password;
-					//header( "Location: homepage.php");
-					echo "<script>window.location.href='homepage.php';</script>";
+						$_SESSION['username'] = $username;
+						$_SESSION['passsword'] = $password;
+						
+						//header( "Location: homepage.php");
+						echo "<script>window.location.href='homepage.php';</script>";
+						}else{
+							echo '<script type="text/javascript">alert("Invalid Credentials")</script>';
+						}
 					}
 					else
 					{
@@ -93,6 +98,7 @@
 			}
 			else
 			{
+					
 			}
 		?>
 		
