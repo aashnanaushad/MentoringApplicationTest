@@ -72,319 +72,321 @@
 		<div class="-mx-3 md:flex mb-">
 			<div class="md:w-full px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name" >
-				Name :
+				Name :  <?php echo $r['name'];?>
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="name" type="text" placeholder="Enter your name" value="<?php echo $row['name']?>">
-
 			</div>
 		</div>
 		<div class="-mx-3 md:flex mb-">
 			<div class="md:w-full px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name" >
-				D.O.B :
+				D.O.B :  <?php echo $r['dateofbirth'];?>
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="dob" type="date" placeholder="Enter your D.O.B" value="<?php echo $row['dob']?>">
-
 			</div>
 		</div>
 		<div class="-mx-3 md:flex mb-">
 			<div class="md:w-full px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name" >
-				Gender :
+				Gender :  <?php echo $r['gender'];?> 
 			</label>
-			<input name="gender" type="radio" id="male" value="male" ><label for="male">MALE</label><br>
-            <input name="gender" type="radio" id="female" value="female"><label for="female">FEMALE</label><br>
-
+            </div>
+		</div>
+		<div class="-mx-3 md:flex mb-">
+			<div class="md:w-full px-3">
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name" >
+				Branch :  <?php echo $r['dept'];?>
+			</label>
 			</div>
 		</div>
 		<div class="-mx-3 md:flex mb-">
 			<div class="md:w-full px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name" >
-				Branch :
+				Batch :  <?php echo $r['start_yr'];?>
 			</label>
-			<select  name="branch" id="branch" value="<?php echo $row['branch']?>">
-			   <option value="me">ME</option>
-               <option value="ce">CE</option>
-			   <option value="ece">ECE</option>
-			   <option value="eee">EEE</option>
-			   <option value="cse">CSE</option>
-			   <option value="ai">CSE[AI]</option>
-			</select>
 			</div>
 		</div>
 		<div class="-mx-3 md:flex mb-">
 			<div class="md:w-full px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name" >
-				Reg No :
+				Reg No :  <?php echo $r['username'];?>
 			</label>
-			
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="regno" type="text" placeholder="Enter your registration number" value="<?php echo $row['regno']?>">
-
 			</div>
 		</div>
-		<div class="-mx-3 md:flex mb-">
-			<div class="md:w-full px-3">
+		<section class="-mx-3 md:flex mb-">
+			<section class="md:w-full px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-aspiration" >
 				What are your usual causes of stress ?
 			</label>
 			
-			<input type="checkbox" name="stress" id="Family Issues" value="Family Issues">
+			<input type="checkbox" name="cause[]" id="Family Issues" value="Family Issues">
                <label for="Family Issues">Family Issues</label>
 			   <br>
-			<input type="checkbox" name="stress" id="Financial Issues" value="Financial Issues">
+			<input type="checkbox" name="cause[]" id="Financial Issues" value="Financial Issues">
                <label for="Financial Issues">Financial Issues</label>
 			   <br>
-			<input type="checkbox" name="stress" id="Health related Issues" value="Health related Issues">
+			<input type="checkbox" name="cause[]" id="Health related Issues" value="Health related Issues">
                <label for="Health related Issues">Health related Issues</label>
 			   <br>
-			<input type="checkbox" name="stress" id="Academic related Issues" value="Academic related Issues">
+			<input type="checkbox" name="cause[]" id="Academic related Issues" value="Academic related Issues">
                <label for="Academic related Issues">Academic related Issues</label>
 			   <br>
-			<input type="checkbox" name="stress" id="Behavioural Issues" value="Behavioural Issues">
+			<input type="checkbox" name="cause[]" id="Behavioural Issues" value="Behavioural Issues">
                <label for="Behavioural Issues">Behavioural Issues</label>
 			   <br>
-			<input type="checkbox" name="stress" id="Emotional Issues" value="Emotional Issues">
+			<input type="checkbox" name="cause[]" id="Emotional Issues" value="Emotional Issues">
                <label for="Emotional Issues">Emotional Issues</label>
 			   <br>
-			<input type="checkbox" name="stress" id="Relationships related Issues" value="Relationships related Issues">
+			<input type="checkbox" name="cause[]" id="Relationships related Issues" value="Relationships related Issues">
                <label for="Relationships related Issues">Relationships related Issues</label>
 			   <br>
-			<input type="checkbox" name="stress" id="none of the above" value="none of the above">
+			<input type="checkbox" name="cause[]" id="none of the above" value="none of the above">
                <label for="none of the above">None of the above</label>
 			   <br>
-			<input type="checkbox" name="stress" id="others" value="others">
+			<input type="checkbox" name="cause[]" id="others" value="others">
                <label for="others">Others</label>
 			   <br>
+			   <br>
 			
-		    Any Other(Please Mention) : <input name="cause1" id="cause1" type = "text" placeholder="Please Mention" value=<?php $cause1 ?>>
+		    Any Other(Please Mention) : <input name="cause[]" id="cause1" type = "text" placeholder="Please Mention" value=<?php $cause1 ?>>
 			<br>
-			</div>
-		</div>
-
-		<div class="-mx-3 md:flex mb-">
-			<div class="md:w-full px-3">
+			</section>
+		</section>
+        <br>
+		<br>
+		<section class="-mx-3 md:flex mb-">
+			<section class="md:w-full px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name">
 				How do you usually experience stress(in the situations selected from the list above)?Please,describe in few words the physical sensations and the feelings you encounter when you call yourself as feeling stressed.
 			</label>
-			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="expstress" type="text" placeholder="Mention here" value="<?php echo $row['expstress']?>">
+			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" name="expstress" type="text" value=" " placeholder="Mention here" value="<?php echo $row['expstress']?>">
 
-			</div>
-		</div>
+			</section>
+		</section>
+		<br>
+		<br>
         
-		<div class="-mx-3 md:flex mb-">
-			<div class="md:w-full px-3">
+		<section class="-mx-3 md:flex mb-">
+			<section class="md:w-full px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-aspiration" >
 				What are the most pressing factors in your current academic context(related to this program of study)? Select all that apply.
 			</label>
 			
-			<input type="checkbox" name="factors" id="Academic Workload" value="Academic Workload">
+			<input type="checkbox" name="factors[]" id="Academic Workload" value="Academic Workload">
                <label for="Academic Workload">Academic Workload</label>
 			   <br>
-			<input type="checkbox" name="factors" id="Study & Life balancing" value="Study & Life balancing">
+			<input type="checkbox" name="factors[]" id="Study & Life balancing" value="Study & Life balancing">
                <label for="Study & Life balancing">Study & Life balancing</label>
 			   <br>
-			<input type="checkbox" name="factors" id="Relationship with faculty members" value="Relationship with faculty members">
+			<input type="checkbox" name="factors[]" id="Relationship with faculty members" value="Relationship with faculty members">
                <label for="Relationship with faculty members">Relationship with faculty members</label>
 			   <br>
-			<input type="checkbox" name="factors" id="Relationship with classmates" value="Relationship with classmates">
+			<input type="checkbox" name="factors[]" id="Relationship with classmates" value="Relationship with classmates">
                <label for="Relationship with classmates">Relationship with classmates</label>
 			   <br>
-			<input type="checkbox" name="factors" id="Grades" value="Grades">
+			<input type="checkbox" name="factors[]" id="Grades" value="Grades">
                <label for="Grades">Grades</label>
 			   <br>
-			<input type="checkbox" name="factors" id="Lack of Interest in Engineering" value="Lack of Interest in Engineering">
+			<input type="checkbox" name="factors[]" id="Lack of Interest in Engineering" value="Lack of Interest in Engineering">
                <label for="Lack of Interest in Engineering">Lack of Interest in Engineering</label>
 			   <br>
-			<input type="checkbox" name="factors" id="Difficulty with online classrooms" value="Difficulty with online classrooms">
+			<input type="checkbox" name="factors[]" id="Difficulty with online classrooms" value="Difficulty with online classrooms">
                <label for="Difficulty with online classrooms">Difficulty with online classrooms</label>
 			   <br>
-			<input type="checkbox" name="factors" id="Financial pressure(fees,living costs)" value="Financial pressure(fees,living costs)">
+			<input type="checkbox" name="factors[]" id="Financial pressure(fees,living costs)" value="Financial pressure(fees,living costs)">
                <label for="Financial pressure(fees,living costs)">Financial pressure(fees,living costs)</label>
 			   <br>
-			<input type="checkbox" name="factors" id="none of the above" value="none of the above">
+			<input type="checkbox" name="factors[]" id="none of the above" value="none of the above">
                <label for="none of the above">None of the above</label>
 			   <br>
-			<input type="checkbox" name="factors" id="others" value="others">
+			<input type="checkbox" name="factors[]" id="others" value="others">
                <label for="others">Others</label>
 			   <br>
+			   <br>
 			
-		    Any Other(Please Mention) : <input name="factors1" id="factors1" type = "text" placeholder="Please Mention" value=<?php $factors1 ?>>
+		    Any Other(Please Mention) : <input name="factors[]" id="factors1" type = "text" placeholder="Please Mention" value=<?php $factors1 ?>>
 			<br>
-			</div>
-		</div>
-
-		<div class="-mx-3 md:flex mb-">
-			<div class="md:w-full px-3">
+			</section>
+		</section>
+        <br>
+		<br>
+		<section class="-mx-3 md:flex mb-">
+			<section class="md:w-full px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-aspiration" >
 				What are the usual cognitive effects of stress you've noticed at yourself? Select all that apply.
 			</label>
 			
-			<input type="checkbox" name="cognitive" id="Low attention span" value="Low attention span">
+			<input type="checkbox" name="cognitive[]" id="Low attention span" value="Low attention span">
                <label for="Low attention span">Low attention span</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="Memory Issues and fogetfulness" value="Memory Issues and fogetfulness">
+			<input type="checkbox" name="cognitive[]" id="Memory Issues and fogetfulness" value="Memory Issues and fogetfulness">
                <label for="Memory Issues and fogetfulness">Memory Issues and fogetfulness</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="Difficulty in concentrating" value="Difficulty in concentrating">
+			<input type="checkbox" name="cognitive[]" id="Difficulty in concentrating" value="Difficulty in concentrating">
                <label for="Difficulty in concentrating">Difficulty in concentrating</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="Low analyzing and comprehending capacity" value="Low analyzing and comprehending capacity">
+			<input type="checkbox" name="cognitive[]" id="Low analyzing and comprehending capacity" value="Low analyzing and comprehending capacity">
                <label for="Low analyzing and comprehending capacity">Low analyzing and comprehending capacity</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="Concentration difficulty" value="Concentration difficulty">
+			<input type="checkbox" name="cognitive[]" id="Concentration difficulty" value="Concentration difficulty">
                <label for="Concentration difficulty">Concentration difficulty</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="Poor self-motivation" value="Poor self-motivation">
+			<input type="checkbox" name="cognitive[]" id="Poor self-motivation" value="Poor self-motivation">
                <label for="Poor self-motivation">Poor self-motivation</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="Lack of an aim" value="Lack of an aim">
+			<input type="checkbox" name="cognitive[]" id="Lack of an aim" value="Lack of an aim">
                <label for="Lack of an aim">Lack of an aim</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="Slow learning" value="Slow learning">
+			<input type="checkbox" name="cognitive[]" id="Slow learning" value="Slow learning">
                <label for="Slow learning">Slow learning</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="Lack of interest in academics" value="Lack of interest in academics">
+			<input type="checkbox" name="cognitive[]" id="Lack of interest in academics" value="Lack of interest in academics">
                <label for="Lack of interest in academics">Lack of interest in academics</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="Subject related difficulty" value="Subject related difficulty">
+			<input type="checkbox" name="cognitive[]" id="Subject related difficulty" value="Subject related difficulty">
                <label for="Subject related difficulty">Subject related difficulty</label>
 			   <br>
-		    <input type="checkbox" name="cognitive" id="Instruction related difficulty" value="Instruction related difficulty">
+		    <input type="checkbox" name="cognitive[]" id="Instruction related difficulty" value="Instruction related difficulty">
                <label for="Instruction related difficulty">Instruction related difficulty</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="Academic perfomance anxiety" value="Academic perfomance anxiety">
+			<input type="checkbox" name="cognitive[]" id="Academic perfomance anxiety" value="Academic perfomance anxiety">
                <label for="Academic perfomance anxiety">Academic perfomance anxiety</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="Test anxiety/Fear of examinations" value="Test anxiety/Fear of examinations">
+			<input type="checkbox" name="cognitive[]" id="Test anxiety/Fear of examinations" value="Test anxiety/Fear of examinations">
                <label for="Test anxiety/Fear of examinations">Test anxiety/Fear of examinations</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="Poor time management" value="Poor time management">
+			<input type="checkbox" name="cognitive[]" id="Poor time management" value="Poor time management">
                <label for="Poor time management">Poor time management</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="none of the above" value="none of the above">
+			<input type="checkbox" name="cognitive[]" id="none of the above" value="none of the above">
                <label for="none of the above">None of the above</label>
 			   <br>
-			<input type="checkbox" name="cognitive" id="others" value="others">
+			<input type="checkbox" name="cognitive[]" id="others" value="others">
                <label for="others">Others</label>
 			   <br>
+			   <br>
 			
-		    Any Other(Please Mention) : <input name="cognitive1" id="cognitive1" type = "text" placeholder="Please Mention" value=<?php $cognitive1 ?>>
+		    Any Other(Please Mention) : <input name="cognitive[]" id="cognitive1" type = "text" placeholder="Please Mention" value=<?php $cognitive1 ?>>
 			<br>
-			</div>
-		</div>
+			</section>
+		</section>
+		<br>
+		<br>
 
-		<div class="-mx-3 md:flex mb-">
-			<div class="md:w-full px-3">
+		<section class="-mx-3 md:flex mb-">
+			<section class="md:w-full px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-aspiration" >
 				What are the usual emotional effects of stress you've noticed at yourself? Select all that apply.
 			</label>
 			
-			<input type="checkbox" name="emotional" id="Irritability or anger" value="Irritability or anger">
+			<input type="checkbox" name="emotional[]" id="Irritability or anger" value="Irritability or anger">
                <label for="Irritability or anger">Irritability or anger</label>
 			   <br>
-			<input type="checkbox" name="emotional" id="Poor self esteem" value="Poor self esteem">
+			<input type="checkbox" name="emotional[]" id="Poor self esteem" value="Poor self esteem">
                <label for="Poor self esteem">Poor self esteem</label>
 			   <br>
-			<input type="checkbox" name="emotional" id="Restlessness" value="Restlessness">
+			<input type="checkbox" name="emotional[]" id="Restlessness" value="Restlessness">
                <label for="Restlessness">Restlessness</label>
 			   <br>
-			<input type="checkbox" name="emotional" id="Feeling of lonliness" value="Feeling of lonliness">
+			<input type="checkbox" name="emotional[]" id="Feeling of lonliness" value="Feeling of lonliness">
                <label for="Feeling of lonliness">Feeling of lonliness</label>
 			   <br>
-			<input type="checkbox" name="emotional" id="Anxiety or Fear" value="Anxiety or Fear">
+			<input type="checkbox" name="emotional[]" id="Anxiety or Fear" value="Anxiety or Fear">
                <label for="Anxiety or Fear">Anxiety or Fear</label>
 			   <br>
-			<input type="checkbox" name="emotional" id="Inferiority complexes" value="Inferiority complexes">
+			<input type="checkbox" name="emotional[]" id="Inferiority complexes" value="Inferiority complexes">
                <label for="Inferiority complexes">Inferiority complexes</label>
 			   <br>
-			<input type="checkbox" name="emotional" id="Superiority complexes" value="Superiority complexes">
+			<input type="checkbox" name="emotional[]" id="Superiority complexes" value="Superiority complexes">
                <label for="Superiority complexes">Superiority complexes</label>
 			   <br>
-			<input type="checkbox" name="emotional" id="Lack of confidence" value="Lack of confidence">
+			<input type="checkbox" name="emotional[]" id="Lack of confidence" value="Lack of confidence">
                <label for="Lack of confidence">Lack of confidence</label>
 			   <br>
-			<input type="checkbox" name="emotional" id="Poor sleep" value="Poor sleep">
+			<input type="checkbox" name="emotional[]" id="Poor sleep" value="Poor sleep">
                <label for="Poor sleep">Poor sleep</label>
 			   <br>
-			<input type="checkbox" name="emotional" id="Moodiness,grief or depression" value="Moodiness,grief or depression">
+			<input type="checkbox" name="emotional[]" id="Moodiness,grief or depression" value="Moodiness,grief or depression">
                <label for="Moodiness,grief or depression">Moodiness,grief or depression</label>
 			   <br>
-		    <input type="checkbox" name="emotional" id="Substance abuse" value="Substance abuse">
+		    <input type="checkbox" name="emotional[]" id="Substance abuse" value="Substance abuse">
                <label for="Substance abuse">Substance abuse</label>
 			   <br>
-			<input type="checkbox" name="emotional" id="Overthinking or chain of thoughts" value="Overthinking or chain of thoughts">
+			<input type="checkbox" name="emotional[]" id="Overthinking or chain of thoughts" value="Overthinking or chain of thoughts">
                <label for="Overthinking or chain of thoughts">Overthinking or chain of thoughts</label>
 			   <br>
-			<input type="checkbox" name="emotional" id="Negativity" value="Negativity">
+			<input type="checkbox" name="emotional[]" id="Negativity" value="Negativity">
                <label for="Negativity">Negativity</label>
 			   <br>
-			<input type="checkbox" name="emotional" id="none of the above" value="none of the above">
+			<input type="checkbox" name="emotional[]" id="none of the above" value="none of the above">
                <label for="none of the above">None of the above</label>
 			   <br>
-			<input type="checkbox" name="emotional" id="others" value="others">
+			<input type="checkbox" name="emotional[]" id="others" value="others">
                <label for="others">Others</label>
 			   <br>
+			   <br>
 			
-		    Any Other(Please Mention) : <input name="emotional1" id="emotional1" type = "text" placeholder="Please Mention" value=<?php $emotional1 ?>>
+		    Any Other(Please Mention) : <input name="emotional[]" id="emotional1" type = "text" placeholder="Please Mention" value=<?php $emotional1 ?>>
 			<br>
-			</div>
-		</div>
+			</section>
+		</section>
+		<br>
+		<br>
 
-		<div class="-mx-3 md:flex mb-">
-			<div class="md:w-full px-3">
+		<section class="-mx-3 md:flex mb-">
+			<section class="md:w-full px-3">
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-aspiration" >
 				What are the usual social effects of stress you've noticed at yourself? Select all that apply.
 			</label>
 			
-			<input type="checkbox" name="socialeff" id="Withdrawing or isolated from people" value="Withdrawing or isolated from people">
+			<input type="checkbox" name="socialeff[]" id="Withdrawing or isolated from people" value="Withdrawing or isolated from people">
                <label for="Withdrawing or isolated from people">Withdrawing or isolated from people</label>
 			   <br>
-			<input type="checkbox" name="socialeff" id="Difficulty in sharing ideas" value="Difficulty in sharing ideas">
+			<input type="checkbox" name="socialeff[]" id="Difficulty in sharing ideas" value="Difficulty in sharing ideas">
                <label for="Difficulty in sharing ideas">Difficulty in sharing ideas</label>
 			   <br>
-			<input type="checkbox" name="socialeff" id="Difficulty in engaging multiple problem solving" value="Difficulty in engaging multiple problem solving">
+			<input type="checkbox" name="socialeff[]" id="Difficulty in engaging multiple problem solving" value="Difficulty in engaging multiple problem solving">
                <label for="Difficulty in engaging multiple problem solving">Difficulty in engaging multiple problem solving</label>
 			   <br>
-			<input type="checkbox" name="socialeff" id="Blaming" value="Blaming">
+			<input type="checkbox" name="socialeff[]" id="Blaming" value="Blaming">
                <label for="Blaming">Blaming</label>
 			   <br>
-			<input type="checkbox" name="socialeff" id="Criticizing" value="Criticizing">
+			<input type="checkbox" name="socialeff[]" id="Criticizing" value="Criticizing">
                <label for="Criticizing">Criticizing</label>
 			   <br>
-			<input type="checkbox" name="socialeff" id="Intolerance of group activities" value="Intolerance of group activities">
+			<input type="checkbox" name="socialeff[]" id="Intolerance of group activities" value="Intolerance of group activities">
                <label for="Intolerance of group activities">Intolerance of group activities</label>
 			   <br>
-			<input type="checkbox" name="socialeff" id="Difficulty in giving support to others" value="Difficulty in giving support to others">
+			<input type="checkbox" name="socialeff[]" id="Difficulty in giving support to others" value="Difficulty in giving support to others">
                <label for="Difficulty in giving support to others">Difficulty in giving support to others</label>
 			   <br>
-			<input type="checkbox" name="socialeff" id="Difficulty in taking support from others" value="Difficulty in taking support from others">
+			<input type="checkbox" name="socialeff[]" id="Difficulty in taking support from others" value="Difficulty in taking support from others">
                <label for="Difficulty in taking support from others">Difficulty in taking support from others</label>
 			   <br>
-			<input type="checkbox" name="socialeff" id="Impatience with others" value="Impatience with others">
+			<input type="checkbox" name="socialeff[]" id="Impatience with others" value="Impatience with others">
                <label for="Impatience with others">Impatience with others</label>
 			   <br>
-			<input type="checkbox" name="socialeff" id="Isolation feeling in a group" value="Isolation feeling in a group">
+			<input type="checkbox" name="socialeff[]" id="Isolation feeling in a group" value="Isolation feeling in a group">
                <label for="Isolation feeling in a group">Isolation feeling in a group</label>
 			   <br>
-		    <input type="checkbox" name="socialeff" id="Stage fear" value="Stage fear">
+		    <input type="checkbox" name="socialeff[]" id="Stage fear" value="Stage fear">
                <label for="Stage fear">Stage fear</label>
 			   <br>
-			<input type="checkbox" name="socialeff" id="Lack of synergy" value="Lack of synergy">
+			<input type="checkbox" name="socialeff[]" id="Lack of synergy" value="Lack of synergy">
                <label for="Lack of synergy">Lack of synergy</label>
 			   <br>
-			<input type="checkbox" name="socialeff" id="Lack of trust in others" value="Lack of trust in others">
+			<input type="checkbox" name="socialeff[]" id="Lack of trust in others" value="Lack of trust in others">
                <label for="Lack of trust in others">Lack of trust in others</label>
 			   <br>
-			<input type="checkbox" name="socialeff" id="none of the above" value="none of the above">
+			<input type="checkbox" name="socialeff[]" id="none of the above" value="none of the above">
                <label for="none of the above">None of the above</label>
 			   <br>
-			<input type="checkbox" name="socialeff" id="others" value="others">
+			<input type="checkbox" name="socialeff[]" id="others" value="others">
                <label for="others">Others</label>
 			<br>
-		    Any Other(Please Mention) : <input name="socialeff1" id="socialeff1" type = "text" placeholder="Please Mention" value=<?php $socialeff1 ?>>
 			<br>
-			</div>
-		</div>
+		    Any Other(Please Mention) : <input name="socialeff[]" id="socialeff1" type = "text" placeholder="Please Mention" value=<?php $socialeff1 ?>>
+			<br>
+			</section>
+		</section>
 		<div class="flex items-center justify-between float-right">
 						<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="form" type="submit">
 							Submit
@@ -399,47 +401,82 @@
 </body>
 </html>
 <?php
-			if(isset($_POST['personal']))
+			if(isset($_POST['form']))
 			{   
-				@$username=$_SESSION['username']; 
-				@$name=$_SESSION['name']; 
-				@$dob=$_POST['dob'];
-				@$gender=$_POST['gender'];
-				@$branch=$_POST['branch'];
-				@$regno=$_POST['regno'];
-				@$cause=$_POST['cause'];
+				@$username=$_SESSION['username'];
+				@$name=$r['name'];
+				@$dob=$r['dateofbirth'];
+				@$gender=$r['gender'];
+				@$branch=$r['dept'];
+				@$batch=$r['start_yr'];
+				@$regno=$r['username']; 
+				//@$cause=$_POST['cause'];
+                $checkbox1=$_POST['cause'];  
+                $causechk="";  
+                foreach($checkbox1 as $causechk1)  
+                {  
+                    $causechk .= $causechk1.",";  
+                }
 				@$expstress=$_POST['expstress'];
-				@$factors=$_POST['factors'];
-				@$cognitive=$_POST['cognitive'];
-				@$emotional=$_POST['emotional'];
-				@$socialeff=$_POST['socialeff'];
-				@$cause1=$_POST['cause1'];
-				@$factors1=$_POST['factors1'];
-				@$cognitive1=$_POST['cognitive1'];
-				@$emotional1=$_POST['emotional1'];
-				@$socialeff1=$_POST['socialeff1'];
+				//@$factors=$_POST['factors'];
+				$checkbox2=$_POST['factors'];  
+                $factorschk="";  
+                foreach($checkbox2 as $factorschk1)  
+                {  
+                    $factorschk .= $factorschk1.",";  
+                }
+				//@$cognitive=$_POST['cognitive'];
+				$checkbox3=$_POST['cognitive'];  
+                $cognitivechk="";  
+                foreach($checkbox3 as $cognitivechk1)  
+                {  
+                    $cognitivechk .= $cognitivechk1.",";  
+                }
+				//@$emotional=$_POST['emotional'];
+				$checkbox4=$_POST['emotional'];  
+                $emotionalchk="";  
+                foreach($checkbox4 as $emotionalchk1)  
+                {  
+                    $emotionalchk .= $emotionalchk1.",";  
+                }
+				//@$socialeff=$_POST['socialeff'];
+				$checkbox5=$_POST['socialeff'];  
+                $socialeffchk="";  
+				foreach($checkbox5 as $socialeffchk1)  
+                {  
+                    $socialeffchk .= $socialeffchk1.",";  
+				}
+			    
+				
+				
+				//@$cause1=$_POST['cause1'];
+				//@$factors1=$_POST['factors1'];
+				//@$cognitive1=$_POST['cognitive1'];
+				//@$emotional1=$_POST['emotional1'];
+				//@$socialeff1=$_POST['socialeff1'];
 				
 
-				if($cause == "others"){
-					$cause = $cause1 ;
+				if($causechk == "others"){
+					$causechk = $cause1 ;
 				}
-				if($factors == "others"){
-					$factors = $factors1 ;
+				if($factorschk == "others"){
+					$factorschk = $factors1 ;
 				}
-				if($cognitive == "others"){
-					$cognitive = $cognitive1 ;
+				if($cognitivechk == "others"){
+					$cognitivechk = $cognitive1 ;
 				}
-				if($emotional == "others"){
-					$emotional = $emotional1 ;
+				if($emotionalchk == "others"){
+					$emotionalchk = $emotional1 ;
 				}
-				if($socialeff == "others"){
-					$socialeff = $socialeff1 ;
+				if($socialeffchk == "others"){
+					$socialeffchk = $socialeff1 ;
 				}
+				
 
-				$query = "select * form where username='$username'";
+				$query = "select * from form where username='$username'";
 				$query_run = mysqli_query($con,$query);
 				if(mysqli_num_rows($query_run)>0){
-					$query = "update form set username='$username',dob= '$dob',gender='$gender',branch='$branch',regno='$regno',cause='$cause',expstress='$expstress',factors='$factors',cognitive='$cognitive',emotional='$emotional',socialeff='$socialeff' where username='$username'";
+					$query = "update form set username='$username',name='$name',dob= '$dob',gender='$gender',branch='$branch',batch='$batch',regno='$username',cause='$causechk',expstress='$expstress',factors='$factorschk',cognitive='$cognitivechk',emotional='$emotionalchk',socialeff='$socialeffchk' where username='$username'";
 					$query_run = mysqli_query($con,$query);
 					if($query_run)
 					{
@@ -453,12 +490,12 @@
 				}
 				else
 				{
-					$query = "insert into form values('$username','$dob','$gender','$branch','$regno','$cause','$expstress','$factors','$cognitive','$emotional','$socialeff')";
+					$query = "insert into form values('$username','$name''$dob','$gender','$branch','$batch','$regno','$causechk','$expstress','$factorschk','$cognitivechk','$emotionalchk','$socialeffchk')";
 					$query_run = mysqli_query($con,$query);
 					if($query_run)
 					{	
 						echo '<script type="text/javascript">alert("Updates saved!")</script>';
-						echo "<script>window.location.href='personal_view.php';</script>";
+						echo "<script>window.location.href='view.php';</script>";
 					}
 					else
 					{
