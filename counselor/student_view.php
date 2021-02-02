@@ -102,8 +102,7 @@
                                 SUBMITTED INFORMATION
                             </label>
                             <p class="text-gray-700 text-base"><b>Usual Causes of Stress in your Life : </b><?php echo $cause;?></p>
-                            <p class="text-gray-700 text-base"><b>What are the most pressing stress factors in your current academic context
-(related to this program of study)? : </b><?php echo $expstress;?></p>
+                            <p class="text-gray-700 text-base"><b>How do you usually experience stress (in the situations selected from the above list)? : </b><?php echo $expstress;?></p>
                             <p class="text-gray-700 text-base"><b>What are the most pressing stress factors in your current academic context
 (related to this program of study)? : </b><?php echo $factors;?></p>
                             <p class="text-gray-700 text-base"><b>What are the usual cognitive effects of stress you've noticed at yourself?  : </b><?php echo $cognitive;?></p>
