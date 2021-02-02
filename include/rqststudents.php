@@ -8,101 +8,55 @@
     $this_session=date("yy-m-d h:m:s");
     $last_session=date("yy-m-d h:m:s");
     $added_user=array();
-    
-?>  
+    $query="select * from counselor where username='$user'";
+	$query_run = mysqli_query($con,$query);
+	if($query_run)
+	{
+	    $row=$query_run->fetch_assoc();
+    }
+?> 
+
 <!doctype html>
 <html>
 <head>
-    <link rel="stylesheet" href="../css/chat.css">
     <link rel="stylesheet" href="../css/tailwind.min.css">
-    <style>
-         *{
-             font-size:20px;
-         }
-          
-        #left-col{
-            position:relative;
-            float:left;
-            width:100%;
-        }
-        #left-col-container{
-            width:60%;
-            height:80%;
-            top:30px;
-            left:45px;
-            border:border-box;
-            border-color:black;
-            margin:0px auto;
-            overflow:auto;
-        }
-        .req{
-            position:relative;
-            float:right;
-            padding-right:8px;
-        }
-        .req-elements{
-            background-color:#BDC3C7;
-            position:relative;
-            padding-right:8px;
-            padding-left:8px;
-        }
-        a,.req{
-            padding-left:12px;
-        }
-        .back{
-            font-weight:250;
-            width:94%;
-            height:50px;
-            border:1px solid grey;
-            padding:5px;
-            margin-left:1px;
-            margin-top:2px;
-            overflow:auto;
-            
-        }
-        .white1{
-            font-weight:250;
-            width:94%;
-            height:50px;
-            border:1px solid grey;
-            padding:5px;
-            margin-left:1px;
-            margin-top:2px;
-            overflow:auto;
-            background-color:blue;
-            color:white;
-        }
-        #new{
-            padding:4px;
-            border-radius:50%;
-        }
-        .back1{
-            float:right;
-            position:relative;
-            right:8px;
-            bottom:10px;
-            width:75px;
-            height:30px;
-            border:2px solid white;
-            border-sizing:border-box;
-            background:blue;
-            color:white;
-            padding-left:9px;
-            font-size:12px;
-            margin-left:7px;
-        }
-        .txt{
-             top:8px;
-        }
-    </style>
     </head>
-    <body>
-    <div id="left">
-    <div id="left-col-container">
-    <div class="white1" style="height:5%;">
-        <h1 style="text-align:center" class="txt">REQUESTED STUDENTS</h1>
-        <a href="../counselor/home.php"><button class="back1" type="button">back</button></a>
-    </div>
+    <body class=" bg-blue-400 ">
+    <nav class=" flex items-center justify-between flex-wrap bg-white p-6">
+		    <div class="flex items-center flex-shrink-0 text-blue-600 mr-6 ">
+			    	<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $row['name'];?>)</span>
+		    </div>
+		    <div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+				<div class="text-sm lg:flex-grow">
+                    <a href="../counselor/home.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+                        Profile
+                    </a>
+                    <a href="../include/rqststudents.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+                        Requested Students
+                    </a>
+                    <a href="../counselor/student_list.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+                        Student List
+                    </a>
+                    <a href="../counselor/ChangePassword.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200">
+                        Change Password
+                    </a>
+				</div> 
+				<div>
+				    <a href="../logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Logout</a>
+				</div>
+			</div>
+	</nav>
+    <div class=" px-1 py-2 bg-blue-400 flex justify-center ">
+        <div class="w-3/4 lg:flex bg-white shadow-md px-8 py-4 mb-4 " >
+            <div class="w-full  py-2 overflow-y-scroll">
+                <table class=" w-full ml-8 px-4">
+		            <thead class="bg-blue-400 flex text-white w-full rounded"> 
+  
+                            <tr class="flex w-full mb-2 ">
+                                <th >REQUESTED STUDENTS</th> 
+                            </tr> 
+                    </thead>
+                    <tbody class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full divide-y divide-grey-500" style="height: 50vh;">
     <?php
 
         //echo $user;
@@ -120,14 +74,12 @@
                         if(mysqli_num_rows($r)==0){
                             $sender_name=$username;
                                 ?>
-                            <div class="back">
-                                <?php echo'<a href="#">'.$sender_name.'</a>'?>
-                                <div class="req">
-                                <?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="req-elements" name="profile">PROFILE</button></a>';?>                  
-                                <?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="req-elements" name="chat">CHAT</button></a>';?>
-                                <button class="req-elements" id="new" name="chat" style="background-color:#00FF00;">new</button>
-                                </div>
-                             </div>   
+                            <tr class="flex w-full mb-2">
+                            <td class="p-1 w-1/2 overflow-hidden"><?php echo'<a href="#">'.$sender_name.'</a>'?></td>
+                                <td class="p-1 w-1/2 overflow-hidden pl-40 ml-10"><?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition bg-transparent border-2 border-blue-700 rounded ripple hover:bg-blue-100 focus:outline-none" name="profile">PROFILE</button></a>';?>           
+                                <?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-green-500 uppercase transition bg-transparent border-2 border-green-500 rounded ripple hover:bg-green-100 focus:outline-none" name="chat">CHAT</button></a>';?>
+                                <button class="inline-block p-3 text-center text-white transition bg-green-400 rounded-full shadow ripple hover:shadow-lg hover:bg-green-500 focus:outline-none" id="new" name="chat"></button></td>
+                             </tr>
                                 <?php
                         
                          
@@ -146,14 +98,12 @@
             while($row=mysqli_fetch_assoc($r)){
                 $sender_name=$row['username'];
                         ?>
-                            <div class="back">
-                               <?php echo'<a href="#">'.$sender_name.'</a>'?>
-                               <div class="req">
-                               <?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="req-elements" name="profile">PROFILE</button></a>';?>                  
-                               <?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="req-elements" name="chat">CHAT</button></a>';?>
-                               <button class="req-elements" id="new" name="chat" style="background-color:#0000FF;">msg</button>
-                               </div>
-                            </div>
+                            <tr class="flex w-full mb-2 ">
+                            <td class="p-1 w-1/2 overflow-hidden "><?php echo'<a href="#">'.$sender_name.'</a>'?></td>
+                               <td class="p-1 w-1/2 overflow-hidden pl-40 ml-10"><?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition bg-transparent border-2 border-blue-700 rounded ripple hover:bg-blue-100 focus:outline-none" name="profile">PROFILE</button></a>';?>                 
+                               <?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-green-500 uppercase transition bg-transparent border-2 border-green-500 rounded ripple hover:bg-green-100 focus:outline-none" name="chat">CHAT</button></a>';?>
+                               <button class="inline-block p-3 text-center text-white transition bg-blue-700 rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none" id="new" name="chat" ></button></td>
+                            </tr>
                         <?php
                     
                 }
@@ -170,13 +120,10 @@
             while($row=mysqli_fetch_assoc($r)){
                 $sender_name=$row['username'];
                     ?>
-                        <div class="back">
-                               <?php echo'<a href="#">'.$sender_name.'</a>'?>
-                               <div class="req">
-                               <?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="req-elements" name="profile">PROFILE</button></a>';?>                  
-                               <?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="req-elements" name="chat">CHAT</button></a>';?>
-                               </div>
-                            </div>
+                        <tr class="flex w-full mb-2">
+                            <td class="p-1 w-1/4 overflow-hidden"><?php echo'<a href="#">'.$sender_name.'</a>'?></td>
+                               <td class="p-1 w-1/4 overflow-hidden"><?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition bg-transparent border-2 border-blue-700 rounded ripple hover:bg-blue-100 focus:outline-none" name="profile">PROFILE</button></a>';?></td>          
+                               <td class="p-1 w-1/4 overflow-hidden"><?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-green-500 uppercase transition bg-transparent border-2 border-green-500 rounded ripple hover:bg-green-100 focus:outline-none" name="chat">CHAT</button></a>';?></td>
                         <?php
                     
                 }
@@ -184,7 +131,8 @@
     }
 
 ?>
-</div>
+</tbody>
+</table>
 </div>
 </body>
 </html>
