@@ -68,7 +68,7 @@ require '../vendor/autoload.php';
     $mail->Username   = $username; // SMTP account username example
     $mail->Password   = $password;        //
     
-    $mail->SetFrom("17CS163@mgits.ac.in", "Mentoring App MITS");
+    $mail->SetFrom("18CS052@mgits.ac.in", "Mentoring App MITS");
     $mail->addAddress($userEmail);
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Reset your password for the  mentoring app';
