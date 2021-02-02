@@ -12,6 +12,15 @@
 	$row1=mysqli_fetch_array($result);
 	$dept1=$row1['dept'];
 	$type=$row1['user_type'];
+	if($type == "HOD"){
+		$flag = 1;
+	}
+	else if($type == "advisor"){
+		$flag = 2;
+	}
+	else{
+		$flag = 0;
+	}
 ?>
 
 <html>  
@@ -21,14 +30,87 @@
     <title>View students</title>  
 </head>   
   
-<body>  
-  
-<div class="container ">
-	<h1 class="mb-8 text-center text-2xl text-teal-400">
+<body class=" bg-blue-400 ">
+<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
+		<div class="flex items-center flex-shrink-0 text-blue-600 mr-6 ">
+				<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $row1['name'];?>)</span>
+			</div>
+			<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+				<div class="text-sm lg:flex-grow">
+				
+				<?php 
+					if($flag == 2){
+				?>
+				<a href="advisor/advisor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Profile
+				</a>
+				<a href="advisor/sadd.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Add Student
+				</a>
+				<a href="slist_dept.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Student List(Dept)
+				</a>
+				<a href="advisor/slist_class.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Class List
+				</a>
+				<a href="mentor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				Mentorship
+				</a>
+				<a href="advisor/requeststofaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Advisorship
+				</a>
+				<?php } ?>
+				<?php 
+					if($flag == 1){
+				?>
+				<a href="hod/hod.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Profile
+					</a>
+				<a href="hod/request_fwdhod.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Requests
+				</a>
+				<a href="hod/assignadvisor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Assign advisor
+				</a>
+				<a href="mentor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				Mentorship
+				</a>
+				<a href="hod/viewfaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					List Faculty
+				</a>
+				<a href="slist_dept.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					List Students
+				</a>
+				<?php } ?>
+				<?php 
+					if($flag == 0){
+				?>
+				<a href="home.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Profile
+				</a>
+				<a href="slist_dept.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Students of Department
+				</a>
+				<a href="mentor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				Mentorship
+				</a>
+				<?php } ?>
+				<a href="changepassword.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200">
+					Change Password
+				</a>
+				 </div>
+				<div>
+				<a href="../logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Logout</a>
+				</div>
+			</div>
+			</nav>
+	<h1 class="mb-8 text-center text-2xl text-white">
     Student list of Department - <?php echo $dept1; ?>
   </h1> 
-  <table class="text-left w-full ml-8">
-		<thead class="bg-teal-400 flex text-white w-full"> 
+  <div class="py-5 bg-blue-400 flex justify-center">
+			<div class="flex bg-white shadow-md rounded px-2 py-2 w-2/3" >
+            <table class="text-left w-full ">
+		<thead class="bg-blue-400 flex text-white w-full"> 
   
         <tr class="flex w-full mb-4">
   
@@ -103,12 +185,14 @@
        
   
     </table> 
+	</div>
+	</div>
     </br>
-    <form action="slist_dept.php" method="post">
-    <a href="slist_dept.php"><button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
+    <!-- <form action="slist_dept.php" method="post">
+    <a href="slist_dept.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
 								back
 		</button> </a>
-        </form>
+        </form> -->
         <?php
 			if(isset($_POST['back']))
 			{
@@ -125,7 +209,6 @@
 			     echo "<script>window.location.href='home.php';</script>";
 				 }
 			}?>
-        </div>  
 
   
 </body>  

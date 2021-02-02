@@ -21,14 +21,47 @@
     <link type="text/css" rel="stylesheet" href="..\..\css\tailwind.min.css">
     <title>View faculty</title>  
 </head>  
-<body>  
-  
-<div class="container ">
-	<h1 class="mb-8 text-center text-2xl text-teal-400">
+<body class=" bg-blue-400 ">
+	<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
+		<div class="flex items-center flex-shrink-0 text-blue-600 mr-6 ">
+				<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $row1['name'];?>)</span>
+		</div>
+		<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+				<div class="text-sm lg:flex-grow">
+				<a href="hod.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Profile
+					</a>
+				<a href="request_fwdhod.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Requests
+				</a>
+				<a href="assignadvisor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Assign advisor
+				</a>
+				<a href="../mentor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				Mentorship
+				</a>
+				<a href="viewfaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					List Faculty
+				</a>
+				<a href="../slist_dept.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					List Students
+				</a>
+				<a href="../changepassword.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 ">
+					Change Password
+				</a>
+				 </div> 
+				<div>
+				<a href="../../logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Logout</a>
+				</div>
+			</div>
+			</nav>
+            <h1 class="mb-8 text-center text-2xl text-white">
     Faculty list
   </h1> 
-  <table class="text-left w-full ml-8">
-		<thead class="bg-teal-400 flex text-white w-full"> 
+  <div class="py-5 bg-blue-400 flex justify-center">
+			<div class="flex bg-white shadow-md rounded px-2 py-2 w-2/3" >
+            <table class="text-left w-full ">
+		<thead class="bg-blue-400 flex text-white w-full"> 
   
         <tr class="flex w-full mb-4">
   
@@ -67,7 +100,7 @@
                 <td class="p-4 w-1/6 overflow-hidden"><?php echo $batch;  ?></td> 
             <?php } 
             else { ?>
-                 <td class="p-4 w-1/6 overflow-hidden focus:bg-teal-400"><input type="text"  name="batch" value=" "/></td>
+                 <td class="p-4 w-1/6 overflow-hidden focus:bg-blue-400"><input type="text"  name="batch" value=" "/></td>
             <?php } ?>
             <?php  if ($user_type != "advisor") { ?>
             <td class="p-4 w-1/6 overflow-hidden"><a href="assignadvisor.php"><button class="text-green-400" type="submit"  name="<?php echo "$user_id"; ?>">Assign</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
@@ -133,20 +166,9 @@
 		?>
        	 <?php } ?> 
             </tbody> 
-    </table>  
-    </br>
-        <form action="assignadvisor.php" method="post">
-    <a href="assignadvisor.php"><button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
-								back
-		</button> </a>
-        </form>
-        <?php
-			if(isset($_POST['back']))
-			{
-			     echo "<script>window.location.href='hod.php';</script>";
-            }
-            ?> 
-</div>  
+    </table>
+    </div>
+    </div>
 </body>  
   
 </html> 

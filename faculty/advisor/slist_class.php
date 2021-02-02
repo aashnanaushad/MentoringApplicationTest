@@ -21,13 +21,48 @@
     <title>View students</title>  
 </head>    
   
-<body>   
-    <div class="container ">
-	<h1 class="mb-8 text-center text-2xl text-teal-400">
+<body class=" bg-blue-400 ">
+<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
+		<div class="flex items-center flex-shrink-0 text-blue-600 mr-6 ">
+				<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $row1['name'];?>)</span>
+		</div>
+		<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+				<div class="text-sm lg:flex-grow">
+				<a href="advisor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Profile
+				</a>
+				<a href="sadd.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Add Student
+				</a>
+				<a href="../slist_dept.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Student List(Dept)
+				</a>
+				<a href="slist_class.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Class List
+				</a>
+				<a href="../mentor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				Mentorship
+				</a>
+				<a href="requeststofaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Advisorship
+				</a>
+				<a href="../changepassword.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Change Password
+				</a>
+				</div>
+                <div>
+				<a href="../../logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Logout</a>
+				</div>
+            </div>
+			
+		</nav>
+        <h1 class="mb-8 text-center text-2xl text-white">
     Students of <?php echo "$dept1  batch $batch";?>
   </h1> 
-  <table class="text-left w-full ml-8">
-		<thead class="bg-teal-400 flex text-white w-full"> 
+  <div class="py-5 bg-blue-400 flex justify-center">
+			<div class="flex bg-white shadow-md rounded px-2 py-2 w-2/3" >
+            <table class="text-left w-full ">
+		<thead class="bg-blue-400 flex text-white w-full"> 
   
         <tr class="flex w-full mb-4"> 
   
@@ -136,20 +171,19 @@
        
   
        </table> 
+       </div></div>
        </br>
-       <form action="slist_class.php" method="post">
-       <a href="slist_class.php"><button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
+       <!-- <form action="slist_class.php" method="post">
+       <a href="slist_class.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
                                    back
            </button> </a>
-           </form>
+           </form> -->
            <?php
                if(isset($_POST['back']))
                {
                     echo "<script>window.location.href='advisor.php';</script>";
                     
                }?>
-           </div>
-  
 </body>  
   
 </html> 
