@@ -101,11 +101,14 @@
                             <label class="block text-gray-700 text-md font-bold mb-2" >
                                 SUBMITTED INFORMATION
                             </label>
-                            <p class="text-gray-700 text-base"><b>Cause : </b><?php echo $cause;?></p>
-                            <p class="text-gray-700 text-base"><b>Factors : </b><?php echo $factors;?></p>
-                            <p class="text-gray-700 text-base"><b>Cognitive  : </b><?php echo $cognitive;?></p>
-                            <p class="text-gray-700 text-base"><b>Emotional  : </b><?php echo $emotional;?></p>
-                            <p class="text-gray-700 text-base"><b>Social Efficiency  : </b><?php echo $socialeff;?></p>
+                            <p class="text-gray-700 text-base"><b>Usual Causes of Stress in your Life : </b><?php echo $cause;?></p>
+                            <p class="text-gray-700 text-base"><b>What are the most pressing stress factors in your current academic context
+(related to this program of study)? : </b><?php echo $expstress;?></p>
+                            <p class="text-gray-700 text-base"><b>What are the most pressing stress factors in your current academic context
+(related to this program of study)? : </b><?php echo $factors;?></p>
+                            <p class="text-gray-700 text-base"><b>What are the usual cognitive effects of stress you've noticed at yourself?  : </b><?php echo $cognitive;?></p>
+                            <p class="text-gray-700 text-base"><b>What are the usual emotional effects of stress you've noticed at yourself?  : </b><?php echo $emotional;?></p>
+                            <p class="text-gray-700 text-base"><b>What are the usual social effects of stress you've noticed at yourself?  : </b><?php echo $socialeff;?></p>
                         </div>
                     </div>
                 </div>
