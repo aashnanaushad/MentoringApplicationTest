@@ -161,31 +161,6 @@
     </table> 
     </div>
     </div>
-    </br>
-    <!-- <form action="mentor.php" method="post">
-    <a href="home.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit" name="back">
-								back
-		</button> </a>
-        </form> -->
-         <?php
-			if(isset($_POST['back']))
-			{
-				if($type=='HOD')
-				 {
-			     echo "<script>window.location.href='hod/hod.php';</script>";
-				 }
-				 if($type=='advisor')
-				 {
-			     echo "<script>window.location.href='advisor/advisor.php';</script>";
-				 }
-				 if($type=='faculty')
-				 {
-			     echo "<script>window.location.href='home.php';</script>";
-				 }
-			}?> 
-        <!-- </div>   -->
-
-  
 </body>  
   
 </html> 
