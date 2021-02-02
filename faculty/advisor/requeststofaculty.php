@@ -59,18 +59,9 @@
             </div>
 			
 		</nav>
-        <!-- <div class="h-screen pb-14 bg-right bg-cover"> -->
-			
-			<!-- <div class="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center"> -->
-				
-
-        <!--Left Col-->
-				<!-- <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden"> -->
-                
-		           
-                   <div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
-				<div class=" g:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
-                <div>Approve Edit Request here:</div><br /> 
+        <div class="py-5 bg-blue-400 flex justify-center">
+			<div class=" g:flex bg-white shadow-md rounded px-2 py-2 w-2/3" >
+                <div>Approve Edit Request here:</div> 
 				
 		<?php
 		    $flag=0;
@@ -432,8 +423,8 @@
 				<!--Right Col-->
 				<!-- <div class="w-full xl:w-3/5 py-6 overflow-y-hidden"> -->
                                         
-            <div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
-				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
+				<div class="py-5 bg-blue-400 flex justify-center">
+			<div class=" g:flex bg-white shadow-md rounded px-2 py-2 w-2/3" >
                 Approve Counselor Request here:
 		<?php
 		    $flag=0;
@@ -465,8 +456,8 @@
 		  ?>
 		      <form method="post" action="requeststofaculty.php">
 		      <input type="hidden" name="user" value="<?php echo $username ?>">
-			  <br /><br /><button name="forward" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Forward</button></a>
-			  <button name="reject" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-left" type="submit">Reject</button>
+			  <br /><br /><button name="forward" class="w-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit">Forward</button></a><br /><br />
+				<button name="reject" class="w-20 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" type="submit">Reject</button>
 				</form>
 
 		  
@@ -515,17 +506,9 @@
 	</div>
 	
 		  </div>
-		  
-	<!-- </div> -->
-	
-				<!-- </div> -->
-				
-        
-        <!-- </div> -->
-		<!-- <div class="w-full xl:w-3/5 py-6 overflow-y-hidden"> -->
                                         
-                <div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
-				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
+		  <div class="py-5 bg-blue-400 flex justify-center">
+			<div class=" g:flex bg-white shadow-md rounded px-2 py-2 w-2/3" >
                 Request counselor for a student: <br/>
 				<form action="requeststofaculty.php" method="post"  >
 					<div class="-mx-3 md:flex mb-6">
@@ -544,8 +527,8 @@
 							</label>
 						<input class="shadow appearance-none border rounded w-full py-12 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="reason" type="text" placeholder="Please specify a reason for request here..." class="reason" required>
 					</div>
-					<div class="flex items-center justify-between">
-						<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="request_counselor" type="submit">
+					<!-- <div class="flex items-center justify-between"> -->
+						<button class="w-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline float-right" name="request_counselor" type="submit">
 							Request
 						</button>
 					
@@ -554,9 +537,8 @@
 	</div>
 			
         </div>
-		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center ">
-		
-				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 w-2/3" >
+		<div class="py-5 bg-blue-400 flex justify-center">
+			<div class=" g:flex bg-white shadow-md rounded px-2 py-2 w-2/3" >
 				Counsellor Feedbacks:
 				<div class="shadow overflow-hidden rounded border-b border-gray-200">
                 
