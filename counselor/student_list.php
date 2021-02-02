@@ -81,9 +81,9 @@
         </div>
     </div>
     <div class=" px-1 py-2 bg-blue-400 flex justify-center shadow-md rounded">
-                                <div class="w-3/4 lg:flex bg-white shadow-md rounded px-8 py-4 mb-4 " >
-                                    <div class="w-full  py-2 overflow-y-scroll">
-                                    <table class="text-left w-full ml-8">
+                                <div class="w-3/4 lg:flex bg-white shadow-md rounded px-4 py-4 mb-4 " >
+                                    <div class="w-full  py-2 ">
+                                    <table class="text-left w-full ">
 		<thead class="bg-blue-400 flex text-white w-full"> 
   
         <tr class="flex w-full mb-2">

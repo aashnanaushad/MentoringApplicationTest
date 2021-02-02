@@ -47,9 +47,9 @@
 			</div>
 	</nav>
     <div class=" px-1 py-2 bg-blue-400 flex justify-center ">
-        <div class="w-3/4 lg:flex bg-white shadow-md px-8 py-4 mb-4 " >
-            <div class="w-full  py-2 overflow-y-scroll">
-                <table class=" w-full ml-8 px-4">
+        <div class="w-3/4 lg:flex bg-white shadow-md px-4 py-4 mb-4 " >
+            <div class="w-full  py-2 px-2">
+                <table class=" w-full px-4">
 		            <thead class="bg-blue-400 flex text-white w-full rounded"> 
   
                             <tr class="flex w-full mb-2 ">
@@ -145,9 +145,9 @@
                 }
                     ?>
                         <tr class="flex w-full mb-2">
-                            <td class="p-1 w-1/4 overflow-hidden"><?php echo'<a href="#">'.$sender_name.'('.$name.')</a>'?></td>
-                               <td class="p-1 w-1/4 overflow-hidden"><?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition bg-transparent border-2 border-blue-700 rounded ripple hover:bg-blue-100 focus:outline-none" name="profile">PROFILE</button></a>';?></td>          
-                               <td class="p-1 w-1/4 overflow-hidden"><?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-green-500 uppercase transition bg-transparent border-2 border-green-500 rounded ripple hover:bg-green-100 focus:outline-none" name="chat">CHAT</button></a>';?></td>
+                            <td class="p-1 w-1/2 overflow-hidden"><?php echo'<a href="#">'.$sender_name.'('.$name.')</a>'?></td>
+                               <td class="p-1 w-1/2 overflow-hidden pl-40 ml-10"><?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition bg-transparent border-2 border-blue-700 rounded ripple hover:bg-blue-100 focus:outline-none" name="profile">PROFILE</button></a>';?>          
+                               <?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-green-500 uppercase transition bg-transparent border-2 border-green-500 rounded ripple hover:bg-green-100 focus:outline-none" name="chat">CHAT</button></a>';?></td>
                         <?php
                     
                 }
