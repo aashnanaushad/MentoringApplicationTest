@@ -26,7 +26,15 @@
 			    {
 			        $row=$query_run->fetch_assoc();
 				}
-				
+				$form_query='select * from form where username="'.$username.'";';
+				$form_query_run = mysqli_query($con,$form_query);
+				if($form_query_run){
+					if(mysqli_num_rows($form_query_run)==0){
+						$form = 1;
+					}else{
+						$form=0;
+					}
+				}
 
 ?>
 <!DOCTYPE html>
@@ -55,6 +63,15 @@
 				<a href="request_counselor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Request Counselor
 				</a>
+				<?php
+                if($form==1){
+					?>
+					<a href="form.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+						Student Form
+					</a>
+					<?php
+				}
+				?>
 				<a href="changepass.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200">
 					Change Password
 				</a>
