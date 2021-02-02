@@ -490,7 +490,7 @@
 				}
 				else
 				{
-					$query = "insert into form values('$username','$name''$dob','$gender','$branch','$batch','$regno','$causechk','$expstress','$factorschk','$cognitivechk','$emotionalchk','$socialeffchk')";
+					$query = "insert into form values('$username','$name','$dob','$gender','$branch','$batch','$regno','$causechk','$expstress','$factorschk','$cognitivechk','$emotionalchk','$socialeffchk')";
 					$query_run = mysqli_query($con,$query);
 					if($query_run)
 					{	
