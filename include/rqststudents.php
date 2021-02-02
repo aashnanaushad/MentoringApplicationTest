@@ -145,9 +145,15 @@
                 }
                     ?>
                         <tr class="flex w-full mb-2">
+<<<<<<< HEAD
                             <td class="p-1 w-1/4 overflow-hidden"><?php echo'<a href="#">'.$sender_name.'('.$name.')</a>'?></td>
                                <td class="p-1 w-1/4 overflow-hidden"><?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition bg-transparent border-2 border-blue-700 rounded ripple hover:bg-blue-100 focus:outline-none" name="profile">PROFILE</button></a>';?></td>          
                                <td class="p-1 w-1/4 overflow-hidden"><?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-green-500 uppercase transition bg-transparent border-2 border-green-500 rounded ripple hover:bg-green-100 focus:outline-none" name="chat">CHAT</button></a>';?></td>
+=======
+                            <td class="p-1 w-1/2 overflow-hidden"><?php echo'<a href="#">'.$sender_name.'</a>'?></td>
+                               <td class="p-1 w-1/2 overflow-hidden  pl-40 ml-10"><?php echo'<a href="../student/view.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition bg-transparent border-2 border-blue-700 rounded ripple hover:bg-blue-100 focus:outline-none" name="profile">PROFILE</button></a>';?>       
+                               <?php echo'<a href="counselorchat.php?user='.$sender_name.'"> <button class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-green-500 uppercase transition bg-transparent border-2 border-green-500 rounded ripple hover:bg-green-100 focus:outline-none" name="chat">CHAT</button></a>';?></td>
+>>>>>>> 5ffdf297373fe72a9f84f2f8a629214bab34da49
                         <?php
                     
                 }

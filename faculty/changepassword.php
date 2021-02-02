@@ -12,7 +12,17 @@
 	{
 			        //$row=mysqli_fetch_row($query_run);
         $row=$query_run->fetch_assoc();
-    }
+	}
+	$user_type = $row['user_type'];
+	if($user_type == "HOD"){
+		$flag = 1;
+	}
+	else if($user_type == "advisor"){
+		$flag = 2;
+	}
+	else{
+		$flag = 0;
+	}
 ?>
 
 <!DOCTYPE html>
@@ -30,16 +40,65 @@
 			</div>
 			<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
 				<div class="text-sm lg:flex-grow">
+				
+				<?php 
+					if($flag == 2){
+				?>
+				<a href="advisor/advisor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Profile
+				</a>
+				<a href="advisor/sadd.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Add Student
+				</a>
+				<a href="slist_dept.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Student List(Dept)
+				</a>
+				<a href="advisor/slist_class.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Class List
+				</a>
+				<a href="mentor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				Mentorship
+				</a>
+				<a href="advisor/requeststofaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Advisorship
+				</a>
+				<?php } ?>
+				<?php 
+					if($flag == 1){
+				?>
+				<a href="hod/hod.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Profile
+					</a>
+				<a href="hod/request_fwdhod.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Requests
+				</a>
+				<a href="hod/assignadvisor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Assign advisor
+				</a>
+				<a href="mentor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				Mentorship
+				</a>
+				<a href="hod/viewfaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					List Faculty
+				</a>
+				<a href="slist_dept.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					List Students
+				</a>
+				<?php } ?>
+				<?php 
+					if($flag == 0){
+				?>
 				<a href="home.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Profile
 				</a>
 				<a href="slist_dept.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Students of Department
 				</a>
+				<?php } ?>
 				<a href="changepassword.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200">
 					Change Password
 				</a>
-				 </div> 
+				 </div>
 				<div>
 				<a href="../logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Logout</a>
 				</div>

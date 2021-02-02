@@ -37,6 +37,9 @@
 				<a href="assignadvisor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Assign advisor
 				</a>
+				<a href="../mentor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+				Mentorship
+				</a>
 				<a href="viewfaculty.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					List Faculty
 				</a>

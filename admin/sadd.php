@@ -129,9 +129,9 @@
             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
 				Gender
 			</label>
-			<input name="gender" type="radio" id="male" value="male"><label for="male">Male</label><br>
-            <input name="gender" type="radio" id="female" value="female"><label for="female">Female</label><br>
-            <input name="gender" type="radio" id="other" value="other"><label for="other">Other</label><br>
+			<label class="inline-flex items-center mt-3"><input name="gender" class="form-radio h-5 w-5 text-gray-600" type="radio" id="male" value="male"><label for="male" class="ml-2 text-gray-700">Male</label></label><br>
+            <label class="inline-flex items-center mt-3"><input name="gender" class="form-radio h-5 w-5 text-gray-600" type="radio" id="female" value="female"><label for="female" class="ml-2 text-gray-700">Female</label></label><br>
+            <label class="inline-flex items-center mt-3"><input name="gender" class="form-radio h-5 w-5 text-gray-600" type="radio" id="other" value="other"><label for="other" class="ml-2 text-gray-700">Other</label></label><br>
 		    </div>
 		</div>
 		<div class="-mx-3 md:flex mb-6">
