@@ -14,7 +14,15 @@
 			$username=$_SESSION['username'];
 		}
 	}
-			    
+				$form_query='select * from form where username="'.$username.'";';
+				$form_query_run = mysqli_query($con,$form_query);
+				if($form_query_run){
+					if(mysqli_num_rows($form_query_run)==0){
+						$form = 1;
+					}else{
+						$form=0;
+					}
+				}
 			    $query="select * from student where username='$username'";
 			    $query_run = mysqli_query($con,$query);
 			    if($query_run)
@@ -50,6 +58,15 @@
 				<a href="request_counselor.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
 					Request Counselor
 				</a>
+				<?php
+				if($form==1){
+					?>
+					<a href="form.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+						Student Form
+					</a>
+					<?php
+				}
+				?>
 				<a href="changepass.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200">
 					Change Password
 				</a>
@@ -199,7 +216,7 @@
                     
 					<br>
 					<br>
-					<div class="flex items-center justify-between">
+				<div class="flex items-center justify-between">
 					<?php
 					if($flag==1){
 					?>
@@ -233,23 +250,7 @@
 						<?php
 					}
 					?>
-					<?php
-					if($flag==1){
-						?>
-						<?php echo '<a href="../include/rqststudents.php?user='.$_SESSION['username'].'"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
-						     Student form
-						</button></a>'; ?>
-						<?php
-					}else{
-						?>
-					<div class="flex items-center justify-between">
-						<a href="form.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
-							Student form
-						</button></a>
-						<?php
-					}
-					?>
-					</div>
+					 
 					</div>
 				</div>
 					
