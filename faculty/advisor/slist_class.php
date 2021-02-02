@@ -136,18 +136,27 @@
             }
             if(isset($_POST["assign$user_id"]))
 			{
-				$mentor=$_POST['mentor'];
-				$query="update student set mentorship='$mentor' where username='$user_id'";
-			    $query_run = mysqli_query($con,$query);
-			    if($query_run)
-			    {
-					      echo '<script type="text/javascript">alert("Mentor assigned successfully ")</script>';
-					        echo "<script>window.location.href='slist_class.php';</script>";
-				}
-			    else
-			    {
-			        echo '<script type="text/javascript">alert("DB error")</script>';
-			    }
+                $mentor=$_POST['mentor'];
+                $query1='select * from faculty where username="'.$mentor.'";';
+                $query_run1 = mysqli_query($con,$query1);
+                if($query_run1){
+                        if(mysqli_num_rows($query_run1)>0){
+                        $query="update student set mentorship='$mentor' where username='$user_id'";
+                        $query_run = mysqli_query($con,$query);
+                        if($query_run)
+                        {
+                                echo '<script type="text/javascript">alert("Mentor assigned successfully ")</script>';
+                                    echo "<script>window.location.href='slist_class.php';</script>";
+                        }
+                        else
+                        {
+                            echo '<script type="text/javascript">alert("DB error")</script>';
+                        }
+                    }else{
+                        echo '<script type="text/javascript">alert("Invalid Faculty!!")</script>';
+                        echo "<script>window.location.href='slist_class.php';</script>";
+                    }
+                }
             }
             if(isset($_POST["deassign$user_id"]))
 			{

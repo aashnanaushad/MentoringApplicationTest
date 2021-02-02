@@ -154,12 +154,7 @@
         
         </form>
         <?php
-			if(isset($_POST[$user_id]))
-			{
-			    
-            }
-		?>
-        <?php } ?>
+     } ?>
         </tbody>  
        
   
