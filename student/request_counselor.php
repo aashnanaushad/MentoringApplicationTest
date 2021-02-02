@@ -63,17 +63,19 @@
 					<form action="request_counselor.php" method="post"  >
                     <input type="hidden" name="username" value="<?php echo $username; ?>">
 				    <input type="hidden" name="dept" value="<?php echo $dept1; ?>">
+                    
+					
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-4" >
 							Would you like to request for Counselor?
 						</label>
-						<input class="shadow appearance-none border rounded w-full py-12 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="reason" type="text" placeholder="Please specify a reason for request here..." class="reason" required>
+						<input class="shadow appearance-none border rounded w-full py-12 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="reason" type="text" placeholder="Please specify a reason for request here..." class="reason">
 					</div>
 					<div class="flex items-center justify-between">
 						<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" name="request_counselor" type="submit">
 							Request
 						</button>
-					
+                       
                     </form>
 				
 				<?php
@@ -134,7 +136,7 @@
 				    }
                      ?>
  
-
+                      </div>
 				</div>
     </div>
 </body>
