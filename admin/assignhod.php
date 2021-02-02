@@ -11,7 +11,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="..\css\tailwind.min.css">
     <title>Assign hod</title>  
-</head>  
+</head>
+<div class=" px-2 py-2 bg-blue-400 flex justify-center">
+		<div class="w-3/4 bg-white shadow-md rounded px-4 mb-2 " >
+            <div class="w-full overflow-y-hidden"> 
+                <div class="mb-2">
+                    <h2>Select Department & Batch:</h2></br>
+                    <form class="form" action="assignhod.php" method="post">
+                        <label class="text-gray-700 text-md font-bold mb-2" for="department">
+                            Department:
+                        </label>
+                        <select id="department" name="department" required>
+                            <option value="CSE">CSE</option>
+                            <option value="CE">CE</option>
+                            <option value="EC">EC</option>
+                            <option value="EEE">EE</option>
+                            <option value="ME">ME</option>
+                        </select>
+                        <!-- <div class="flex items-center justify-between"> -->
+                            <button class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-400 hover:bg-blue-700 mt-4 lg:mt-0" type="submit" name="survey">
+                                    Submit
+                            </button>
+                        <!-- </div> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> 
 <div class="container ">
 	<h1 class="mb-8 text-center text-2xl text-teal-400">
     Faculty list
@@ -31,8 +57,9 @@
         </thead>  
         <tbody class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full" style="height: 50vh;">
         <?php  
-         
-        $view_users_query="select * from faculty order by dept ";//select query for viewing users.  
+        if(isset($_POST['survey'])){
+        $department = $_POST['department'];
+        $view_users_query='select * from faculty where dept="'.$department.'";';//select query for viewing users.  
         $run=mysqli_query($con,$view_users_query);//here run the sql query.  
   
         while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.  
@@ -61,7 +88,8 @@
                 <td class="p-4 w-1/6 overflow-hidden"><a href="assignhod.php"><button class="text-red-400" type="submit"  name="<?php echo "$user_id"; ?>">De-assign</button></a></td>  
                 <?php 
                     $flag=1;
-            } ?>
+            } 
+            ?>
         </tr>  
             </form>
         <?php
@@ -112,7 +140,8 @@
             }
         }
 		?>
-       	 <?php } ?> 
+            <?php }
+            } ?> 
             </tbody> 
     </table>  
     </br>
