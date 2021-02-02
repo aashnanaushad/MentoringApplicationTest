@@ -53,7 +53,7 @@
 	
 			<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
-					<form action="homepage.php" method="post" >
+					<form action="changepass.php" method="post" >
 					<div class="mb-4">
 						<label class="block text-gray-700 text-sm font-bold mb-2" >
 							Current Password
@@ -73,12 +73,7 @@
 							Change 
 						</button>
 						</form>
-						<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="common/forgotpassword/reset-password.php">
-							<form action="reset-password.php" method="post">
-								<input type="hidden" name="pageinfo" value="c">
-								<button type="submit" name="newpwd">Forgot Password?</button>
-							</form>
-						</a>
+						 
 					</div>
 					
 			</div>
@@ -87,111 +82,48 @@
 			if(isset($_POST['change']))
 			{
 				@$password=$_POST['password'];
-				@$npassword=$_POST['npassword'];
+				@$npassword=password_hash($_POST['npassword'],PASSWORD_DEFAULT);
+				//echo $npassword;
 				$username=$_SESSION['username'];
-				$query = "select * from student where username='$username' and password='$password' ";
+				$query = "select * from admin where username='$username';";
 				//echo $query;
 				$query_run = mysqli_query($con,$query);
 				//echo mysql_num_rows($query_run);
 				if($query_run)
 				{
 					if(mysqli_num_rows($query_run)>0)
-					{
-					$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
-					$query = "update student set password='$npassword' where username='$username'";
-					$query_run = mysqli_query($con,$query);
-					
-					$_SESSION['username'] = $username;
-					$_SESSION['password'] = $npassword;
-					
-					
-					//header( "Location: homepage.php");
-					echo "<script>window.location.href='../logout.php';</script>";
+					{	
+						
+						$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
+						if(password_verify($password,$row['password'])){
+						$query = "update admin set password='$npassword' where username='$username'";
+						$query_run = mysqli_query($con,$query);
+						if($query_run){
+						$_SESSION['username'] = $username;
+						$_SESSION['password'] = $npassword;
+						
+						
+						//header( "Location: homepage.php");
+						echo "<script>window.location.href='homepage.php';</script>";
+						}else{
+							echo '<script type="text/javascript">alert("Database Error")</script>';
+							echo "<script>window.location.href='homepage.php';</script>";
+						}
+					}else{
+						echo '<script type="text/javascript">alert("Password Incorrect!!")</script>';
+						echo "<script>window.location.href='changepass.php';</script>";
 					}
-					else
-					{
-						//echo '<script type="text/javascript">alert("Something went wrong")</script>';
-                        $query = "select * from faculty where username='$username' and password='$password';";
-        				//echo $query;
-        				$query_run = mysqli_query($con,$query);
-        				//echo mysql_num_rows($query_run);
-        				if($query_run)
-        				{
-        					if(mysqli_num_rows($query_run)>0)
-        					{
-        					$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
-        					$query = "update faculty set password='$npassword' where username='$username';";
-        					$query_run = mysqli_query($con,$query);
-        					
-        					$_SESSION['username'] = $username;
-        					$_SESSION['password'] = $npassword;
-        					
-        					
-        					//header( "Location: homepage.php");
-        					echo "<script>window.location.href='../logout.php';</script>";
-        					}
-        					else
-        					{
-        						//echo '<script type="text/javascript">alert("Something went wrong")</script>';
-        						 $query = "select * from counselor where username='$username' and password='$password'";
-                				//echo $query;
-                				$query_run = mysqli_query($con,$query);
-                				//echo mysql_num_rows($query_run);
-                				if($query_run)
-                				{
-                					if(mysqli_num_rows($query_run)>0)
-                					{
-                					$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
-                					$query = "update counselor set password='$npassword' where username='$username';";
-                					$query_run = mysqli_query($con,$query);
-                					
-                					$_SESSION['username'] = $username;
-                					$_SESSION['password'] = $npassword;
-                					
-                					
-                					//header( "Location: homepage.php");
-                					echo "<script>window.location.href='../logout.php';</script>";
-                					}
-                					else
-                					{
-                						//echo '<script type="text/javascript">alert("Something went wrong")</script>';
-                						$query = "select * from admin where username='$username' and password='$password';";
-                        				//echo $query;
-                        				$query_run = mysqli_query($con,$query);
-                        				//echo mysql_num_rows($query_run);
-                        				if($query_run)
-                        				{
-                        					if(mysqli_num_rows($query_run)>0)
-                        					{
-                        					$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
-                        					$query = "update admin set password='$npassword' where username='$username'";
-                        					$query_run = mysqli_query($con,$query);
-                        					
-                        					$_SESSION['username'] = $username;
-                        					$_SESSION['password'] = $npassword;
-                        					
-                        					
-                        					//header( "Location: homepage.php");
-                        					echo "<script>window.location.href='../logout.php';</script>";
-                        					}
-                        					else
-                        					{
-                        						echo '<script type="text/javascript">alert("Something went wrong")</script>';
-                        					}
-                        				}
-                        				else
-                        				{
-                        				    echo '<script type="text/javascript">alert("DB ERROR")</script>';
-                        				}
-                					}
-                				}
-        					}
-					    }
-			    	}   
-				}	
-			}
-			else
-			{
+					}else{    					
+						//header( "Location: homepage.php");
+						echo '<script type="text/javascript">alert("Password cannot be updated!!")</script>';
+						echo "<script>window.location.href='changepass.php';</script>";
+					}
+				}else{
+					echo '<script type="text/javascript">alert("Database Error")</script>';
+					echo "<script>window.location.href='homepage.php';</script>";
+				}
+			}else{
+				 
 			}
 		?>
 		</div>

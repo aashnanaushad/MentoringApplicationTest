@@ -120,7 +120,7 @@
 				@$qualification=$_POST['qualification'];
 				@$designation=$_POST['designation'];
 				@$email=$_POST['email'];
-				@$password=$_POST['username'];
+				@$password=password_hash($_POST['username'],PASSWORD_DEFAULT);
 				@$dept=$_POST['dept'];
 				$type='faculty';
 				$batch=0;

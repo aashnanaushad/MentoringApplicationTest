@@ -2,18 +2,19 @@
 if(isset($_POST['reset-password-submit'])){
     $selector=$_POST["selector"];
     $validator=$_POST["validator"];
-    $password=$_POST["pwd"];
+    $password1=$_POST["pwd"];
     $passwordRepeat=$_POST["pwd-repeat"];
-    if(empty($password) && empty($passwordRepeat)){
+    if(empty($password1) && empty($passwordRepeat)){
         header("../slogin.php");
         exit();
     }
-    else if($password!=$passwordRepeat){
+    else if($password1!=$passwordRepeat){
         header("../slogin.php");
         exit();
         
     }
     $currentDate=date("U");
+    $password = password_hash($_POST["pwd"],PASSWORD_DEFAULT);
     require '../dbconfig/config.php';
     
     $sql ="SELECT * FROM pwdReset WHERE pwdResetSelector=? AND pwdResetExpires>=?;";
@@ -68,6 +69,7 @@ if(isset($_POST['reset-password-submit'])){
                                         exit();
                                     }
                                     else{
+                                        $password1 = hex2bin($password);
                                          mysqli_stmt_bind_param($stmt,"ss",$password,$tokenEmail);
                                          mysqli_stmt_execute($stmt);
                             

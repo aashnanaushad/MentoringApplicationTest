@@ -62,50 +62,48 @@
                  ?>
 		
 		<?php
-			if(isset($_POST['login']))
-			{
-				@$username=$_POST['username'];
-				@$password=$_POST['password'];
-				$query = "select * from faculty where username='$username' and password='$password' ";
-				//echo $query;
-				$query_run = mysqli_query($con,$query);
-				//echo mysql_num_rows($query_run);
-				if($query_run)
-				{
-					if(mysqli_num_rows($query_run)>0)
-					{
-					    $row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
-					
-					    $_SESSION['username'] = $username;
-					    $_SESSION['password'] = $password;
-					    $user= $row['user_type'];
-					    //header( "Location: homepage.php");
-					    if($user=="HOD")
-					    {
-					        echo "<script>window.location.href='hod/hod.php';</script>";
-					    }
-					    elseif ($user=="advisor")
-					    {
-					        echo "<script>window.location.href='advisor/advisor.php';</script>";
-					    }
-					    else
-					    {
-					        echo "<script>window.location.href='home.php';</script>";
-					    }
-					}
-					else
-					{
-						echo '<script type="text/javascript">alert("Invalid Credentials")</script>';
-					}
-				}
-				else
-				{
-					echo '<script type="text/javascript">alert("Database Error")</script>';
-				}
-			}
-			else
-			{
-			}
+						if(isset($_POST['login']))
+						{
+							@$username=$_POST['username'];
+							@$password= $_POST['password'];
+							$query = "select * from faculty where username='$username';";
+							//echo $query;
+							$query_run = mysqli_query($con,$query);
+							//echo mysql_num_rows($query_run);
+							if($query_run){
+								if(mysqli_num_rows($query_run)>0)
+								{
+									$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
+									if(password_verify($password,$row['password']) ){
+									
+										$_SESSION['username'] = $username;
+										$_SESSION['passsword'] = $password;
+										
+										//header( "Location: homepage.php");
+										if($row['user_type']=="HOD"){
+											echo "<script>window.location.href='hod/hod.php';</script>";
+										}else if($row['user_type']=="advisor"){
+											echo "<script>window.location.href='advisor/advisor.php';</script>";
+										}else{
+											echo "<script>window.location.href='home.php';</script>";
+										}
+										
+									}else{
+											echo '<script type="text/javascript">alert("Invalid Credentials")</script>';
+									}
+								}else{
+									echo '<script type="text/javascript">alert("Invalid Credentials")</script>';
+								}
+							}
+							else
+							{
+								echo '<script type="text/javascript">alert("Database Error")</script>';
+							}
+						}
+						else
+						{
+								
+						}
 		?>
 		
 </body>
