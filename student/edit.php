@@ -144,12 +144,12 @@
 			<input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="mocc" type="text" value="<?php echo $row['mocc'];?>"  >
 			</div>
 		</div>	
-		<div class="container">
-		<div class="-mx-3 md:flex mb-6">
+		<!-- <div class="container"> -->
+		<!-- <div class="flex my-3 "> -->
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
 			   Academic details
 			</label>
-             <table class="text-left w-full ml-8">
+             <table class="text-left w-full my-2">
               <thead class="bg-gray-800 flex text-white w-full">
             	<tr class="flex w-full mb-4">
 					<th class="w-1/4 p-4">QUALIFICATION</th>
@@ -179,16 +179,16 @@
       		</tr>
     		</tbody>
     		</table>
-  		</div>
-	</div>
+  		<!-- </div> -->
+	<!-- </div> -->
     
-	<div class="md:px-32 py w-full">
-	<div class="-mx-3 md:flex mb-6">
-            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
+	<!-- <div class="md:px-32 py w-full">
+	<div class="-mx-3 md:flex mb-6"> -->
+			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" >
 				Semester wise performance
 			</label>
             <!-- <div class="shadow overflow-hidden rounded "> -->
-            <table class="w-full ml-8">
+            <table class="w-full px-4">
             <thead class="bg-gray-800 text-white w-full flex">
             <tr class="flex w-full mb-4">
 				<th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">SEMESTER</th>
@@ -239,8 +239,8 @@
       		</tr>
       		</tbody>
     		</table>
-			</div>
-  		</div>
+			<!-- </div> -->
+  		<!-- </div> -->
 			
 		
 		<div class="flex items-center justify-between float-right">

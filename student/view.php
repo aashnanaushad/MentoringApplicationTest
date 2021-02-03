@@ -80,12 +80,9 @@
 			}
 			?>
 
-		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
-				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
-                 <!-- <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
-					<img src="../imgs/avatar.png" /> 
-				</div> -->
-				 <div class="w-full  py-6 overflow-y-hidden"> 
+<div class=" px-1 py-2 bg-blue-400 flex justify-center ">
+        <div class="w-3/4 lg:flex bg-white shadow-md px-4 py-4 mb-4 " >
+            <div class="w-full  py-2 px-2"> 
 					<div class="mb-4">
 						<label class="block text-gray-700 text-md font-bold mb-2" >
 							PROFESSIONAL DETAILS
@@ -118,101 +115,101 @@
 						<p class="text-gray-700 text-base"><b>Mother  : </b><?php echo $row['mother'];?></p>
                         <p class="text-gray-700 text-base"><b>Occupation: </b><?php echo $row['mocc'];?></p>
 					</div>
-                    <div class="container">
+                    <!-- <div class="container"> -->
             <label class="block uppercase tracking-wide text-grey-darker text-md font-bold mb-2" >
 			   Academic details
 			</label>
 			<div class="shadow overflow-hidden rounded border-b border-gray-200">
-             <table class="min-w-full bg-white">
-              <thead class="bg-gray-800 text-white">
-            <tr>
-                <th class="w-1/20 text-left py-3 px-4 ">QUALIFICATION</th>
-                <th class="w-1/20 text-left py-3 px-4 ">NAME OF SCHOOL & SYLLABUS</th>
-                <th class="w-1/20 text-left py-3 px-4 ">TOTAL MARKS</th>
-                <th class="w-1/20 text-left py-3 px-4 ">PERCENTAGE</td>
+			<table class=" w-full px-4 ">
+              <thead class="bg-gray-800 text-white flex w-full rounded">
+            <tr class="flex w-full mb-2 ">
+                <th class="w-1/4 text-left py-1 px-2 uppercase font-semibold text-xs">QUALIFICATION</th>
+                <th class="w-1/4 text-left py-1 px-2 uppercase font-semibold text-xs">NAME OF SCHOOL & SYLLABUS</th>
+                <th class="w-1/4 text-left py-1 px-2 uppercase font-semibold text-xs">TOTAL MARKS</th>
+                <th class="w-1/4 text-left py-1 px-2 uppercase font-semibold text-xs">PERCENTAGE</td>
             </tr>
             </thead>
-            <tbody class="text-gray-700">
-            <tr>
-                <td class="w-1/20 text-left py-3 px-4">GRADE X</td>
-       			<td class="w-1/20 text-left py-3 px-4"><?php echo $row["school10"];?></td>
-        		<td class="w-1/20 text-left py-3 px-4"><?php echo $row["mark10"];?></td>
-        		<td class="w-1/20 text-left py-3 px-4"><?php echo $row["perc10"];?></td>
+            <tbody class="text-gray-700 bg-grey-light flex flex-col items-center justify-between w-full divide-y divide-grey-500">
+            <tr class="flex w-full">
+                <td class="w-1/4 text-left py-1 px-2">GRADE X</td>
+       			<td class="w-1/4 text-left py-1 px-2"><?php echo $row["school10"];?></td>
+        		<td class="w-1/4 text-left py-1 px-2"><?php echo $row["mark10"];?></td>
+        		<td class="w-1/4 text-left py-1 px-2"><?php echo $row["perc10"];?></td>
       		</tr>
-      		<tr class="bg-gray-100">
-        		<td class="w-1/20 text-left py-3 px-4">GRADE XII</td>
-        		<td class="w-1/20 text-left py-3 px-4"><?php echo $row["school12"];?></td>
-        		<td class="w-1/20 text-left py-3 px-4"><?php echo $row["mark12"];?></td>
-        		<td class="w-1/20 text-left py-3 px-4"><?php echo $row["perc12"];?></td>
+      		<tr class="bg-gray-100 flex w-full">
+        		<td class="w-1/4 text-left py-1 px-2">GRADE XII</td>
+        		<td class="w-1/4 text-left py-1 px-2"><?php echo $row["school12"];?></td>
+        		<td class="w-1/4 text-left py-1 px-2"><?php echo $row["mark12"];?></td>
+        		<td class="w-1/4 text-left py-1 px-2"><?php echo $row["perc12"];?></td>
       		</tr>
-      		<tr>
-        		<td class="w-1/20 text-left py-3 px-4">Any Other</td>
-       		 	<td class="w-1/20 text-left py-3 px-4"><?php echo $row["othername"];?></td>
-        		<td class="w-1/20 text-left py-3 px-4"><?php echo $row["othermark"];?></td>
-        		<td class="w-1/20 text-left py-3 px-4"><?php echo $row["otherperc"];?></td>
+      		<tr class="flex w-full">
+        		<td class="w-1/4 text-left py-1 px-2">Any Other</td>
+       		 	<td class="w-1/4 text-left py-1 px-2"><?php echo $row["othername"];?></td>
+        		<td class="w-1/4 text-left py-1 px-2"><?php echo $row["othermark"];?></td>
+        		<td class="w-1/4 text-left py-1 px-2"><?php echo $row["otherperc"];?></td>
       		</tr>
     		</tbody>
     		</table>
   	  </div>
-	</div>
-    <div class="md:px-32 py w-full">
+	<!-- </div> -->
+    <!-- <div class="md:px-32 py w-full"> -->
             <label class="block uppercase tracking-wide text-grey-darker text-md font-bold mb-2" >
 				Semester wise performance
 			</label>
-            <div class="shadow overflow-hidden rounded border-b border-gray-200">
-            <table class="min-w-full bg-white">
-            <thead class="bg-gray-800 text-white">
-            <tr>
-                <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">SEMESTER</th>
-                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">CGPA</th>
-                <th class="text-left py-3 px-4 uppercase font-semibold text-sm">NO: OF ARREARS</th>
+			<!-- <div class="shadow overflow-hidden rounded border-b border-gray-200"> -->
+            <table class=" w-full px-4">
+            <thead class="bg-gray-800 text-white flex w-full rounded">
+            <tr class="flex w-full mb-2 ">
+                <th class="w-1/3 text-left py-1 px-2 uppercase font-semibold text-sm">SEMESTER</th>
+                <th class="w-1/3 text-left py-1 px-2 uppercase font-semibold text-sm">CGPA</th>
+                <th class="w-1/3 text-left py-1 px-2 uppercase font-semibold text-sm">NO: OF ARREARS</th>
             </tr>
             </thead>
-            <tbody class="text-gray-700">
-            <tr>
-                <td class="w-1/3 text-left py-3 px-4">SEMESTER 1</td>
-       			<td class="text-left py-3 px-4"> <?php echo $row["C1"];?></td>
-        		<td class="text-left py-3 px-4"><?php echo $row["A1"];?></td>
+            <tbody class="text-gray-700 bg-grey-light flex flex-col items-center justify-between w-full divide-y divide-grey-500">
+            <tr class="flex w-full">
+                <td class="w-1/3 text-left py-1 px-2">SEMESTER 1</td>
+       			<td class="w-1/3 text-left py-1 px-2"> <?php echo $row["C1"];?></td>
+        		<td class="w-1/3 text-left py-1 px-2"><?php echo $row["A1"];?></td>
       		</tr>
-      		<tr class="bg-gray-100">
-        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 2</td>
-        		<td class="text-left py-3 px-4"><?php echo $row["C2"];?></td>
-        		<td class="text-left py-3 px-4"><?php echo $row["A2"];?></td>
+      		<tr class="flex w-full bg-gray-100">
+        		<td class="w-1/3 text-left py-1 px-2">SEMESTER 2</td>
+        		<td class="w-1/3 text-left py-1 px-2"><?php echo $row["C2"];?></td>
+        		<td class="w-1/3 text-left py-1 px-2"><?php echo $row["A2"];?></td>
       		</tr>
-			<tr>
-                <td class="w-1/3 text-left py-3 px-4">SEMESTER 3</td>
-       			<td class="text-left py-3 px-4"><?php echo $row["C3"];?></td>
-        		<td class="text-left py-3 px-4"><?php echo $row["A3"];?></td>
+			<tr class="flex w-full">
+                <td class="w-1/3 text-left py-1 px-2">SEMESTER 3</td>
+       			<td class="w-1/3 text-left py-1 px-2"><?php echo $row["C3"];?></td>
+        		<td class="w-1/3 text-left py-1 px-2"><?php echo $row["A3"];?></td>
       		</tr>
-			<tr class="bg-gray-100">
-        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 4</td>
-        		<td class="text-left py-3 px-4" ><?php echo $row["C4"];?></td>
-        		<td class="text-left py-3 px-4" ><?php echo $row["A4"];?></td>
+			<tr class="flex w-full bg-gray-100">
+        		<td class="w-1/3 text-left py-1 px-2">SEMESTER 4</td>
+        		<td class="w-1/3 text-left py-1 px-2" ><?php echo $row["C4"];?></td>
+        		<td class="w-1/3 text-left py-1 px-2" ><?php echo $row["A4"];?></td>
       		</tr>
-			<tr>
-                <td class="w-1/3 text-left py-3 px-4">SEMESTER 5</td>
-       			<td class="text-left py-3 px-4" ><?php echo $row["C5"];?></td>
-        		<td class="text-left py-3 px-4" ><?php echo $row["A5"];?></td>
+			<tr class="flex w-full">
+                <td class="w-1/3 text-left py-1 px-2">SEMESTER 5</td>
+       			<td class="w-1/3 text-left py-1 px-2" ><?php echo $row["C5"];?></td>
+        		<td class="w-1/3 text-left py-1 px-2" ><?php echo $row["A5"];?></td>
       		</tr>
-			<tr class="bg-gray-100">
-        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 6</td>
-        		<td class="text-left py-3 px-4" ><?php echo $row["C6"];?></td>
-        		<td class="text-left py-3 px-4" ><?php echo $row["A6"];?></td>
+			<tr class="flex w-full bg-gray-100">
+        		<td class="w-1/3 text-left py-1 px-2">SEMESTER 6</td>
+        		<td class="w-1/3 text-left py-1 px-2" ><?php echo $row["C6"];?></td>
+        		<td class="w-1/3 text-left py-1 px-2" ><?php echo $row["A6"];?></td>
       		</tr>
-			<tr>
-                <td class="w-1/3 text-left py-3 px-4">SEMESTER 7</td>
-       			<td class="text-left py-3 px-4"><?php echo $row["C7"];?></td>
-        		<td class="text-left py-3 px-4" ><?php echo $row["A7"];?></td>
+			<tr class="flex w-full ">
+                <td class="w-1/3 text-left py-1 px-2">SEMESTER 7</td>
+       			<td class="w-1/3 text-left py-1 px-2"><?php echo $row["C7"];?></td>
+        		<td class="w-1/3 text-left py-1 px-2" ><?php echo $row["A7"];?></td>
       		</tr>
-			<tr class="bg-gray-100">
-        		<td class="w-1/3 text-left py-3 px-4">SEMESTER 8</td>
-        		<td class="text-left py-3 px-4"><?php echo $row["C8"];?></td>
-        		<td class="text-left py-3 px-4"><?php echo $row["A8"];?></td>
+			<tr class="flex w-full bg-gray-100">
+        		<td class="w-1/3 text-left py-1 px-2">SEMESTER 8</td>
+        		<td class="w-1/3 text-left py-1 px-2"><?php echo $row["C8"];?></td>
+        		<td class="w-1/3 text-left py-1 px-2"><?php echo $row["A8"];?></td>
       		</tr>
       		</tbody>
     		</table>
-  		</div>
-	</div>
+  		<!-- </div> -->
+	<!-- </div> -->
                     
 					<br>
 					<br>
