@@ -215,112 +215,112 @@
 						  if( $row["C1"]!=$row1["C1"])
 		                  {
 		                      @$C1=$row1["C1"];
-		                      echo "Edited C1: $C1";
+		                      echo "Edited CGPA of S1: $C1";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["A1"]!=$row1["A1"])
 		                  {
 		                      @$A1=$row1["A1"];
-		                      echo "A1: $A1";
+		                      echo "Edited Arrear of S1: $A1";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["C2"]!=$row1["C2"])
 		                  {
 		                      @$C2=$row1["C2"];
-		                      echo "Edited C2: $C2";
+		                      echo "Edited CGPA of S2: $C2";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["A2"]!=$row1["A2"])
 		                  {
 		                      @$A2=$row1["A2"];
-		                      echo "Edited A2: $A2";
+		                      echo "Edited Arrear of S2: $A2";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["C3"]!=$row1["C3"])
 		                  {
 		                      @$C3=$row1["C3"];
-		                      echo "Edited C3: $C3";
+		                      echo "Edited CGPA of S3: $C3";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["A3"]!=$row1["A3"])
 		                  {
 		                      @$A3=$row1["A3"];
-		                      echo "Edited A3: $A3";
+		                      echo "Edited Arrear of S3: $A3";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["C4"]!=$row1["C4"])
 		                  {
 		                      @$C4=$row1["C4"];
-		                      echo "Edited C4: $C4";
+		                      echo "Edited CGPA of S4: $C4";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["A4"]!=$row1["A4"])
 		                  {
 		                      @$A4=$row1["A4"];
-		                      echo "Edited A4: $A4";
+		                      echo "Edited Arrear of S4: $A4";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["C5"]!=$row1["C5"])
 		                  {
 		                      @$C5=$row1["C5"];
-		                      echo "Edited C5: $C5";
+		                      echo "Edited CGPA of S5: $C5";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["A5"]!=$row1["A5"])
 		                  {
 		                      @$A5=$row1["A5"];
-		                      echo "Edited A5: $A5";
+		                      echo "Edited Arrear of S5: $A5";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["C6"]!=$row1["C6"])
 		                  {
 		                      @$C6=$row1["C6"];
-		                      echo "Edited C6: $C6";
+		                      echo "Edited CGPA of S6: $C6";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["A6"]!=$row1["A6"])
 		                  {
 		                      @$A6=$row1["A6"];
-		                      echo "Edited A6: $A6";
+		                      echo "Edited Arrear of S6: $A6";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["C7"]!=$row1["C7"])
 		                  {
 		                      @$C7=$row1["C7"];
-		                      echo "Edited C7: $C7";
+		                      echo "Edited CGPA of S7: $C7";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["A7"]!=$row1["A7"])
 		                  {
 		                      @$A7=$row1["A7"];
-		                      echo "Edited A7: $A7";
+		                      echo "Edited Arrear of S7: $A7";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["C8"]!=$row1["C8"])
 		                  {
 		                      @$C8=$row1["C8"];
-		                      echo "Edited C8: $C8";
+		                      echo "Edited CGPA of S8: $C8";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
 						  if( $row["A8"]!=$row1["A8"])
 		                  {
 		                      @$A8=$row1["A8"];
-		                      echo "Edited A8: $A8";
+		                      echo "Edited Arrear of S8: $A8";
 		                      echo "<br>";
 		                      echo "<br>";
 						  }
