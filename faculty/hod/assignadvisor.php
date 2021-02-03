@@ -124,7 +124,7 @@
 			        	if($query_run)
 				    	{
 					      echo '<script type="text/javascript">alert("Successfully de-assigned advisor ")</script>';
-					        echo "<script>window.location.href='hod.php';</script>";
+					        echo "<script>window.location.href='assignadvisor.php';</script>";
 				    	}
 				    	else
 				    	{
@@ -146,7 +146,7 @@
 			        	if($query_run)
 				    	{
 					      echo '<script type="text/javascript">alert("Successfully assigned advisor ")</script>';
-					        echo "<script>window.location.href='hod.php';</script>";
+					        echo "<script>window.location.href='assignadvisor.php';</script>";
 				    	}
 				    	else
 				    	{
