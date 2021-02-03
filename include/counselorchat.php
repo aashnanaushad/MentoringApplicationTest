@@ -4,8 +4,14 @@
     $flag=1;
 	if(!isset($_SESSION['username'])){
     echo "<script>window.location.href='../counselor/chome.php';</script>";
-	}
-	//phpinfo();
+    }
+    $username = $_SESSION['username'];
+    $cname_query = "select * from counselor where username='$username'";
+    $cname_run = mysqli_query($con,$cname_query);
+    if($cname_run)
+    {
+        $c_row=$cname_run->fetch_assoc();
+    }
 ?>
 <html>
 <head>
@@ -220,7 +226,31 @@
 
     </style>
     </head>
-    <body>
+    <body class=" bg-blue-400 ">
+	<nav class=" flex items-center justify-between flex-wrap bg-white p-6">
+		<div class="flex items-center flex-shrink-0 text-blue-600 mr-6 ">
+				<span class="font-semibold text-xl tracking-tight"><?php echo $_SESSION['username']; ?>(<?php echo $c_row['name'];?>)</span>
+			</div>
+			<div class=" w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+				<div class="text-sm lg:flex-grow">
+				<a href="home.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Profile
+				</a>
+				<a href="../include/rqststudents.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Requested Students
+				</a>
+				<a href="student_list.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200 mr-4">
+					Student List
+				</a>
+				<a href="ChangePassword.php" class="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-blue-200">
+					Change Password
+				</a>
+				 </div> 
+				<div>
+				<a href="../logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-600 border-blue-600 hover:border-transparent hover:text-blue-600 hover:bg-blue-200 mt-4 lg:mt-0">Logout</a>
+				</div>
+			</div>
+			</nav>
     <div id ="container">
          <div id="menu">
              <?php 
@@ -230,7 +260,7 @@
             }
             ?>
                     
-                    <a href="../include/rqststudents.php"><button class="chome" type="button">HOME</button></a>
+                    <!-- <a href="../include/rqststudents.php"><button class="chome" type="button">HOME</button></a> -->
                     <button onclick="myFunction()" class="chome" type="button" style="border = 1px solid red;background-color=#FADBD8;">END</button>
          </div> 
          <div id="feedback">
