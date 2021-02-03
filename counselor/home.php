@@ -66,7 +66,7 @@
 						</label>
 						<p class="text-gray-700 text-base">Name: <?php echo $row['name'];?></p>
 						<p class="text-gray-700 text-base">Email ID: <?php echo $row['email'];?></p>
-						<p class="text-gray-700 text-base">DOB: <?php echo $row['qualification'];?></p>
+						<p class="text-gray-700 text-base">Qualification: <?php echo $row['qualification'];?></p>
 					</div>
 					<div class="flex items-center justify-between">
 						<a href="edit.php"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline" >
