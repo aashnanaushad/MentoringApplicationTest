@@ -99,6 +99,13 @@
 		                      echo "Edited dob: $dateofbirth";
 		                      echo "<br>";
 		                      echo "<br>";
+						  }
+						  if( $row["gender"] != $row1["gender"])
+		                  {
+		                      @$gender=$row1["gender"];
+		                      echo "Edited gender: $gender";
+		                      echo "<br>";
+		                      echo "<br>";
 		                  }
 		                  if( $row["address"]!=$row1["address"])
 		                  {
@@ -326,7 +333,8 @@
 						  }
 				
 		                  @$name=$row1['name'];
-		                  @$dateofbirth=$row1['dateofbirth'];
+						  @$dateofbirth=$row1['dateofbirth'];
+						  @$gender=$row1['gender'];
 			           	  @$address=$row1['address'];
 						  @$email=$row1['email'];
 						  @$phone_no=$row1['phone_no'];
@@ -375,7 +383,7 @@
 			{
 				
 				echo "$username";
-	            $query = "update student set name='$name',dateofbirth='$dateofbirth',address='$address',email='$email',phone_no='$phone_no',father='$father',focc='$focc',mother='$mother',mocc='$mocc',school10='$school10',mark10='$mark10',perc10='$perc10',school12='$school12',mark12='$mark12',perc12='$perc12',C1='$C1',A1='$A1',C2='$C2',A2='$A2',C3='$C3',A3='$A3',C4='$C4',A4='$A4',C5='$C5',A5='$A5',C6='$C6',A6='$A6',C7='$C7',A7='$A7',C8='$C8',A8='$A8',edit='0' where username='$username'";
+	            $query = "update student set name='$name',dateofbirth='$dateofbirth',address='$address',email='$email',phone_no='$phone_no',gender='$gender',father='$father',focc='$focc',mother='$mother',mocc='$mocc',school10='$school10',mark10='$mark10',perc10='$perc10',school12='$school12',mark12='$mark12',perc12='$perc12',C1='$C1',A1='$A1',C2='$C2',A2='$A2',C3='$C3',A3='$A3',C4='$C4',A4='$A4',C5='$C5',A5='$A5',C6='$C6',A6='$A6',C7='$C7',A7='$A7',C8='$C8',A8='$A8',edit='0' where username='$username'";
 				$query_run= mysqli_query($con,$query);
 				if($query_run)
 				{
