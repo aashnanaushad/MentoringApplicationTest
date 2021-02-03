@@ -12,6 +12,9 @@
 	$row1=mysqli_fetch_array($result);
 	$dept1=$row1['dept'];
     $batch=$row1['batch'];
+    $mentors_query="select * from faculty where dept='$dept1'";
+    $mentors_result=mysqli_query($con,$mentors_query);
+    
 ?>
 
 <html>  
@@ -104,7 +107,16 @@
             </form>
             <form action="slist_class.php" method="post">
             <?php  if ($mentor == NULL) { ?>
-            <td class="p-4 w-1/6 overflow-hidden"><input type="text" name="mentor" placeholder="ID" class="border-2 border-black border-rounded" required/></td>  
+            <td class="p-4 w-1/6 overflow-hidden">
+            <select name="mentor" placeholder="ID" class="text-black text-sm border border-grey-lighter" value="<?php echo $mrow['username']; ?>" required>
+            <?php
+                    while($mrow = mysqli_fetch_array($mentors_result)) {
+                    ?>
+                    <option value="<?php echo $mrow['username']; ?>"><?php echo $mrow['username']; ?></option>
+            
+                <?php } ?>
+                </select>
+            </td>  
             <?php }
                 else { ?>
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $mentor;  ?></td>
