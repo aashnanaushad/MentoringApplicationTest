@@ -153,7 +153,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name" for="study">
 				How is your study practice?
 			</label>
-			<select  name="study" id="study" value="<?php echo $row['study']?>">
+			<select  name="study" id="study" class="border border-grey-lighter" value="<?php echo $row['study']?>">
 			   <option value="regular">Regular</option>
                <option value="irregular">Irregular</option>
 			   <option value="bookreading">Book Reading</option>
@@ -166,7 +166,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-last-name" for="learn">
 				What is your learning pattern ?
 			</label>
-			<select name="learn" id="learn" value="<?php echo $row['learn']?>">
+			<select name="learn" id="learn" class="border border-grey-lighter" value="<?php echo $row['learn']?>">
 			    <option value="visual">Visual</option>
 				<option value="auditory">Auditory</option>
 				<option value="read,write,revise">Read,Write,Revise</option>
@@ -243,7 +243,7 @@
 			<label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-aspiration" >
 				Aspiration Set
 			</label>
-			<select  name="aspiration" id="aspiration" value="<?php echo $row['aspiration']?>">
+			<select  name="aspiration" id="aspiration" class="border border-grey-lighter" value="<?php echo $row['aspiration']?> ">
 			   <option value="Dream company jobs">Dream company jobs</option>
                <option value="Campus cream placements">Campus cream placements</option>
 			   <option value="Higher study Abroad">Higher study Abroad</option>

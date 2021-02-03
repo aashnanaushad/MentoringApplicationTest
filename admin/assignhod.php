@@ -58,7 +58,7 @@
                         <label class="text-gray-700 text-md font-bold mb-2" for="department">
                             Department:
                         </label>
-                        <select id="department" name="department" required>
+                        <select id="department" class="border border-gray-lighter" name="department" required>
                             <option value="CSE">CSE</option>
                             <option value="CE">CE</option>
                             <option value="EC">EC</option>

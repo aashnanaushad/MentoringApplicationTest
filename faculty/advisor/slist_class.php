@@ -104,7 +104,7 @@
             </form>
             <form action="slist_class.php" method="post">
             <?php  if ($mentor == NULL) { ?>
-            <td class="p-4 w-1/6 overflow-hidden"><input type="text" name="mentor"  required/></td>  
+            <td class="p-4 w-1/6 overflow-hidden"><input type="text" name="mentor" placeholder="ID" class="border-2 border-black border-rounded" required/></td>  
             <?php }
                 else { ?>
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $mentor;  ?></td>

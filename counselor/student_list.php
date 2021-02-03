@@ -54,7 +54,7 @@
                         <label class="text-gray-700 text-md font-bold mb-2" for="department">
                             Department:
                         </label>
-                        <select id="department" name="department" required>
+                        <select id="department" class="border border-gray-lighter" name="department" required>
                             <option value="CSE">CSE</option>
                             <option value="CE">CE</option>
                             <option value="EC">EC</option>
@@ -64,7 +64,7 @@
                         <label class=" text-gray-700 text-md font-bold mb-2" for="batch">
                             Batch:
                         </label>
-                        <select id="batch" name="batch" required>
+                        <select id="batch" class="border border-gray-lighter" name="batch" required>
                             <option value="2017">2017</option>
                             <option value="2018">2018</option>
                             <option value="2019">2019</option>

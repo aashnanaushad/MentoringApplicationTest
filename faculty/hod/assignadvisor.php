@@ -100,7 +100,7 @@
                 <td class="p-4 w-1/6 overflow-hidden"><?php echo $batch;  ?></td> 
             <?php } 
             else { ?>
-                 <td class="p-4 w-1/6 overflow-hidden focus:bg-blue-400"><input type="text"  name="batch" value=" "/></td>
+                 <td class="p-4 w-1/6 overflow-hidden focus:bg-blue-400"><input type="text"  placeholder="20XX" class="border-2 border-black border-rounded" name="batch" value=""/></td>
             <?php } ?>
             <?php  if ($user_type != "advisor") { ?>
             <td class="p-4 w-1/6 overflow-hidden"><a href="assignadvisor.php"><button class="text-green-400" type="submit"  name="<?php echo "$user_id"; ?>">Assign</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
