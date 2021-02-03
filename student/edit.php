@@ -96,7 +96,7 @@
 				Gender
 			</label>
 			<select name="gender" id="gender" class="border border-grey-lighter" value="<?php echo $row['gender'];?>">
-			    <option value="	Female">Female</option>
+			    <option value="Female">Female</option>
 				<option value="Male">Male</option>
             </select>
 			<!-- <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" name="gender"  type="text"  > -->
