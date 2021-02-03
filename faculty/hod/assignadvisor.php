@@ -108,13 +108,14 @@
                 else { ?>
             <td class="p-4 w-1/6 overflow-hidden"><a href="assignadvisor.php"><button class="text-red-400" type="submit"  name="<?php echo "$user_id"; ?>">DeAssign</button></a></td>
                 <?php 
-                    $flag=1;
             } ?>
         </tr>  
             </form>
         <?php
 			if(isset($_POST[$user_id]))
 			{
+				if($user_type == "advisor")
+					$flag=1;
                 if($flag == 1){
                     $user_type="faculty";
                     $batch=0;
