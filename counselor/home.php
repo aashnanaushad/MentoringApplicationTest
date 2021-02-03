@@ -58,7 +58,7 @@
 						<label class="block text-gray-700 text-sm font-bold mb-2" >
 							Professional Details:
 						</label>
-						<p class="text-gray-700 text-base">Admission No: <?php echo $row['username'];?></p>
+						<p class="text-gray-700 text-base">Username: <?php echo $row['username'];?></p>
 					</div>
 					<div class="mb-6">
 						<label class="block text-gray-700 text-sm font-bold mb-2" >
