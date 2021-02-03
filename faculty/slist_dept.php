@@ -113,13 +113,24 @@
 		<thead class="bg-blue-400 flex text-white w-full"> 
   
         <tr class="flex w-full mb-4">
-  
+				<?php 
+					if($flag == 1){
+				?>
             <th class="p-4 w-1/6">User Name</th>  
             <th class="p-4 w-1/6">Dept</th>  
             <th class="p-4 w-1/6">Year of Join</th>  
             <th class="p-4 w-1/6">Year of Passout</th>  
             <th class="p-4 w-1/6">Email</th>
             <th class="p-4 w-1/6">Edit User</th>  
+			<?php } 
+			else{ 
+			?>
+			<th class="p-4 w-1/5">User Name</th>  
+            <th class="p-4 w-1/5">Dept</th>  
+            <th class="p-4 w-1/5">Year of Join</th>  
+            <th class="p-4 w-1/5">Year of Passout</th>  
+            <th class="p-4 w-1/5">Email</th>
+			<?php } ?>
         </tr>  
         </thead>  
         <tbody class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full" style="height: 50vh;">
@@ -141,13 +152,25 @@
         
 			<tr class="flex w-full mb-1">
 <!--here showing results in the table -->  
+				<?php 
+					if($flag == 1){
+				?>
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_id;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $department;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $sy;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $ey;  ?></td>
             <td class="p-4 w-1/6 overflow-hidden "><?php echo $user_email; ?></td>
             <td class="p-4 w-1/6 overflow-hidden"><a href="slist_dept.php"><button class="text-red-400" type="submit" name="<?php echo $user_id;?>">Delete</button></a></td> <!--btn btn-danger is a bootstrap button to show danger-->  
-        </tr>  
+			<?php } 
+			else{ 
+			?>
+			<td class="p-4 w-1/5 overflow-hidden"><?php echo $user_id;  ?></td>  
+            <td class="p-4 w-1/5 overflow-hidden"><?php echo $department;  ?></td>  
+            <td class="p-4 w-1/5 overflow-hidden"><?php echo $sy;  ?></td>  
+            <td class="p-4 w-1/5 overflow-hidden"><?php echo $ey;  ?></td>
+            <td class="p-4 w-1/5 overflow-hidden "><?php echo $user_email; ?></td>
+			<?php } ?>
+		</tr>  
         
         </form>
         <?php
