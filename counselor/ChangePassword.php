@@ -67,12 +67,12 @@
 							Change 
 						</button>
 						</form>
-						<a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="../common/forgotpassword/reset-password.php">
+						<!-- <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="../common/forgotpassword/reset-password.php">
 							<form action="../common/forgotpassword/reset-password.php" method="post">
 								<input type="hidden" name="pageinfo" value="c">
 								<button type="submit" name="newpwd">Forgot Password?</button>
 							</form>
-						</a>
+						</a> -->
 					</div>
 					
 			</div>
