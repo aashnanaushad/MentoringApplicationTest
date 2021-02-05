@@ -105,7 +105,7 @@
                         $user_type=$row['user_type'];  
                         $dept=$row['dept'];
                     ?>  
-                    <form action="assignhod.php" method="post">
+                    <form action="assign2.php" method="post">
                     
                     <tr class="flex w-full mb-1"> 
             <!--here showing results in the table -->  
@@ -114,69 +114,27 @@
                         <td class="p-4 w-1/6 overflow-hidden"><?php echo $designation;  ?></td>  
                         <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_email;  ?></td>  
                         <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_type;  ?></td>  
-                        <?php  if ($user_type != "HOD") { ?>
-                        <td class="p-4 w-1/6 overflow-hidden"><a href="assignhod.php"><button class="text-green-400" type="submit"  name="<?php echo "$user_id"; ?>">Assign</button></a></td>  
-                        <?php 
-                            $flag =0;    
-                                }
-                            else { ?>
-                            <td class="p-4 w-1/6 overflow-hidden"><a href="assignhod.php"><button class="text-red-400" type="submit"  name="<?php echo "$user_id"; ?>">De-assign</button></a></td>  
+                        <input type="hidden" name="hod" value="<?php echo $user_id; ?>">
+                        <input type="hidden" name="dept" value="<?php echo $dept ?>">
+                        <?php  if ($user_type != "HOD") {
+                            $flag=0; ?>
+                        <input type="hidden" name="flag" value="<?php echo $flag; ?>">
+                        <td class="p-4 w-1/6 overflow-hidden"><button class="text-green-400" type="submit"  name="sb">Assign</button></a></td>  
+                         <?php  } else {
+                            $flag=1; ?>
+                            <input type="hidden" name="flag" value="<?php echo $flag; ?>">
+                            <td class="p-4 w-1/6 overflow-hidden"><button class="text-red-400" type="submit"  name="sb">De-assign</button></a></td>  
                             <?php 
-                                $flag=1;
-                        } 
+                                //$flag=1;
+                        }
                         ?>
                     </tr>  
                         </form>
-                    <?php
-                        if(isset($_POST[$user_id]))
-                        {
-                            if($flag == 1){
-                                $user_type="faculty";
-                                $query = "update faculty set user_type='$user_type' where username='$user_id' ";
-                                $query_run = mysqli_query($con,$query);
-                                    if($query_run)
-                                    {
-                                    echo '<script type="text/javascript">alert("Successfully de-assigned HOD ")</script>';
-                                        echo "<script>window.location.href='homepage.php';</script>";
-                                    }
-                                    else
-                                    {
-                                        echo '<script type="text/javascript">alert("cannot de-assign HOD!!")</script>';
-                                    }
-                            }
-                            else{
-                            $query="select * from faculty where dept='$dept' and user_type='HOD'";
-                            $query_run = mysqli_query($con,$query);
-                            if($query_run)
-                            {
-                                if(mysqli_num_rows($query_run)<2)
-                                {
-                                    $query = "update faculty set user_type='HOD',batch=0 where username='$user_id' ";
-                                    $query_run = mysqli_query($con,$query);
-                                    if($query_run)
-                                    {
-                                    echo '<script type="text/javascript">alert("Successfully assigned hod ")</script>';
-                                    echo "<script>window.location.href='homepage.php';</script>";
-                                    }
-                                    else
-                                    {
-                                    echo '<script type="text/javascript">alert("DB error")</script>';
-                                    }
-                                }
-                                else
-                                {
-                                    echo '<script type="text/javascript">alert("Already 2 HODs assigned for the department!")</script>';
-                                }
-                            }
-                            else
-                            {
-                                echo '<script type="text/javascript">alert("DB error")</script>';
-                            }
+                    
+                        <?php 
                         }
-                    }
-                    ?>
-                        <?php }
-                        } ?> 
+                        }
+                    ?> 
                 </tbody> 
             </table> 
         </div>
