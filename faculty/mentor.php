@@ -118,10 +118,10 @@
   
             <th class="p-4 w-1/6">User Name</th>  
             <th class="p-4 w-1/6">Dept</th>  
-            <th class="p-4 w-1/6">Year of Join</th>  
-            <th class="p-4 w-1/6">Year of Passout</th>  
+            <th class="p-4 w-1/6">Batch</th>    
             <th class="p-4 w-1/6">Email</th>
-            <th class="p-4 w-1/6"></th>  
+            <th class="p-4 w-1/6">More Details</th>  
+			<th class="p-4 w-1/6">IDP Test Marks</th>
         </tr>  
         </thead>  
         <tbody class="bg-grey-light flex flex-col items-center justify-between overflow-y-scroll w-full" style="height: 50vh;">
@@ -146,13 +146,19 @@
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $user_id;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $department;  ?></td>  
             <td class="p-4 w-1/6 overflow-hidden"><?php echo $sy;  ?></td>  
-            <td class="p-4 w-1/6 overflow-hidden"><?php echo $ey;  ?></td>
             <td class="p-4 w-1/6 overflow-hidden "><?php echo $user_email; ?></td>
             <td class="p-4 w-1/6 overflow-hidden"> <input type="hidden" name="text" value="<?php echo $user_id; ?>">
-                   <button type="submit" class="text-blue-600">More Details</button></td> <!--btn btn-danger is a bootstrap button to show danger-->  
-        </tr>  
+                   <button type="submit" class="px-4 text-blue-600">View</button>
+			</td>
+			</form>
+			<form action="../faculty/IDP_view.php" method="post">
+			<td class="p-4 w-1/6 overflow-hidden"> <input type="hidden" name="text" value="<?php echo $user_id; ?>">
+                   <button type="submit" class="px-4 text-blue-600">Update</button>
+			</td>
+			</form>
+		</tr>  
         
-        </form>
+        
         <?php
      } ?>
         </tbody>  
