@@ -61,7 +61,7 @@
                         <select id="department" class="border border-gray-lighter" name="department" required>
                             <option value="CSE">CSE</option>
                             <option value="CE">CE</option>
-                            <option value="EC">EC</option>
+                            <option value="ECE">ECE</option>
                             <option value="EEE">EE</option>
                             <option value="ME">ME</option>
                         </select>
