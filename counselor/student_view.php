@@ -72,11 +72,16 @@
 	</nav>
 
 		    <div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
-				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
+            
+				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 float-right" >
+                
                     <!-- <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
 					    <img src="../imgs/avatar.png" /> 
 				    </div> -->
 				    <div class="w-full  py-6 overflow-y-hidden"> 
+                    <button class="uppercase p-3 flex items-center bg-blue-600 text-blue-50 max-w-max shadow-sm hover:shadow-lg rounded-full w-10 h-10 ">
+                <svg width="32" height="32"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                </button>
                         <div class="mb-4">
                             <label class="block text-gray-700 text-md font-bold mb-2" >
                                 STUDENT DETAILS
