@@ -62,7 +62,7 @@
                             <option value="CSE">CSE</option>
                             <option value="CE">CE</option>
                             <option value="ECE">ECE</option>
-                            <option value="EEE">EE</option>
+                            <option value="EEE">EEE</option>
                             <option value="ME">ME</option>
                         </select>
                         <!-- <div class="flex items-center justify-between"> -->
