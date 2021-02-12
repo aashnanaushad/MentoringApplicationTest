@@ -54,6 +54,10 @@
 		<div class=" px-3 py-10 pt-20 bg-blue-400 flex justify-center">
 				<div class="lg:flex bg-white shadow-md rounded px-8 pt-8 pb-10 mb-8 " >
 			<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
+			<form action="script.php" method="post" enctype="multipart/form-data">
+       <input type="file" name="excelDoc" id="excelDoc" />
+       <input type="submit" name="uploadBtn" id="uploadBtn" />
+       </form>
 		<form action="sadd.php" method="post">
 		
 		<div class="-mx-3 md:flex mb-6">
